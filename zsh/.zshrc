@@ -62,7 +62,7 @@ source $ZSH/oh-my-zsh.sh
 export DOTFILES=$HOME/.dotfiles
 
 # Load dotfiles:
-for file in $DOTFILES/.{aliases,functions}*; do
+for file in $DOTFILES/zsh/{exports,aliases,functions}*; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
