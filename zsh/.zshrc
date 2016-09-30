@@ -77,6 +77,13 @@ for file in $DOTFILES/zsh/{exports,functions,aliases}*; do
 done;
 unset file;
 
+# Load extra plugins
+PLUGINS_DIRECTORY=$DOTFILES/zsh/plugins
+
+source $PLUGINS_DIRECTORY/alias-tips/alias-tips.plugin.zsh
+source $PLUGINS_DIRECTORY/git-open/git-open.plugin.zsh
+source $PLUGINS_DIRECTORY/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
