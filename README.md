@@ -17,5 +17,11 @@ ln -s ~/.dotfiles/zsh/.zshrc ~/.zshrc
 **Create a symlink of Preferences.sublime-settings for Sublime Text 3.**
 
 ```
-ln -s $HOME/.dotfiles/sublime/Preferences.sublime-settings $HOME/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Preferences.sublime-settings
+ln -s ~/.dotfiles/sublime/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Preferences.sublime-settings
+```
+
+**Create symlink for editorconfig file**
+
+```
+ln -s ~/.dotfiles/.editorconfig ~
 ```
