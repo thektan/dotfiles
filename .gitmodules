@@ -1,0 +1,9 @@
+[submodule "zsh/plugins/zsh-autosuggestions"]
+	path = zsh/plugins/zsh-autosuggestions
+	url = git://github.com/zsh-users/zsh-autosuggestions
+[submodule "zsh/plugins/git-open"]
+	path = zsh/plugins/git-open
+	url = git@github.com:paulirish/git-open.git
+[submodule "zsh/plugins/alias-tips"]
+	path = zsh/plugins/alias-tips
+	url = git@github.com:djui/alias-tips.git
