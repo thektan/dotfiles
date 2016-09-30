@@ -97,3 +97,6 @@ alias ss="open ~/Dropbox/Screenshots"
 # Spotify
 alias sp="spotify"
 alias spc="spotify play uri spotify:user:125349885:playlist:146MpXfgHYUdOhxdUn1u6w"
+
+# Open current finder window in sublime
+alias spfd="s $(pfd)"
