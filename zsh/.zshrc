@@ -62,7 +62,7 @@ source $ZSH/oh-my-zsh.sh
 export DOTFILES=$HOME/.dotfiles
 
 # Load dotfiles:
-for file in $DOTFILES/zsh/{exports,aliases,functions}*; do
+for file in $DOTFILES/zsh/{exports,functions,aliases}*; do
 	# If on Liferay, source all the files.
 	if [[ "$(hostname)" == *"liferay"* ]]; then
 		echo $file;
