@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
 alias dfs="subl ~/.dotfiles"
+alias dfp="cd ~/.dotfiles && git push"
+alias dfl="cd ~/.dotfiles && git pull"
 
 ############################################################
 # ZSH aliases
