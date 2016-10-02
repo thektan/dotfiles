@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -59,7 +59,7 @@ export PATH="/usr/local/bin:/bin:/usr/sbin:/sbin:/Users/ktan/Liferay/master/port
 source $ZSH/oh-my-zsh.sh
 
 # Source dotfiles
-export DOTFILES=$HOME/.dotfiles
+export DOTFILES=~/.dotfiles
 
 # Load dotfiles:
 for file in $DOTFILES/zsh/{exports,functions,aliases}*; do
