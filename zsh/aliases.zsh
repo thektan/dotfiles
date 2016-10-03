@@ -1,7 +1,12 @@
 #!/usr/bin/env bash
 
+############################################################
+# Dotfiles
+############################################################
+
 alias dfs="subl ~/.dotfiles"
 alias dfp="cd ~/.dotfiles && git push"
+alias dfc="cd ~/.dotfiles"
 alias dfl="cd ~/.dotfiles && git pull"
 
 ############################################################
