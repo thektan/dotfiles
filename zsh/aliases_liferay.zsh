@@ -91,11 +91,13 @@ alias lreecu="cd $EE62X_PORTAL_CLEAN && git pull upstream ee-6.2.x && ant all"
 # Testray Portlet
 alias tro="cd $TESTRAY"
 alias tra="atom $TESTRAY"
+alias trs="subl $TESTRAY"
 alias trf="open $TESTRAY"
 alias trd="cd $TESTRAY && ant clean deploy"
 
 alias trda="cd $TESTRAY && ant clean deploy && cd $TESTRAY_THEME && ant clean deploy"
 alias trda-new="cd ~/Liferay/ee-6.2.x/plugins/portlets/marketplace-portlet && ant clean deploy && cd ~/Liferay/ee-6.2.x/plugins/hooks/portal-compat-hook && ant clean deploy && cd $TESTRAY && ant clean deploy && cd $TESTRAY_THEME && ant clean deploy"
+alias trrt="cd ~/Liferay/ee-6.2.x/bundles/tomcat/webapps && rm -rfv testray-portlet"
 
 # Testray Theme
 alias trto="cd $TESTRAY_THEME"
