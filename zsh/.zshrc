@@ -65,12 +65,10 @@ export DOTFILES=~/.dotfiles
 for file in $DOTFILES/zsh/{exports,functions,aliases}*; do
 	# If on Liferay, source all the files.
 	if [[ "$(hostname)" == *"liferay"* ]]; then
-		echo $file;
 		[ -r "$file" ] && [ -f "$file" ] && source "$file";
 	else
 		# When not on Liferay, exclude Liferay specific aliases and functions.
 		if [[ $file != *"liferay"* ]]; then
-			echo $file;
 			[ -r "$file" ] && [ -f "$file" ] && source "$file";
 		fi;
 	fi;
