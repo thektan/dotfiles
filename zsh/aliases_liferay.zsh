@@ -126,22 +126,22 @@ alias lrsee="mysql.server start && cd ~/Liferay/ee-6.2.x/bundles/tomcat/bin && .
 alias lrseec="cd ~/Liferay/ee-6.2.x-clean/bundles/tomcat/bin && ./catalina.sh run"
 
 # Find specific processes
-alias pj="ps -ef | grep java"
-alias pt="ps -ef | grep bundles/tomcat/"
+alias pj="ps -ef | ag java"
+alias pt="ps -ef | ag bundles/tomcat/"
 
-alias ptm='ps -ef | grep master/bundles/tomcat/ | grep java | awk '\''{print $2}'\'''
-alias ptmc='ps -ef | grep master-clean/bundles/tomcat/ | grep java | awk '\''{print $2}'\'''
-alias ptee='ps -ef | grep ee-6.2.x/bundles/tomcat/ | grep java | awk '\''{print $2}'\'''
+alias ptm='ps -ef | ag master/bundles/tomcat/ | ag java | awk '\''{print $2}'\'''
+alias ptmc='ps -ef | ag master-clean/bundles/tomcat/ | ag java | awk '\''{print $2}'\'''
+alias ptee='ps -ef | ag ee-6.2.x/bundles/tomcat/ | ag java | awk '\''{print $2}'\'''
 
 # Kill processes
-alias km="zshr && kill -9 $(ptm)"
-alias kmc="zshr && kill -9 $(ptmc)"
-alias kee="zshr && kill -9 $(ptee)"
+alias km="kill -9 $(ptm)"
+alias kmc="kill -9 $(ptmc)"
+alias kee="kill -9 $(ptee)"
 
 # Kill and restart servers
-alias kmr="zshr && kill -9 $(ptm) && lrsm"
-alias kmcr="zshr && kill -9 $(ptmc) && lrsmc"
-alias keer="zshr && kill -9 $(ptee) && lrsee"
+alias kmr="kill -9 $(ptm) && lrsm"
+alias kmcr="kill -9 $(ptmc) && lrsmc"
+alias keer="kill -9 $(ptee) && lrsee"
 
 alias killp="kill -9"
 
