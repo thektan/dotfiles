@@ -60,3 +60,24 @@ submit_pull_request() {
 		gh pr --branch $1 --submit $2 -D "http://issues.liferay.com/browse/$(latest_jira_ticket) $description";
 	fi
 }
+
+# Kill tomcat server
+kt() {
+	if [ -n "$1" ]; then
+		local branchName="master"
+
+		if [[ "$1" == "ee" ]]; then
+			branchName="ee-6.2.x"
+		elif [[ "$1" == "m" ]]; then
+			branchName="master"
+		else
+			echo "Accepted values: [ee | m]";
+		fi
+
+		echo "killing process for branch: $branchName"
+
+		pkill -9 -f $branchName/bundles/tomcat;
+	else
+		echo "Usage: kt [ee | m]\n"
+	fi
+}
