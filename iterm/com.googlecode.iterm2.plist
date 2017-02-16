@@ -317,6 +317,8 @@
 	<string>~</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{712, 459}</string>
+	<key>NSNavPanelExpandedSizeForSaveMode</key>
+	<string>{712, 521}</string>
 	<key>NSQuotedKeystrokeBinding</key>
 	<string></string>
 	<key>NSRepeatCountBinding</key>
@@ -363,15 +365,15 @@
 	<key>NSWindow Frame Preferences</key>
 	<string>-1278 1053 606 456 -3008 -141 3008 1669 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
-	<string>760 787 400 129 0 0 1920 1177 </string>
+	<string>760 786 400 129 0 0 1920 1177 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>650 589 620 392 0 0 1920 1177 </string>
+	<string>-1814 958 620 392 -3008 0 3008 1669 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
-	<string>269 139 606 456 0 0 1920 1177 </string>
+	<string>-2516 234 606 456 -3008 0 3008 1669 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>-2223 635 796 473 -3008 0 3008 1669 </string>
+	<string>1005 267 918 498 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-722 233 650 466 -3008 0 3008 1669 </string>
+	<string>-1339 9 1329 693 -3008 0 3008 1669 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>-1644 350 650 502 -3008 -141 3008 1669 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -2542,7 +2544,7 @@
 			<key>Right Option Key Sends</key>
 			<integer>0</integer>
 			<key>Rows</key>
-			<integer>50</integer>
+			<integer>20</integer>
 			<key>Screen</key>
 			<integer>-2</integer>
 			<key>Scrollback Lines</key>
@@ -2725,6 +2727,8 @@
 	<true/>
 	<key>NoSyncHaveWarnedAboutIncompatibleSoftware</key>
 	<true/>
+	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
+	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>E0A6C842-05BD-4627-97A9-7E21A5FDDDE6</string>
 	<key>NoSyncLastTipTime</key>
@@ -2862,7 +2866,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/ktan/.dotfiles/</string>
+	<string>/Users/ktan/.dotfiles/iterm/</string>
 	<key>Print In Black And White</key>
 	<true/>
 	<key>PromptOnQuit</key>
@@ -2882,7 +2886,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-09-27T16:39:36Z</date>
+	<date>2017-01-24T00:39:01Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Secure Input</key>
@@ -11759,6 +11763,8 @@
 		<array/>
 		<key>Quick Master-EE62X</key>
 		<array/>
+		<key>Testing 1</key>
+		<array/>
 	</dict>
 	<key>WindowNumber</key>
 	<true/>
@@ -11771,7 +11777,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.0.10</string>
+	<string>3.0.13</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
