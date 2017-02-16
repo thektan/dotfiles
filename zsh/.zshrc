@@ -62,7 +62,7 @@ source $ZSH/oh-my-zsh.sh
 export DOTFILES=~/.dotfiles
 
 # Load dotfiles:
-for file in $DOTFILES/zsh/{exports,functions,aliases}*; do
+for file in $DOTFILES/zsh/{exports,functions,aliases,antigen}*; do
 	# If on Liferay, source all the files.
 	if [[ "$(hostname)" == *"liferay"* ]]; then
 		[ -r "$file" ] && [ -f "$file" ] && source "$file";
@@ -106,3 +106,5 @@ source $PLUGINS_DIRECTORY/zsh-autosuggestions/zsh-autosuggestions.zsh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+# Adding autocomplete for 'we'
+[ -f ~/.we_autocomplete ] && source ~/.we_autocomplete
