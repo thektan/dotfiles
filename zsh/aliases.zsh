@@ -42,6 +42,7 @@ alias grcd="gradle clean deploy"
 
 # Gulp
 alias gub="gulp build"
+alias gud="gulp deploy"
 alias guw="gulp watch"
 
 # Node
@@ -94,6 +95,9 @@ eval "$(thefuck --alias oh)"
 
 # Jira
 alias jo=open_jira_ticket;
+
+# Ranger
+alias r="ranger"
 
 # Open Dropbox Paper
 alias paper="open -a 'Google Chrome' https://paper.dropbox.com/doc/Index-Rf8Yrk2ECynKI9agKSITo"
