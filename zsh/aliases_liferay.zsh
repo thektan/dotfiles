@@ -4,12 +4,12 @@
 # Git                                                      #
 ############################################################
 
-alias gcee="git checkout ee-6.2.x"
-alias gluee="git checkout ee-6.2.x && git pull upstream ee-6.2.x"
-alias grbee="git rebase ee-6.2.x"
-alias grlee="git checkout ee-6.2.x && git pull upstream ee-6.2.x && git checkout - && git rebase ee-6.2.x"
-alias grbiee="git rebase -i ee-6.2.x"
-alias gurbee="git pull upstream ee-6.2.x --rebase"
+alias gcee="git checkout ee-7.0.x"
+alias gluee="git checkout ee-7.0.x && git pull upstream ee-7.0.x"
+alias grbee="git rebase ee-7.0.x"
+alias grlee="git checkout ee-7.0.x && git pull upstream ee-7.0.x && git checkout - && git rebase ee-7.0.x"
+alias grbiee="git rebase -i ee-7.0.x"
+alias gurbee="git pull upstream ee-7.0.x --rebase"
 
 
 ############################################################
@@ -23,12 +23,12 @@ alias ghc="gh pr --comment"
 alias ghi="gh pr --info"
 
 alias ghs="submit_pull_request"
-alias ghsee="submit_pull_request ee-6.2.x"
-alias ghsjee="submit_pull_request ee-6.2.x jonmak08"
+alias ghsee="submit_pull_request ee-7.0.x"
+alias ghsjee="submit_pull_request ee-7.0.x jonmak08"
 alias ghsm="submit_pull_request master"
 
 alias ghsj="gh pr --submit jonmak08 --title ''"
-alias ghsmeee="gh pr --submit thektan --branch ee-6.2.x --title"
+alias ghsmeee="gh pr --submit thektan --branch ee-7.0.x --title"
 
 
 ############################################################
@@ -43,11 +43,6 @@ MASTER_CLEAN=~/Liferay/master-clean/portal
 EE62X_PORTAL=~/Liferay/ee-6.2.x/portal
 EE62X_PORTAL_CLEAN=~/Liferay/ee-6.2.x-clean/portal
 EE62X_PLUGINS=~/Liferay/ee-6.2.x/plugins
-
-TESTRAY=~/Liferay/ee-6.2.x/plugins/portlets/testray-portlet
-TESTRAY_THEME=~/Liferay/ee-6.2.x/plugins/themes/testray-theme
-TESTRAY_TOMCAT=~/Liferay/ee-6.2.x/bundles/tomcat/webapps/testray-portlet
-TESTRAY_DASHBOARD=~/Liferay/ee-6.2.x/plugins/webs/testray-dashboard-web
 
 SEARCH_PORTLET=~/Liferay/master/portal/modules/apps/foundation/portal-search/portal-search-web
 
@@ -88,16 +83,32 @@ alias lreec="cd $EE62X_PORTAL_CLEAN"
 alias lreeco="open $EE62X_PORTAL_CLEAN"
 alias lreecu="cd $EE62X_PORTAL_CLEAN && git pull upstream ee-6.2.x && ant all"
 
-# Testray Portlet
+############################################################
+# Testray                                                  #
+############################################################
+
+# Directories
+TESTRAY=~/Liferay/ee-7.0.x/portal-ee/modules/private/apps/osb-testray
+TESTRAY_PORTLET=~/Liferay/ee-7.0.x/portal-ee/modules/private/apps/osb-testray/osb-testray-portlet
+TESTRAY_DASHBOARD=~/Liferay/ee-7.0.x/portal-ee/modules/private/apps/osb-testray/osb-testray-dashboard
+TESTRAY_THEME=~/Liferay/ee-7.0.x/portal-ee/modules/private/apps/osb-testray/osb-testray-theme
+
+alias testray="$TESTRAY"
+
 alias tro="cd $TESTRAY"
 alias tra="atom $TESTRAY"
 alias trs="subl $TESTRAY"
 alias trf="open $TESTRAY"
-alias trd="cd $TESTRAY && ant clean deploy"
+alias trdp="cd $TESTRAY_PORTLET && gradle clean deploy"
+alias trdt="cd $TESTRAY_THEME && gradle clean deploy"
 
 alias trda="cd $TESTRAY && ant clean deploy && cd $TESTRAY_THEME && ant clean deploy"
-alias trda-new="cd ~/Liferay/ee-6.2.x/plugins/portlets/marketplace-portlet && ant clean deploy && cd ~/Liferay/ee-6.2.x/plugins/hooks/portal-compat-hook && ant clean deploy && cd $TESTRAY && ant clean deploy && cd $TESTRAY_THEME && ant clean deploy"
-alias trrt="cd ~/Liferay/ee-6.2.x/bundles/tomcat/webapps && rm -rfv testray-portlet"
+
+# Deploy War
+alias trdw="cd /Users/ktan/Liferay/ee-7.0.x/portal-ee/modules/private/apps/osb-testray/osb-testray-portlet && gradle war && cp /Users/ktan/Liferay/ee-7.0.x/portal-ee/tools/sdk/dist/osb-testray-portlet-7.0.10.1.war /Users/ktan/Liferay/ee-7.0.x/bundles/deploy && rm -rf /Users/ktan/Liferay/ee-7.0.x/bundles/work/osb-testray-portlet-7.0.10.1"
+
+#alias trda-new="cd ~/Liferay/ee-6.2.x/plugins/portlets/marketplace-portlet && ant clean deploy && cd ~/Liferay/ee-6.2.x/plugins/hooks/portal-compat-hook && ant clean deploy && cd $TESTRAY && ant clean deploy && cd $TESTRAY_THEME && ant clean deploy"
+#alias trrt="cd ~/Liferay/ee-6.2.x/bundles/tomcat/webapps && rm -rfv testray-portlet"
 
 # Testray Theme
 alias trto="cd $TESTRAY_THEME"
@@ -122,7 +133,7 @@ alias spd="cd $SEARCH_PORTLET && gradle deploy"
 alias stomcat="./catalina.sh run"
 alias lrsm="cd ~/Liferay/master/bundles/tomcat/bin && ./catalina.sh run"
 alias lrsmc="cd ~/Liferay/master-clean/bundles/tomcat/bin && ./catalina.sh run"
-alias lrsee="mysql.server start && cd ~/Liferay/ee-6.2.x/bundles/tomcat/bin && ./catalina.sh run"
+alias lrsee="mysql.server start && cd ~/Liferay/ee-7.0.x/bundles/tomcat/bin && ./catalina.sh run"
 alias lrseec="cd ~/Liferay/ee-6.2.x-clean/bundles/tomcat/bin && ./catalina.sh run"
 
 # Find specific processes

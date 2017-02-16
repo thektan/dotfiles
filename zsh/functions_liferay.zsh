@@ -66,15 +66,17 @@ kt() {
 	if [ -n "$1" ]; then
 		local branchName="master"
 
-		if [[ "$1" == "ee" ]]; then
+		if [[ "$1" == "6" ]]; then
 			branchName="ee-6.2.x"
+		elif [[ "$1" == "7" ]]; then
+			branchName="ee-7.0.x"
 		elif [[ "$1" == "m" ]]; then
 			branchName="master"
 		else
 			echo "Accepted values: [ee | m]";
 		fi
 
-		echo "killing process for branch: $branchName"
+		echo "Killing process for branch: $branchName\n"
 
 		pkill -9 -f $branchName/bundles/tomcat;
 	else
