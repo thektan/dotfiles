@@ -87,7 +87,7 @@ alias qe="mysql.server stop"
 ############################################################
 
 # Get IP Address (Source: http://stackoverflow.com/a/13322549/5092054)
-alias ip="ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'"
+alias ip="ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1' | pbcopy"
 
 # Does the "Did you mean this?" command
 eval "$(thefuck --alias oh)"
