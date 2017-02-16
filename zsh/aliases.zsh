@@ -1,15 +1,6 @@
 #!/usr/bin/env bash
 
 ############################################################
-# Dotfiles
-############################################################
-
-alias dfs="subl ~/.dotfiles"
-alias dfp="cd ~/.dotfiles && git push"
-alias dfc="cd ~/.dotfiles"
-alias dfl="cd ~/.dotfiles && git pull"
-
-############################################################
 # ZSH aliases
 ############################################################
 
@@ -24,6 +15,15 @@ alias zshu="upgrade_oh_my_zsh"
 
 alias java7='export JAVA_HOME=$JAVA_7_HOME && java -version'
 alias java8='export JAVA_HOME=$JAVA_8_HOME && java -version'
+
+############################################################
+# Dotfiles
+############################################################
+
+alias dfs="subl ~/.dotfiles"
+alias dfp="cd ~/.dotfiles && git push"
+alias dfc="cd ~/.dotfiles"
+alias dfl="cd ~/.dotfiles && git pull"
 
 ############################################################
 # Build Tasks                                              #
@@ -63,38 +63,38 @@ alias gbD="git branch -D"
 alias gcane="git commit --amend --no-edit"
 alias gcaane="git commit --all --amend --no-edit"
 alias gcleana="git clean -fd :/"
-alias grbim="git rebase -i master"
-alias gbm="git branch -m"
-alias ggpf="ggp -f"
-alias gcr="git checkout -"
-alias gurbm="git pull upstream master --rebase"
-alias grha="git reset --hard"
 alias gco2="git checkout @{-2}"
 alias gco3="git checkout @{-3}"
 alias gco4="git checkout @{-4}"
 alias gco5="git checkout @{-5}"
+alias gcr="git checkout -"
+alias grbim="git rebase -i master"
+alias gbm="git branch -m"
+alias ggpf="ggp -f"
+alias gurbm="git pull upstream master --rebase"
+alias grha="git reset --hard"
 
 ############################################################
 # Database aliases                                         #
 ############################################################
 
 # MySQL
-alias q="mysql -u root -p"
-alias qs="mysql.server start"
-alias qe="mysql.server stop"
+alias msql="mysql -u root -p"
+alias msqls="mysql.server start"
+alias msqle="mysql.server stop"
 
 ############################################################
 # Misc aliases                                             #
 ############################################################
 
-# Get IP Address (Source: http://stackoverflow.com/a/13322549/5092054)
-alias ip="ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1' | pbcopy"
-
-# Does the "Did you mean this?" command
-eval "$(thefuck --alias oh)"
+# Git recent
+alias gce="git recent"
 
 # Jira
 alias jo=open_jira_ticket;
+
+# Get IP Address (Source: http://stackoverflow.com/a/13322549/5092054)
+alias ip="ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1' | pbcopy"
 
 # Ranger
 alias r="ranger"
@@ -111,3 +111,6 @@ alias spc="spotify play uri spotify:user:125349885:playlist:146MpXfgHYUdOhxdUn1u
 
 # Open current finder window in sublime
 alias sdf="s $(pfd)"
+
+# Does the "Did you mean this?" command
+eval "$(thefuck --alias oh)"
