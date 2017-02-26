@@ -20,6 +20,7 @@ alias java8='export JAVA_HOME=$JAVA_8_HOME && java -version'
 # Dotfiles
 ############################################################
 
+alias dfa="atom ~/.dotfiles"
 alias dfs="subl ~/.dotfiles"
 alias dfp="cd ~/.dotfiles && git push"
 alias dfc="cd ~/.dotfiles"
@@ -73,6 +74,7 @@ alias gbm="git branch -m"
 alias ggpf="ggp -f"
 alias gurbm="git pull upstream master --rebase"
 alias grha="git reset --hard"
+alias gql="git log --pretty=format:'%C(yellow)%<(8)%h %Cblue%an %Cgreen%<(10)(%cr) %Cred%d %Creset%s'"
 
 ############################################################
 # Database aliases                                         #
@@ -88,7 +90,7 @@ alias msqle="mysql.server stop"
 ############################################################
 
 # Git recent
-alias gce="git recent"
+alias gre="git recent"
 
 # Jira
 alias jo=open_jira_ticket;
