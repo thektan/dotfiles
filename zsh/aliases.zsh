@@ -74,7 +74,7 @@ alias gbm="git branch -m"
 alias ggpf="ggp -f"
 alias gurbm="git pull upstream master --rebase"
 alias grha="git reset --hard"
-alias gql="git log --pretty=format:'%C(yellow)%<(8)%h %Cblue%an %Cgreen%<(10)(%cr) %Cred%d %Creset%s'"
+alias gql="git log --pretty=format:'%Cred%d %C(yellow)%<(8)%h %Creset%s %Cblue<%an> %Cgreen%<(10)(%cr)'"
 
 ############################################################
 # Database aliases                                         #
