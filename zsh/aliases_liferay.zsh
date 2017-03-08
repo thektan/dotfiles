@@ -10,6 +10,7 @@ alias grbee="git rebase ee-7.0.x"
 alias grlee="git checkout ee-7.0.x && git pull upstream ee-7.0.x && git checkout - && git rebase ee-7.0.x"
 alias grbiee="git rebase -i ee-7.0.x"
 alias gurbee="git pull upstream ee-7.0.x --rebase"
+alias gqlt="gql ~/Liferay/ee-7.0.x/portal-ee/modules/private/apps/osb-testray"
 
 
 ############################################################
