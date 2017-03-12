@@ -89,6 +89,9 @@ alias msqle="mysql.server stop"
 # Misc aliases                                             #
 ############################################################
 
+# Jump
+alias j="jump"
+
 # Git recent
 alias gre="git recent"
 
