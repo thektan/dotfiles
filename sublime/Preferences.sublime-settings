@@ -40,7 +40,8 @@
 		".hg",
 		"CVS",
 		".sass-cache",
-		"classes"
+		"classes",
+		"node_modules"
 	],
 	"font_face": "Roboto Mono",
 	"font_options":
