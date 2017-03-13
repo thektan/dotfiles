@@ -13,9 +13,9 @@ brew install diff-so-fancy
 brew install node
 brew install the_silver_searcher
 brew install tree
+brew install z # Jump around files (https://github.com/rupa/z)
 brew install zsh
 
 # Extra tools
-
 brew install shpotify
 brew install wifi-password
