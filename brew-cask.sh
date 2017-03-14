@@ -26,6 +26,7 @@ brew cask install iterm2
 brew cask install github-desktop
 brew cask install sublime-text
 brew cask install sequel-pro
+brew cask install visual-studio-code
 
 # References
 brew cask install dash
