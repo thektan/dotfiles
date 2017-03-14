@@ -12,7 +12,6 @@ brew cask install firefox
 # Productivity
 
 # Tools
-brew cask install helium
 brew cask install kap
 brew cask install transmission
 
