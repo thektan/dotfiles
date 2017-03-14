@@ -81,6 +81,7 @@ PLUGINS_DIRECTORY=$DOTFILES/zsh/plugins
 source $PLUGINS_DIRECTORY/alias-tips/alias-tips.plugin.zsh
 source $PLUGINS_DIRECTORY/git-open/git-open.plugin.zsh
 source $PLUGINS_DIRECTORY/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/local/etc/profile.d/z.sh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
