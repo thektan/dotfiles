@@ -33,19 +33,8 @@ alias ghsmeee="gh pr --submit thektan --branch ee-7.0.x --title"
 
 
 ############################################################
-# Liferay projects                                         #
+# Liferay                                                  #
 ############################################################
-
-# Directories
-MASTER=~/Liferay/master/portal
-MASTER_PLUGINS=~/Liferay/master/plugins
-MASTER_CLEAN=~/Liferay/master-clean/portal
-
-EE62X_PORTAL=~/Liferay/ee-6.2.x/portal
-EE62X_PORTAL_CLEAN=~/Liferay/ee-6.2.x-clean/portal
-EE62X_PLUGINS=~/Liferay/ee-6.2.x/plugins
-
-SEARCH_PORTLET=~/Liferay/master/portal/modules/apps/foundation/portal-search/portal-search-web
 
 # Check all source formatting in current directories
 alias csf="find . | xargs check_sf -q"
@@ -97,15 +86,12 @@ alias trf="open $TESTRAY"
 alias trdp="cd $TESTRAY_PORTLET && gradle clean deploy && cd -"
 alias trdt="cd $TESTRAY_THEME && gradle clean deploy && cd -"
 
-alias trda="cd $TESTRAY_PORTLET && gradle clean deploy && cd $TESTRAY_THEME && gradle clean deploy"
+alias trda="trdp && trdt"
 
 alias trcf=testray_check_format
 
 # Deploy War
 alias trdw="cd /Users/ktan/Liferay/ee-7.0.x/portal-ee/modules/private/apps/osb-testray/osb-testray-portlet && gradle war && cp /Users/ktan/Liferay/ee-7.0.x/portal-ee/tools/sdk/dist/osb-testray-portlet-7.0.10.1.war /Users/ktan/Liferay/ee-7.0.x/bundles/deploy && rm -rf /Users/ktan/Liferay/ee-7.0.x/bundles/work/osb-testray-portlet-7.0.10.1"
-
-#alias trda-new="cd ~/Liferay/ee-6.2.x/plugins/portlets/marketplace-portlet && ant clean deploy && cd ~/Liferay/ee-6.2.x/plugins/hooks/portal-compat-hook && ant clean deploy && cd $TESTRAY && ant clean deploy && cd $TESTRAY_THEME && ant clean deploy"
-#alias trrt="cd ~/Liferay/ee-6.2.x/bundles/tomcat/webapps && rm -rfv testray-portlet"
 
 # Testray Theme
 alias trto="cd $TESTRAY_THEME"
@@ -117,7 +103,10 @@ alias trtd="cd $TESTRAY_THEME && ant clean deploy"
 alias trdbo="cd $TESTRAY_DASHBOARD"
 alias trdbd="cd $TESTRAY_DASHBOARD && ant clean deploy"
 
-# Search Portlet
+############################################################
+# Search Portlet                                           #
+############################################################
+
 alias spo="cd $SEARCH_PORTLET"
 alias spd="cd $SEARCH_PORTLET && gradle deploy"
 
