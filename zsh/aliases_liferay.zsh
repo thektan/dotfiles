@@ -100,10 +100,10 @@ alias tro="cd $TESTRAY"
 alias tra="atom $TESTRAY"
 alias trs="subl $TESTRAY"
 alias trf="open $TESTRAY"
-alias trdp="cd $TESTRAY_PORTLET && gradle clean deploy"
-alias trdt="cd $TESTRAY_THEME && gradle clean deploy"
+alias trdp="cd $TESTRAY_PORTLET && gradle clean deploy && cd -"
+alias trdt="cd $TESTRAY_THEME && gradle clean deploy && cd -"
 
-alias trda="cd $TESTRAY && ant clean deploy && cd $TESTRAY_THEME && ant clean deploy"
+alias trda="cd $TESTRAY_PORTLET && gradle clean deploy && cd $TESTRAY_THEME && gradle clean deploy"
 
 # Deploy War
 alias trdw="cd /Users/ktan/Liferay/ee-7.0.x/portal-ee/modules/private/apps/osb-testray/osb-testray-portlet && gradle war && cp /Users/ktan/Liferay/ee-7.0.x/portal-ee/tools/sdk/dist/osb-testray-portlet-7.0.10.1.war /Users/ktan/Liferay/ee-7.0.x/bundles/deploy && rm -rf /Users/ktan/Liferay/ee-7.0.x/bundles/work/osb-testray-portlet-7.0.10.1"
