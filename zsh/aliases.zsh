@@ -104,9 +104,6 @@ alias ip="ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0
 # Ranger
 alias r="ranger"
 
-# Open Dropbox Paper
-alias paper="open -a 'Google Chrome' https://paper.dropbox.com/doc/Index-Rf8Yrk2ECynKI9agKSITo"
-
 # Open Screenshots folder
 alias ss="open ~/Dropbox/Screenshots"
 

@@ -64,3 +64,22 @@ function fs() {
 		du $arg .[^.]* ./*;
 	fi;
 }
+
+# Quickly open dropbox paper documents
+function p() {
+	if [ -n "$1" ]; then
+		local document_name="/docs"
+
+		if [[ "$1" == "index" ]]; then
+			document_name="/doc/Index-2017-PUi7VDxAFK45bn9W0JLlg"
+		elif [[ "$1" == "taste" ]]; then
+			document_name="/doc/Brainstorm-1sFpGjI9gclozfqB8fSoG"
+		elif [[ "$1" == "refs" ]]; then
+			document_name="/folder/show/-References-e.iX7ZavGxujPFwhjOZcQrZBj3wNHkyDyoc9qqXSvKQjChbogrYK"
+		fi
+
+		open -a 'Google Chrome' https://paper.dropbox.com$document_name;
+	else
+		open -a 'Google Chrome' https://paper.dropbox.com;
+	fi
+}
