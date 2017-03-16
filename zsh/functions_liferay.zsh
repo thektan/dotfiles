@@ -83,3 +83,20 @@ kt() {
 		echo "Usage: kt [ee | m]\n"
 	fi
 }
+
+# Check source formatting on testray portlet and theme.
+testray_check_format() {
+	echo "\n----------------------------------------------------------"
+	echo "|                  PORTLET FORMATSOURCE                  |"
+	echo "----------------------------------------------------------"
+	cd $TESTRAY_PORTLET
+	ant format-source
+	cd -
+
+	echo "\n----------------------------------------------------------"
+	echo "|                   THEME FORMATSOURCE                   |"
+	echo "----------------------------------------------------------"
+	cd $TESTRAY_THEME
+	gradle formatSource
+	cd -
+}
