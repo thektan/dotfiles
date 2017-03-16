@@ -21,9 +21,10 @@ alias java8='export JAVA_HOME=$JAVA_8_HOME && java -version'
 ############################################################
 
 alias dfa="atom ~/.dotfiles"
+alias dfc="code ~/.dotfiles"
 alias dfs="subl ~/.dotfiles"
 alias dfp="cd ~/.dotfiles && git push"
-alias dfc="cd ~/.dotfiles"
+alias dfo="cd ~/.dotfiles"
 alias dfl="cd ~/.dotfiles && git pull"
 
 ############################################################

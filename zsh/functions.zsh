@@ -2,7 +2,7 @@
 
 # `a` with no arguments opens the current directory in Atom Editor, otherwise
 # opens the given location
-# Source: https://github.com/mathiasbynens/dotfiles/blob/master/.functions
+# @source https://github.com/mathiasbynens/dotfiles/blob/master/.functions
 function a() {
 	if [ $# -eq 0 ]; then
 		atom .;
@@ -11,9 +11,19 @@ function a() {
 	fi;
 }
 
+# `c` with no arguments opens the current directory in VSCode, otherwise
+# opens the given location
+function c() {
+	if [ $# -eq 0 ]; then
+		code .;
+	else
+		code "$@";
+	fi;
+}
+
 # `s` with no arguments opens the current directory in Sublime Text, otherwise
 # opens the given location
-# Source: https://github.com/mathiasbynens/dotfiles/blob/master/.functions
+# @source https://github.com/mathiasbynens/dotfiles/blob/master/.functions
 function s() {
 	if [ $# -eq 0 ]; then
 		subl .;
@@ -24,7 +34,7 @@ function s() {
 
 # `o` with no arguments opens the current directory, otherwise opens the given
 # location
-# Source: https://github.com/mathiasbynens/dotfiles/blob/master/.functions
+# @source https://github.com/mathiasbynens/dotfiles/blob/master/.functions
 function o() {
 	if [ $# -eq 0 ]; then
 		open .;
@@ -34,14 +44,14 @@ function o() {
 }
 
 # Make a new directory and cd into it.
-# Source: https://github.com/mathiasbynens/dotfiles/blob/master/.functions
+# @source https://github.com/mathiasbynens/dotfiles/blob/master/.functions
 function mkd() {
 	mkdir -p "$@" && cd "$_";
 }
 
 # Syntax-highlight JSON strings or files
 # Usage: `json '{"foo":42}'` or `echo '{"foo":42}' | json`
-# Source: https://github.com/mathiasbynens/dotfiles/blob/master/.functions
+# @source https://github.com/mathiasbynens/dotfiles/blob/master/.functions
 function json() {
 	if [ -t 0 ]; then # argument
 		python -mjson.tool <<< "$*" | pygmentize -l javascript;
@@ -51,7 +61,7 @@ function json() {
 }
 
 # Determine size of a file or total size of a directory
-# Source: https://github.com/mathiasbynens/dotfiles/blob/master/.functions
+# @source https://github.com/mathiasbynens/dotfiles/blob/master/.functions
 function fs() {
 	if du -b /dev/null > /dev/null 2>&1; then
 		local arg=-sbh;
