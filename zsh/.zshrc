@@ -6,14 +6,16 @@ export ZPLUG_HOME=/usr/local/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
 # Plugins
-zplug mafredri/zsh-async, from:github
+zplug "plugins/git", from:oh-my-zsh
+zplug "rupa/z", use:z.sh, from:github
+zplug "mafredri/zsh-async", from:github # required for pure theme
 
 # Theme
 # @source https://github.com/sindresorhus/pure
-zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
+zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
 
 # Install plugins if there are plugins that have not been installed
-if ! zplug check; then
+if ! zplug check --verbose; then
     printf "Install? [y/N]: "
     if read -q; then
         echo; zplug install
