@@ -149,10 +149,7 @@ testray_check_format() {
 # Aliases
 ############################################################
 
-#!/usr/bin/env bash
-
-############################################################
-# Git                                                      #
+# Git
 ############################################################
 
 alias gcee="git checkout ee-7.0.x"
@@ -163,9 +160,7 @@ alias grbiee="git rebase -i ee-7.0.x"
 alias gurbee="git pull upstream ee-7.0.x --rebase"
 alias gqlt="gql ~/Liferay/ee-7.0.x/portal-ee/modules/private/apps/osb-testray"
 
-
-############################################################
-# Node GH                                                  #
+# Node GH
 ############################################################
 
 alias ghp="gh pr"
@@ -182,9 +177,7 @@ alias ghsm="submit_pull_request master"
 alias ghsj="gh pr --submit jonmak08 --title ''"
 alias ghsmeee="gh pr --submit thektan --branch ee-7.0.x --title"
 
-
-############################################################
-# Liferay                                                  #
+# Liferay
 ############################################################
 
 # Check all source formatting in current directories
@@ -224,8 +217,7 @@ alias lreec="cd $EE62X_PORTAL_CLEAN"
 alias lreeco="open $EE62X_PORTAL_CLEAN"
 alias lreecu="cd $EE62X_PORTAL_CLEAN && git pull upstream ee-6.2.x && ant all"
 
-############################################################
-# Testray                                                  #
+# Testray
 ############################################################
 
 alias testray="$TESTRAY"
@@ -254,16 +246,13 @@ alias trtd="cd $TESTRAY_THEME && ant clean deploy"
 alias trdbo="cd $TESTRAY_DASHBOARD"
 alias trdbd="cd $TESTRAY_DASHBOARD && ant clean deploy"
 
-############################################################
-# Search Portlet                                           #
+# Search Portlet
 ############################################################
 
 alias spo="cd $SEARCH_PORTLET"
 alias spd="cd $SEARCH_PORTLET && gradle deploy"
 
-
-############################################################
-# Tomcat                                                   #
+# Tomcat
 ############################################################
 
 # Start Tomcat server
@@ -293,9 +282,7 @@ alias keer="kill -9 $(ptee) && lrsee"
 
 alias killp="kill -9"
 
-
-############################################################
-# Misc                                                     #
+# Misc
 ############################################################
 
 # Patching Tool
@@ -303,3 +290,6 @@ alias lpt="cd /Users/ktan/Liferay/ee-6.2.x/bundles/patching-tool && ./patching-t
 
 # Elastic Search
 alias es="cd /Users/ktan/Liferay/testray/elasticsearch-2.3.5/bin && ./elasticsearch"
+
+# Jira
+alias jo=open_jira_ticket;
