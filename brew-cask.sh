@@ -14,6 +14,7 @@ brew cask install firefox
 # Tools
 brew cask install kap
 brew cask install transmission
+brew cask install vlc
 
 # Social
 brew cask install caprine # (https://github.com/sindresorhus/caprine)
