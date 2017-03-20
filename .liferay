@@ -1,0 +1,305 @@
+#!/usr/bin/env bash
+
+############################################################
+# Environment Variables                                    #
+############################################################
+
+# Defining hostname for liferay properties file
+export HOSTNAME=$(hostname)
+
+# Setting ANT_OPS variable for ant command
+export ANT_OPTS="-Xms2048m -Xmx4096m -XX:MaxPermSize=2048m"
+
+############################################################
+# Java                                                     #
+############################################################
+
+export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)
+export JAVA_7_HOME=$(/usr/libexec/java_home -v1.7)
+
+# Default java8
+export JAVA_HOME=$JAVA_8_HOME
+
+############################################################
+# Exports
+############################################################
+
+# Directories
+MASTER=~/Liferay/master/portal
+MASTER_PLUGINS=~/Liferay/master/plugins
+MASTER_CLEAN=~/Liferay/master-clean/portal
+
+EE62X_PORTAL=~/Liferay/ee-6.2.x/portal
+EE62X_PORTAL_CLEAN=~/Liferay/ee-6.2.x-clean/portal
+EE62X_PLUGINS=~/Liferay/ee-6.2.x/plugins
+
+TESTRAY=~/Liferay/ee-7.0.x/portal-ee/modules/private/apps/osb-testray
+TESTRAY_PORTLET=~/Liferay/ee-7.0.x/portal-ee/modules/private/apps/osb-testray/osb-testray-portlet
+TESTRAY_DASHBOARD=~/Liferay/ee-7.0.x/portal-ee/modules/private/apps/osb-testray/osb-testray-dashboard
+TESTRAY_THEME=~/Liferay/ee-7.0.x/portal-ee/modules/private/apps/osb-testray/osb-testray-theme
+
+SEARCH_PORTLET=~/Liferay/master/portal/modules/apps/foundation/portal-search/portal-search-web
+
+############################################################
+# Functions
+############################################################
+
+# Find gradle in the root of git directory and execute it.
+# Otherwise use globally installed gradle.
+# @author Nate Cavanaugh
+gradle() {
+	local root_level=$(git rev-parse --show-toplevel 2>/dev/null)
+
+	if [[ -n "$root_level" && -f "$root_level/gradlew" ]];
+		then root_level="$root_level/gradlew"
+	else
+		root_level=$(which gradle)
+fi
+
+	"$root_level" $@
+}
+
+# Open the jria ticket ID
+open_jira_ticket() {
+	open http://issues.liferay.com/browse/$0;
+}
+
+# Get the last mentioned JIRA ticket id from the commit log
+# @author Nate Cavanaugh
+latest_jira_ticket() {
+	git log $1 --oneline | grep -Eo '([A-Z]{3,}-)([0-9]+)' -m 1;
+}
+
+# Open the url to the latest JIRA ticket referenced in the log
+open_jira_ticket() {
+	if [ -z "$1" ]; then
+		latestTicket=$(latest_jira_ticket);
+		open http://issues.liferay.com/browse/$latestTicket;
+	fi
+
+	if [ -n "$1" ]; then
+		open http://issues.liferay.com/browse/$1;
+	fi
+}
+
+# Gets the JIRA url for the latest JIRA ticket referenced in the log
+latest_jira_ticket_url() {
+	export latestTicketURL="http://issues.liferay.com/browse/$(latest_jira_ticket)";
+}
+
+# Submit a pull request
+# $1 branch name - the branch to send the pull request to
+# $2 username - pull request recipient
+# $3 string - extra descriptions
+submit_pull_request() {
+	if [ -n "$1" ] && [ -n "$2" ]; then
+		description="";
+
+		open_jira_ticket;
+
+		if [ -n "$3" ]; then
+			description="<br><br>$3";
+		fi
+
+		gh pr --branch $1 --submit $2 -D "http://issues.liferay.com/browse/$(latest_jira_ticket) $description";
+	fi
+}
+
+# Kill tomcat server
+kt() {
+	if [ -n "$1" ]; then
+		local branchName="master"
+
+		if [[ "$1" == "6" ]]; then
+			branchName="ee-6.2.x"
+		elif [[ "$1" == "7" ]]; then
+			branchName="ee-7.0.x"
+		elif [[ "$1" == "m" ]]; then
+			branchName="master"
+		else
+			echo "Accepted values: [ee | m]";
+		fi
+
+		echo "Killing process for branch: $branchName\n"
+
+		pkill -9 -f $branchName/bundles/tomcat;
+	else
+		echo "Usage: kt [ee | m]\n"
+	fi
+}
+
+# Check source formatting on testray portlet and theme.
+testray_check_format() {
+	echo "\n----------------------------------------------------------"
+	echo "|                  PORTLET FORMATSOURCE                  |"
+	echo "----------------------------------------------------------"
+	cd $TESTRAY_PORTLET
+	ant format-source
+	cd -
+
+	echo "\n----------------------------------------------------------"
+	echo "|                   THEME FORMATSOURCE                   |"
+	echo "----------------------------------------------------------"
+	cd $TESTRAY_THEME
+	gradle formatSource
+	cd -
+}
+
+############################################################
+# Aliases
+############################################################
+
+#!/usr/bin/env bash
+
+############################################################
+# Git                                                      #
+############################################################
+
+alias gcee="git checkout ee-7.0.x"
+alias gluee="git checkout ee-7.0.x && git pull upstream ee-7.0.x"
+alias grbee="git rebase ee-7.0.x"
+alias grlee="git checkout ee-7.0.x && git pull upstream ee-7.0.x && git checkout - && git rebase ee-7.0.x"
+alias grbiee="git rebase -i ee-7.0.x"
+alias gurbee="git pull upstream ee-7.0.x --rebase"
+alias gqlt="gql ~/Liferay/ee-7.0.x/portal-ee/modules/private/apps/osb-testray"
+
+
+############################################################
+# Node GH                                                  #
+############################################################
+
+alias ghp="gh pr"
+
+alias ghb="gh pr --browser"
+alias ghc="gh pr --comment"
+alias ghi="gh pr --info"
+
+alias ghs="submit_pull_request"
+alias ghsee="submit_pull_request ee-7.0.x"
+alias ghsjee="submit_pull_request ee-7.0.x jonmak08"
+alias ghsm="submit_pull_request master"
+
+alias ghsj="gh pr --submit jonmak08 --title ''"
+alias ghsmeee="gh pr --submit thektan --branch ee-7.0.x --title"
+
+
+############################################################
+# Liferay                                                  #
+############################################################
+
+# Check all source formatting in current directories
+alias csf="find . | xargs check_sf -q"
+alias sf="gradlew formatSource"
+
+# Master - Portal
+alias lrmp="cd $MASTER"
+alias lrmpa="atom $MASTER"
+alias lrmps="subl $MASTER"
+alias lrmpf="open $MASTER"
+
+# Master - Plugins
+alias lrmpl="cd $MASTER_PLUGINS"
+alias lrmpla="atom $MASTER_PLUGINS"
+alias lrmpls="subl $MASTER_PLUGINS"
+alias lrmplf="open $MASTER_PLUGINS"
+
+# Master - Clean
+alias lrmc="cd $MASTER_CLEAN"
+alias lrmcf="open $MASTER_CLEAN"
+alias lrmcu="cd $MASTER_CLEAN && git pull upstream master && ant all"
+
+# EE-6.2.X - Portal
+alias lreep="cd $EE62X_PORTAL"
+alias lreepa="atom $EE62X_PORTAL"
+alias lreeps="subl $EE62X_PORTAL"
+alias lreepf="open $EE62X_PORTAL"
+
+# EE-6.2.X - Plugins
+alias lreepl="cd $EE62X_PLUGINS"
+alias lreepla="atom $EE62X_PLUGINS"
+alias lreeplf="open $EE62X_PLUGINS"
+
+# EE-6.2.X - Clean
+alias lreec="cd $EE62X_PORTAL_CLEAN"
+alias lreeco="open $EE62X_PORTAL_CLEAN"
+alias lreecu="cd $EE62X_PORTAL_CLEAN && git pull upstream ee-6.2.x && ant all"
+
+############################################################
+# Testray                                                  #
+############################################################
+
+alias testray="$TESTRAY"
+
+alias tro="cd $TESTRAY"
+alias tra="atom $TESTRAY"
+alias trs="subl $TESTRAY"
+alias trf="open $TESTRAY"
+alias trdp="cd $TESTRAY_PORTLET && gradle clean deploy && cd -"
+alias trdt="cd $TESTRAY_THEME && gradle clean deploy && cd -"
+
+alias trda="trdp && trdt"
+
+alias trcf=testray_check_format
+
+# Deploy War
+alias trdw="cd /Users/ktan/Liferay/ee-7.0.x/portal-ee/modules/private/apps/osb-testray/osb-testray-portlet && gradle war && cp /Users/ktan/Liferay/ee-7.0.x/portal-ee/tools/sdk/dist/osb-testray-portlet-7.0.10.1.war /Users/ktan/Liferay/ee-7.0.x/bundles/deploy && rm -rf /Users/ktan/Liferay/ee-7.0.x/bundles/work/osb-testray-portlet-7.0.10.1"
+
+# Testray Theme
+alias trto="cd $TESTRAY_THEME"
+alias trta="atom $TESTRAY_THEME"
+alias trtf="open $TESTRAY_THEME"
+alias trtd="cd $TESTRAY_THEME && ant clean deploy"
+
+# Testray Dashboard
+alias trdbo="cd $TESTRAY_DASHBOARD"
+alias trdbd="cd $TESTRAY_DASHBOARD && ant clean deploy"
+
+############################################################
+# Search Portlet                                           #
+############################################################
+
+alias spo="cd $SEARCH_PORTLET"
+alias spd="cd $SEARCH_PORTLET && gradle deploy"
+
+
+############################################################
+# Tomcat                                                   #
+############################################################
+
+# Start Tomcat server
+alias stomcat="./catalina.sh run"
+alias lrsm="cd ~/Liferay/master/bundles/tomcat/bin && ./catalina.sh run"
+alias lrsmc="cd ~/Liferay/master-clean/bundles/tomcat/bin && ./catalina.sh run"
+alias lrsee="mysql.server start && cd ~/Liferay/ee-7.0.x/bundles/tomcat/bin && ./catalina.sh run"
+alias lrseec="cd ~/Liferay/ee-6.2.x-clean/bundles/tomcat/bin && ./catalina.sh run"
+
+# Find specific processes
+alias pj="ps -ef | ag java"
+alias pt="ps -ef | ag bundles/tomcat/"
+
+alias ptm='ps -ef | ag master/bundles/tomcat/ | ag java | awk '\''{print $2}'\'''
+alias ptmc='ps -ef | ag master-clean/bundles/tomcat/ | ag java | awk '\''{print $2}'\'''
+alias ptee='ps -ef | ag ee-6.2.x/bundles/tomcat/ | ag java | awk '\''{print $2}'\'''
+
+# Kill processes
+alias km="kill -9 $(ptm)"
+alias kmc="kill -9 $(ptmc)"
+alias kee="kill -9 $(ptee)"
+
+# Kill and restart servers
+alias kmr="kill -9 $(ptm) && lrsm"
+alias kmcr="kill -9 $(ptmc) && lrsmc"
+alias keer="kill -9 $(ptee) && lrsee"
+
+alias killp="kill -9"
+
+
+############################################################
+# Misc                                                     #
+############################################################
+
+# Patching Tool
+alias lpt="cd /Users/ktan/Liferay/ee-6.2.x/bundles/patching-tool && ./patching-tool.sh"
+
+# Elastic Search
+alias es="cd /Users/ktan/Liferay/testray/elasticsearch-2.3.5/bin && ./elasticsearch"
