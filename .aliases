@@ -48,7 +48,7 @@ alias ni="npm install"
 alias pserver="python -m SimpleHTTPServer 8000"
 
 ############################################################
-# Database aliases                                         #
+# Database                                                 #
 ############################################################
 
 # MySQL
@@ -57,7 +57,7 @@ alias msqls="mysql.server start"
 alias msqle="mysql.server stop"
 
 ############################################################
-# Git aliases                                              #
+# Git                                                      #
 ############################################################
 
 alias gbd="git branch -d"
@@ -72,6 +72,7 @@ alias gco5="git checkout @{-5}"
 alias gcr="git checkout -"
 alias grbim="git rebase -i master"
 alias gbm="git branch -m"
+alias gpf="git push --force"
 alias ggpf="ggp -f"
 alias gurbm="git pull upstream master --rebase"
 alias grha="git reset --hard"
