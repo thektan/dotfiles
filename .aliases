@@ -1,0 +1,101 @@
+#!/usr/bin/env bash
+
+############################################################
+# Dotfiles
+############################################################
+
+alias dfc="cd $DOTFILES"
+alias dfu="cd $DOTFILES && git pull origin && cd -"
+
+# Update .zshrc
+alias zshr="source $DOTFILES/.zshrc && echo '\033[0;32m✓ zshrc reloaded!'"
+
+############################################################
+# Shortcuts
+############################################################
+
+alias g="git"
+
+# Open Screenshots folder
+alias ss="open ~/Dropbox/Screenshots"
+
+############################################################
+# Build Tasks                                              #
+############################################################
+
+# Ant
+alias aa="ant all"
+alias ad="ant deploy"
+alias acd="ant clean deploy"
+
+# Gradle
+alias gr="gradle"
+alias grd="gradle deploy"
+alias grcd="gradle clean deploy"
+
+# Gulp
+alias gub="gulp build"
+alias gud="gulp deploy"
+alias guw="gulp watch"
+
+# Node
+alias ns="node server"
+
+# NPM
+alias ni="npm install"
+
+# Start server in current directory
+alias pserver="python -m SimpleHTTPServer 8000"
+
+############################################################
+# Database aliases                                         #
+############################################################
+
+# MySQL
+alias msql="mysql -u root -p"
+alias msqls="mysql.server start"
+alias msqle="mysql.server stop"
+
+############################################################
+# Git aliases                                              #
+############################################################
+
+alias gbd="git branch -d"
+alias gbD="git branch -D"
+alias gcane="git commit --amend --no-edit"
+alias gcaane="git commit --all --amend --no-edit"
+alias gcleana="git clean -fd :/"
+alias gco2="git checkout @{-2}"
+alias gco3="git checkout @{-3}"
+alias gco4="git checkout @{-4}"
+alias gco5="git checkout @{-5}"
+alias gcr="git checkout -"
+alias grbim="git rebase -i master"
+alias gbm="git branch -m"
+alias ggpf="ggp -f"
+alias gurbm="git pull upstream master --rebase"
+alias grha="git reset --hard"
+alias gql="git log --pretty=format:'%Cred%d %C(yellow)%<(8)%h %Creset%s %Cblue<%an> %Cgreen%<(10)(%cr)'"
+
+############################################################
+# Utilities
+############################################################
+
+# Get IP Address
+# @source http://stackoverflow.com/a/13322549/5092054
+alias ip="ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1' | pbcopy"
+
+# Empty the Trash on all mounted volumes and the main HDD. then clear the useless sleepimage
+# @source https://github.com/paulirish/dotfiles/blob/master/.aliases
+alias emptytrash=" \
+    sudo rm -rfv /Volumes/*/.Trashes; \
+    rm -rfv ~/.Trash/*; \
+    sudo rm -v /private/var/vm/sleepimage; \
+"
+
+############################################################
+# Apps
+############################################################
+
+# Spotify
+alias sp="spotify"

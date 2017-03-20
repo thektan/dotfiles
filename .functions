@@ -1,0 +1,95 @@
+#!/usr/bin/env bash
+
+# `a` with no arguments opens the current directory in Atom Editor, otherwise
+# opens the given location
+# @source https://github.com/mathiasbynens/dotfiles/blob/master/.functions
+function a() {
+	if [ $# -eq 0 ]; then
+		atom .;
+	else
+		atom "$@";
+	fi;
+}
+
+# `c` with no arguments opens the current directory in VSCode, otherwise
+# opens the given location
+function c() {
+	if [ $# -eq 0 ]; then
+		code .;
+	else
+		code "$@";
+	fi;
+}
+
+# `s` with no arguments opens the current directory in Sublime Text, otherwise
+# opens the given location
+# @source https://github.com/mathiasbynens/dotfiles/blob/master/.functions
+function s() {
+	if [ $# -eq 0 ]; then
+		subl .;
+	else
+		subl "$@";
+	fi;
+}
+
+# `o` with no arguments opens the current directory, otherwise opens the given
+# location
+# @source https://github.com/mathiasbynens/dotfiles/blob/master/.functions
+function o() {
+	if [ $# -eq 0 ]; then
+		open .;
+	else
+		open "$@";
+	fi;
+}
+
+# Make a new directory and cd into it.
+# @source https://github.com/mathiasbynens/dotfiles/blob/master/.functions
+function mkd() {
+	mkdir -p "$@" && cd "$_";
+}
+
+# Syntax-highlight JSON strings or files
+# Usage: `json '{"foo":42}'` or `echo '{"foo":42}' | json`
+# @source https://github.com/mathiasbynens/dotfiles/blob/master/.functions
+function json() {
+	if [ -t 0 ]; then # argument
+		python -mjson.tool <<< "$*" | pygmentize -l javascript;
+	else # pipe
+		python -mjson.tool | pygmentize -l javascript;
+	fi;
+}
+
+# Determine size of a file or total size of a directory
+# @source https://github.com/mathiasbynens/dotfiles/blob/master/.functions
+function fs() {
+	if du -b /dev/null > /dev/null 2>&1; then
+		local arg=-sbh;
+	else
+		local arg=-sh;
+	fi
+	if [[ -n "$@" ]]; then
+		du $arg -- "$@";
+	else
+		du $arg .[^.]* ./*;
+	fi;
+}
+
+# Quickly open dropbox paper documents
+function p() {
+	if [ -n "$1" ]; then
+		local document_name="/docs"
+
+		if [[ "$1" == "index" ]]; then
+			document_name="/doc/Index-2017-PUi7VDxAFK45bn9W0JLlg"
+		elif [[ "$1" == "taste" ]]; then
+			document_name="/doc/Brainstorm-1sFpGjI9gclozfqB8fSoG"
+		elif [[ "$1" == "refs" ]]; then
+			document_name="/folder/show/-References-e.iX7ZavGxujPFwhjOZcQrZBj3wNHkyDyoc9qqXSvKQjChbogrYK"
+		fi
+
+		open -a 'Google Chrome' https://paper.dropbox.com$document_name;
+	else
+		open -a 'Google Chrome' https://paper.dropbox.com;
+	fi
+}
