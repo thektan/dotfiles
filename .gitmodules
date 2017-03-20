@@ -1,15 +1,3 @@
-[submodule "zsh/plugins/zsh-autosuggestions"]
-	path = zsh/plugins/zsh-autosuggestions
-	url = git://github.com/zsh-users/zsh-autosuggestions
-[submodule "zsh/plugins/git-open"]
-	path = zsh/plugins/git-open
-	url = git@github.com:paulirish/git-open.git
-[submodule "zsh/plugins/alias-tips"]
-	path = zsh/plugins/alias-tips
-	url = git@github.com:djui/alias-tips.git
-[submodule "zsh/plugins/zsh-syntax-highlighting"]
-	path = zsh/plugins/zsh-syntax-highlighting
-	url = git@github.com:zsh-users/zsh-syntax-highlighting.git
 [submodule "vscode"]
 	path = vscode
 	url = git@gist.github.com:c98703a02e59b04f4e2e8de20f6885a6.git
