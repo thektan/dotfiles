@@ -84,7 +84,8 @@ alias gql="git log --pretty=format:'%Cred%d %C(yellow)%<(8)%h %Creset%s %Cblue<%
 
 # Get IP Address
 # @source http://stackoverflow.com/a/13322549/5092054
-alias ip="ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1' | pbcopy"
+alias ip="ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'"
+alias ipc="ip | pbcopy"
 
 # Empty the Trash on all mounted volumes and the main HDD. then clear the useless sleepimage
 # @source https://github.com/paulirish/dotfiles/blob/master/.aliases
