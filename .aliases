@@ -79,6 +79,10 @@ alias gurbm="git pull upstream master --rebase"
 alias grha="git reset --hard"
 alias gql="git log --pretty=format:'%Cred%d %C(yellow)%<(8)%h %Creset%s %Cblue<%an> %Cgreen%<(10)(%cr)'"
 
+# Git Plugins
+alias gop="git open"
+alias gre="git recent"
+
 ############################################################
 # Utilities
 ############################################################

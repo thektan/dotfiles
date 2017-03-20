@@ -9,6 +9,7 @@ source $ZPLUG_HOME/init.zsh
 zplug "plugins/git", from:oh-my-zsh
 zplug "rupa/z", use:z.sh, from:github
 zplug "paulirish/git-open", as:command
+zplug "paulirish/git-recent", as:command
 zplug "mafredri/zsh-async", from:github # required for pure theme
 zplug "zsh-users/zsh-autosuggestions"
 
