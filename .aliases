@@ -100,7 +100,7 @@ alias gpf="git push --force"
 alias ggpf="ggp -f"
 alias gurbm="git pull upstream master --rebase"
 alias grha="git reset --hard"
-alias gql="git log --pretty=format:'%Cred%d %C(yellow)%<(8)%h %Creset%s %Cblue<%an> %Cgreen%<(10)(%cr)'"
+alias gql="git log --pretty=format:'* %Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --date=relative"
 
 # Git Plugins
 alias gop="git open"
@@ -130,5 +130,5 @@ alias emptytrash=" \
 # Spotify
 alias sp="spotify"
 alias spp="spotify play"
-alias sps="spotify stop"
+alias sps="spotify pause"
 alias spv="spotify vol"
