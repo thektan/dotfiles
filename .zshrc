@@ -17,6 +17,7 @@ zplug "zsh-users/zsh-autosuggestions"
 # Theme
 # @source https://github.com/sindresorhus/pure
 zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
+PURE_GIT_DELAY_DIRTY_CHECK=0
 
 # Shell theme customizations
 export CLICOLOR=1
