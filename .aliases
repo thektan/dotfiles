@@ -15,6 +15,11 @@ alias zshr="source $DOTFILES/.zshrc && echo '\033[0;32m✓ zshrc reloaded!'"
 # Shortcuts
 ############################################################
 
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ......="cd ../../../../.."
+
 alias g="git"
 
 # Open Screenshots folder
