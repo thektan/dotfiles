@@ -130,16 +130,16 @@ kt() {
 
 # Check source formatting on testray portlet and theme.
 testray_check_format() {
-	echo "\n----------------------------------------------------------"
-	echo "|                  PORTLET FORMATSOURCE                  |"
-	echo "----------------------------------------------------------"
+	echo "\n────────────────────────────────────────────────────────────────"
+	echo "PORTLET FORMATSOURCE"
+	echo "────────────────────────────────────────────────────────────────"
 	cd $TESTRAY_PORTLET
 	ant format-source
 	cd -
 
-	echo "\n----------------------------------------------------------"
-	echo "|                   THEME FORMATSOURCE                   |"
-	echo "----------------------------------------------------------"
+	echo "\n────────────────────────────────────────────────────────────────"
+	echo "THEME FORMATSOURCE"
+	echo "────────────────────────────────────────────────────────────────"
 	cd $TESTRAY_THEME
 	gradle formatSource
 	cd -
@@ -170,8 +170,8 @@ alias ghc="gh pr --comment"
 alias ghi="gh pr --info"
 
 alias ghs="submit_pull_request"
-alias ghsee="submit_pull_request ee-7.0.x"
-alias ghsjee="submit_pull_request ee-7.0.x jonmak08"
+alias ghsee="testray_check_format; submit_pull_request ee-7.0.x"
+alias ghsjee="testray_check_format; submit_pull_request ee-7.0.x jonmak08"
 alias ghsm="submit_pull_request master"
 
 alias ghsj="gh pr --submit jonmak08 --title ''"
