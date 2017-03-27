@@ -367,7 +367,7 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>-2255 516 445 77 -3008 0 3008 1669 </string>
+	<string>-1888 436 445 77 -3008 0 3008 1669 </string>
 	<key>NSWindow Frame Preferences</key>
 	<string>-1278 1053 606 456 -3008 -141 3008 1669 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
@@ -377,9 +377,11 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>-2516 234 606 456 -3008 0 3008 1669 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>-978 749 918 512 -3008 0 3008 1669 </string>
+	<string>-1189 699 796 473 -3008 0 3008 1669 </string>
+	<key>NSWindow Frame UKCrashReporter</key>
+	<string>-2726 1085 592 584 -3008 0 3008 1669 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-3008 0 3008 613 -3008 0 3008 1669 </string>
+	<string>-1 10 1922 1167 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>-1644 350 650 502 -3008 -141 3008 1669 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -1031,7 +1033,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>SFMono-Medium 13</string>
+			<string>SFMono-Medium 14</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<true/>
 			<key>Option Key Sends</key>
@@ -1865,7 +1867,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>SauceCodePowerline-Regular 14</string>
+			<string>SFMono-Regular 14</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -2664,7 +2666,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>SauceCodePowerline-Regular 14</string>
+			<string>SFMono-Regular 13</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<true/>
 			<key>Open Toolbelt</key>
@@ -2841,8 +2843,10 @@
 			<false/>
 			<key>Use Italic Font</key>
 			<true/>
+			<key>Use Non-ASCII Font</key>
+			<true/>
 			<key>Vertical Spacing</key>
-			<real>1.1000000000000001</real>
+			<real>1.0210255082831325</real>
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
@@ -3018,7 +3022,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-03-07T06:00:35Z</date>
+	<date>2017-03-23T23:40:28Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Secure Input</key>
@@ -3057,6 +3061,8 @@
 	</array>
 	<key>TripleClickSelectsFullWrappedLines</key>
 	<false/>
+	<key>UKCrashReporterLastCrashReportDate</key>
+	<real>1490302464</real>
 	<key>URLHandlersByGuid</key>
 	<dict/>
 	<key>UseBorder</key>
@@ -11911,7 +11917,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.0.14</string>
+	<string>3.0.15</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
