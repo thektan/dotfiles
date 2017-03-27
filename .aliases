@@ -73,6 +73,11 @@ alias ns="node server"
 # NPM
 alias ni="npm install"
 
+# Yarn
+alias ya="yarn add"
+alias ys="yarn start"
+alias yt="yarn test"
+
 # Start server in current directory
 alias pserver="python -m SimpleHTTPServer 8000"
 
