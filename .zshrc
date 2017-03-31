@@ -7,6 +7,7 @@ source $ZPLUG_HOME/init.zsh
 
 # Plugins
 zplug "plugins/git", from:oh-my-zsh
+zplug "plugins/osx", from:oh-my-zsh
 zplug "rupa/z", use:z.sh, from:github
 zplug "paulirish/git-open", as:command
 zplug "paulirish/git-recent", as:command
