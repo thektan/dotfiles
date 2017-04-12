@@ -35,7 +35,7 @@ EE62X_PLUGINS=~/Liferay/ee-6.2.x/plugins
 
 TESTRAY=~/Liferay/ee-7.0.x/portal-ee/modules/private/apps/osb-testray
 TESTRAY_PORTLET=~/Liferay/ee-7.0.x/portal-ee/modules/private/apps/osb-testray/osb-testray-portlet
-TESTRAY_DASHBOARD=~/Liferay/ee-7.0.x/portal-ee/modules/private/apps/osb-testray/osb-testray-dashboard
+TESTRAY_DASHBOARD=~/Liferay/ee-7.0.x/portal-ee/modules/private/apps/osb-testray/osb-testray-dashboard/osb-testray-dashboard-web
 TESTRAY_THEME=~/Liferay/ee-7.0.x/portal-ee/modules/private/apps/osb-testray/osb-testray-theme
 
 SEARCH_PORTLET=~/Liferay/master/portal/modules/apps/foundation/portal-search/portal-search-web
@@ -228,6 +228,7 @@ alias trs="subl $TESTRAY"
 alias trf="open $TESTRAY"
 alias trdp="cd $TESTRAY_PORTLET && gradle clean deploy && cd -"
 alias trdt="cd $TESTRAY_THEME && gradle clean deploy && cd -"
+alias trdd="cd $TESTRAY_DASHBOARD && gradle clean deploy && cd -"
 
 alias trda="trdp && trdt"
 
@@ -235,16 +236,6 @@ alias trcf=testray_check_format
 
 # Deploy War
 alias trdw="cd /Users/ktan/Liferay/ee-7.0.x/portal-ee/modules/private/apps/osb-testray/osb-testray-portlet && gradle war && cp /Users/ktan/Liferay/ee-7.0.x/portal-ee/tools/sdk/dist/osb-testray-portlet-7.0.10.1.war /Users/ktan/Liferay/ee-7.0.x/bundles/deploy && rm -rf /Users/ktan/Liferay/ee-7.0.x/bundles/work/osb-testray-portlet-7.0.10.1"
-
-# Testray Theme
-alias trto="cd $TESTRAY_THEME"
-alias trta="atom $TESTRAY_THEME"
-alias trtf="open $TESTRAY_THEME"
-alias trtd="cd $TESTRAY_THEME && ant clean deploy"
-
-# Testray Dashboard
-alias trdbo="cd $TESTRAY_DASHBOARD"
-alias trdbd="cd $TESTRAY_DASHBOARD && ant clean deploy"
 
 # Search Portlet
 ############################################################
