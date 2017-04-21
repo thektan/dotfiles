@@ -228,7 +228,7 @@ alias trs="subl $TESTRAY"
 alias trf="open $TESTRAY"
 alias trdp="cd $TESTRAY_PORTLET && gradle clean deploy && cd -"
 alias trdt="cd $TESTRAY_THEME && gradle clean deploy && cd -"
-alias trdd="cd $TESTRAY_DASHBOARD && gradle clean deploy && cd -"
+alias trdd="cd $TESTRAY_DASHBOARD && gradle clean deploy && cd - && trdw"
 
 alias trda="trdp && trdt"
 
