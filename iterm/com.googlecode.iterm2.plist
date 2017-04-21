@@ -377,11 +377,15 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>-2516 234 606 456 -3008 0 3008 1669 </string>
 	<key>NSWindow Frame SharedPreferences</key>
+<<<<<<< Updated upstream
 	<string>-1189 699 796 473 -3008 0 3008 1669 </string>
+=======
+	<string>-1335 636 918 498 -3008 0 3008 1669 </string>
+>>>>>>> Stashed changes
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>-2726 1085 592 584 -3008 0 3008 1669 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-1 10 1922 1167 0 0 1920 1177 </string>
+	<string>-3008 0 3008 305 -3008 0 3008 1669 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>-1644 350 650 502 -3008 -141 3008 1669 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -2828,7 +2832,7 @@
 			<key>Thin Strokes</key>
 			<integer>1</integer>
 			<key>Transparency</key>
-			<real>0.032160687869822485</real>
+			<real>0.069001941568047329</real>
 			<key>Triggers</key>
 			<array/>
 			<key>Unlimited Scrollback</key>
@@ -3022,7 +3026,11 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
+<<<<<<< Updated upstream
 	<date>2017-03-23T23:40:28Z</date>
+=======
+	<date>2017-04-13T00:24:32Z</date>
+>>>>>>> Stashed changes
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Secure Input</key>
@@ -3032,7 +3040,7 @@
 	<key>ShowBookmarkName</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
-	<false/>
+	<true/>
 	<key>ShowNewOutputIndicator</key>
 	<true/>
 	<key>ShowPaneTitles</key>
