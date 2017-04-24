@@ -43,6 +43,15 @@ function o() {
 	fi;
 }
 
+# Function to shorten `yarn` command and allows to add commands after `yarn`.
+function y() {
+	if [ $# -eq 0 ]; then
+		yarn;
+	else
+		yarn "$@";
+	fi;
+}
+
 # Make a new directory and cd into it.
 # @source https://github.com/mathiasbynens/dotfiles/blob/master/.functions
 function mkd() {
