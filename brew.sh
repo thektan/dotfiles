@@ -19,3 +19,7 @@ brew install zsh
 # Extra tools
 brew install shpotify
 brew install wifi-password
+
+# Misc Development
+# https://raamdev.com/2008/howto-install-md5sum-sha1sum-on-mac-os-x/
+brew install md5sha1sum
