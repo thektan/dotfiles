@@ -223,14 +223,17 @@ alias lreecu="cd $EE62X_PORTAL_CLEAN && git pull upstream ee-6.2.x && ant all"
 alias testray="$TESTRAY"
 
 alias tro="cd $TESTRAY"
+alias trf="open $TESTRAY"
+
 alias tra="atom $TESTRAY"
 alias trs="subl $TESTRAY"
-alias trf="open $TESTRAY"
+
+alias trd="trdw"
 alias trdp="cd $TESTRAY_PORTLET && gradle clean deploy && cd -"
 alias trdt="cd $TESTRAY_THEME && gradle clean deploy && cd -"
 alias trdd="cd $TESTRAY_DASHBOARD && gradle clean deploy && cd - && trdw"
 
-alias trda="trdp && trdt"
+alias trda="trd && trdt"
 
 alias trcf=testray_check_format
 
