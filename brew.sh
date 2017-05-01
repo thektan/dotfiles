@@ -11,6 +11,7 @@ brew upgrade
 brew install git
 brew install diff-so-fancy
 brew install node
+brew install ripgrep # https://github.com/BurntSushi/ripgrep
 brew install the_silver_searcher
 brew install tree
 brew install zplug # https://github.com/zplug/zplug
