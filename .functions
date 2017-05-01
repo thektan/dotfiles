@@ -102,3 +102,15 @@ function p() {
 		open -a 'Google Chrome' https://paper.dropbox.com;
 	fi
 }
+
+# Sorts files into folders according to the file name.
+# @source https://github.com/thektan/filesort
+function filesort() {
+	cd /Users/ktan/Projects/filesort;
+
+	if [ $# -eq 0 ]; then
+		java FileSort;
+	else
+		java FileSort "$@";
+	fi;
+}
