@@ -170,8 +170,8 @@ alias ghc="gh pr --comment"
 alias ghi="gh pr --info"
 
 alias ghs="submit_pull_request"
-alias ghsee="testray_check_format; submit_pull_request ee-7.0.x"
-alias ghsjee="testray_check_format; submit_pull_request ee-7.0.x jonmak08"
+alias ghsee="submit_pull_request ee-7.0.x"
+alias ghsjee="submit_pull_request ee-7.0.x jonmak08"
 alias ghsm="submit_pull_request master"
 
 alias ghsj="gh pr --submit jonmak08 --title ''"
@@ -238,7 +238,7 @@ alias trda="trd && trdt"
 alias trcf=testray_check_format
 
 # Deploy War
-alias trdw="cd /Users/ktan/Liferay/ee-7.0.x/portal-ee/modules/private/apps/osb-testray/osb-testray-portlet && gradle war && cp /Users/ktan/Liferay/ee-7.0.x/portal-ee/tools/sdk/dist/osb-testray-portlet-7.0.10.1.war /Users/ktan/Liferay/ee-7.0.x/bundles/deploy && rm -rf /Users/ktan/Liferay/ee-7.0.x/bundles/work/osb-testray-portlet-7.0.10.1"
+alias trdw="cd /Users/ktan/Liferay/ee-7.0.x/portal-ee/modules/private/apps/osb-testray/osb-testray-portlet && ../../../../../gradlew war && cp /Users/ktan/Liferay/ee-7.0.x/portal-ee/tools/sdk/dist/osb-testray-portlet-7.0.10.1.war /Users/ktan/Liferay/ee-7.0.x/bundles/deploy && rm -rf /Users/ktan/Liferay/ee-7.0.x/bundles/work/osb-testray-portlet-7.0.10.1"
 
 # Search Portlet
 ############################################################
