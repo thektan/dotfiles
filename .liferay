@@ -237,9 +237,9 @@ alias tra="atom $TESTRAY"
 alias trs="subl $TESTRAY"
 
 alias trd="trdw"
-alias trdp="cd $TESTRAY_PORTLET && gradle clean deploy && cd -"
-alias trdt="cd $TESTRAY_THEME && gradle clean deploy && cd -"
-alias trdd="cd $TESTRAY_DASHBOARD && gradle clean deploy && cd - && trdw"
+alias trdp="cd $TESTRAY_PORTLET && ../../../../../gradlew clean deploy && cd -"
+alias trdt="cd $TESTRAY_THEME && ../../../../../gradlew clean deploy && cd -"
+alias trdd="cd $TESTRAY_DASHBOARD && ../../../../../gradlew clean deploy && cd - && trdw"
 
 alias trda="trd && trdt"
 
