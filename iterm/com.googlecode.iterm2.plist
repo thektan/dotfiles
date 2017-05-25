@@ -377,11 +377,11 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>-2516 234 606 456 -3008 0 3008 1669 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>-1107 580 796 473 -3008 0 3008 1669 </string>
+	<string>-1107 648 796 473 -3008 0 3008 1669 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>-2726 1085 592 584 -3008 0 3008 1669 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-3008 1215 3008 454 -3008 0 3008 1669 </string>
+	<string>-3008 0 3008 454 -3008 0 3008 1669 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>-1644 350 650 502 -3008 -141 3008 1669 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -1441,7 +1441,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-04-28T17:13:04Z</date>
+	<date>2017-05-25T17:41:03Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Secure Input</key>
