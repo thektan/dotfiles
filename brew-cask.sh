@@ -37,9 +37,3 @@ brew cask install sketch
 
 # Quick Look Plugins (https://github.com/sindresorhus/quick-look-plugins)
 brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql qlimagesize webpquicklook suspicious-package qlvideo
-
-# Other apps that aren't in cask
-# https://www.wunderlist.com/download/
-# https://getpocket.com/
-# http://matthewpalmer.net/rocket/
-# https://getcaption.co/
