@@ -116,7 +116,7 @@ alias gql="git log --pretty=format:'* %Cred%h%Creset -%C(yellow)%d%Creset %s %Cg
 # Git Plugins
 alias gop="git open"
 alias gre="git recent"
-alias j="jack --pretty=format:'* %Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --date=relative"
+alias j="jack --pretty=format:'* %Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --date=relative -n 100"
 
 ############################################################
 # Utilities
