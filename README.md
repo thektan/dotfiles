@@ -11,22 +11,30 @@ Install Homebrew (https://brew.sh/)
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-Create a symlink of .zshrc in the home directory.
-
-```bash
-ln -s ~/.dotfiles/zsh/.zshrc ~/.zshrc
-```
-
 Point iTerm2 preferences file to `$HOME/.dotfiles/iterm/`.
 
-Create a symlink of Preferences.sublime-settings for Sublime Text 3.
-
+Run `setup.sh`
 ```bash
-ln -s ~/.dotfiles/sublime/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Preferences.sublime-settings
+. ./setup.sh
 ```
 
-Create symlink for editorconfig file
+## Additional Notes
+
+Make sure macOS is using the zsh installed by brew. (Copied from [this StackOverflow article](https://stackoverflow.com/questions/17648621/how-do-i-update-zsh-to-the-latest-version).)
 
 ```bash
-ln -s ~/.dotfiles/.editorconfig ~
+# check the zsh info
+brew info zsh
+
+# install zsh
+brew install --without-etcdir zsh
+
+# add shell path
+sudo vim /etc/shells
+
+# add the following line into the very end of the file(/etc/shells)
+/usr/local/bin/zsh
+
+# change default shell
+chsh -s /usr/local/bin/zsh
 ```
