@@ -51,3 +51,11 @@ sudo vim /etc/shells
 # change default shell
 chsh -s /usr/local/bin/zsh
 ```
+
+## Resources
+
+Places I've referenced while creating my dotfiles.
+
+- https://github.com/mathiasbynens/dotfiles
+- https://github.com/paulirish/dotfiles
+- https://github.com/holman/dotfiles
