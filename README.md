@@ -20,7 +20,20 @@ Run `setup.sh`
 
 ## Additional Notes
 
-Make sure macOS is using the zsh installed by brew. (Copied from [this StackOverflow article](https://stackoverflow.com/questions/17648621/how-do-i-update-zsh-to-the-latest-version).)
+### Backup and Install Atom Packages
+```bash
+# Generates and saves a list of installed atom packages.
+# @source https://github.com/holman/dotfiles/blob/master/bin/atom-package-backup
+apm list --installed --bare > ~/.dotfiles/atom/packages.txt
+```
+
+```bash
+# Installs the atom packages backed up previously.
+# @source https://github.com/holman/dotfiles/blob/master/bin/atom-package-install
+apm install --packages-file ~/.dotfiles/atom/packages.txt
+```
+
+### Make sure macOS is using the zsh installed by brew. (Copied from [this StackOverflow article](https://stackoverflow.com/questions/17648621/how-do-i-update-zsh-to-the-latest-version).)
 
 ```bash
 # check the zsh info
