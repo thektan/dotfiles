@@ -18,6 +18,8 @@ zplug "zsh-users/zsh-autosuggestions"
 # @source https://github.com/sindresorhus/pure
 zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
 
+PURE_PROMPT_SYMBOL=➜
+
 export DOTFILES=$HOME/.dotfiles
 
 # Source files
