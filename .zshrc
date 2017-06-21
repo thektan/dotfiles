@@ -18,11 +18,14 @@ zplug "zsh-users/zsh-autosuggestions"
 # @source https://github.com/sindresorhus/pure
 zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
 
+# Shell theme customizations
+export LSCOLORS=exfxcxdxbxegedabagacad
+
 PURE_PROMPT_SYMBOL=➜
 
+# Source files
 export DOTFILES=$HOME/.dotfiles
 
-# Source files
 source $DOTFILES/.aliases
 source $DOTFILES/.functions
 
@@ -33,6 +36,7 @@ if ! zplug check --verbose; then
         echo; zplug install
     fi
 fi
+
 
 # Source plugins and add commands to $PATH
 zplug load
