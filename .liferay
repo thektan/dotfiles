@@ -37,6 +37,7 @@ TESTRAY=~/Liferay/ee-7.0.x/portal-ee/modules/private/apps/osb-testray
 TESTRAY_PORTLET=~/Liferay/ee-7.0.x/portal-ee/modules/private/apps/osb-testray/osb-testray-portlet
 TESTRAY_DASHBOARD=~/Liferay/ee-7.0.x/portal-ee/modules/private/apps/osb-testray/osb-testray-dashboard/osb-testray-dashboard-web
 TESTRAY_THEME=~/Liferay/ee-7.0.x/portal-ee/modules/private/apps/osb-testray/osb-testray-theme
+TESTRAY_SETUP=~/Liferay/dxp-bundle-setup
 
 SEARCH_PORTLET=~/Liferay/master/portal/modules/apps/foundation/portal-search/portal-search-web
 
@@ -247,6 +248,9 @@ alias trcf=testray_check_format
 
 # Deploy War
 alias trdw="cd /Users/ktan/Liferay/ee-7.0.x/portal-ee/modules/private/apps/osb-testray/osb-testray-portlet && ../../../../../gradlew war && cp /Users/ktan/Liferay/ee-7.0.x/portal-ee/tools/sdk/dist/osb-testray-portlet-7.0.10.1.war /Users/ktan/Liferay/ee-7.0.x/bundles/deploy && rm -rf /Users/ktan/Liferay/ee-7.0.x/bundles/work/osb-testray-portlet-7.0.10.1"
+
+# Test pull request
+alias testpr="python $TESTRAY_SETUP/test_pr.py"
 
 # Search Portlet
 ############################################################
