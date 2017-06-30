@@ -28,16 +28,18 @@ alias ss="open ~/Dropbox/Screenshots"
 ############################################################
 # ls command
 ############################################################
-# @source https://github.com/mathiasbynens/dotfiles/blob/master/.aliases
-
-# List all files colorized in long format, including dot files
-alias l="ls -laF ${colorflag}"
+# Use GNU ls from coreutils
+# -a      do not ignore entries starting with .
+# -A      do not list implied . and ..
+# -h      with -l and/or -s, print human readable sizes (e.g., 1K 234M 2G)
+# -l      use a long listing format
+# -p      append / indicator to directories
+# --color colorize the output
+# --group-directories-first
+alias l="gls -aAhlp --color --group-directories-first"
 
 # List only directories
 alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
-
-# Always use color output for `ls`
-alias ls="command ls ${colorflag}"
 
 ############################################################
 # Build Tasks                                              #

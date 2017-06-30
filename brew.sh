@@ -9,6 +9,7 @@ brew update
 brew upgrade
 
 brew install git
+brew install coreutils # https://en.wikipedia.org/wiki/GNU_Core_Utilities
 brew install diff-so-fancy
 brew install node
 brew install ripgrep # https://github.com/BurntSushi/ripgrep
