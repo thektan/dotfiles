@@ -19,6 +19,7 @@ zplug "zsh-users/zsh-autosuggestions"
 zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
 
 # Shell theme customizations
+export CLICOLOR=1
 export LSCOLORS=exfxcxdxbxegedabagacad
 
 PURE_PROMPT_SYMBOL=➜
