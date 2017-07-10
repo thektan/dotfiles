@@ -9,8 +9,6 @@ brew cask install private-internet-access
 brew cask install google-chrome
 brew cask install firefox
 
-# Productivity
-
 # Tools
 brew cask install kap
 brew cask install transmission

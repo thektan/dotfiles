@@ -143,3 +143,8 @@ alias spb="spotify prev && spotify status"
 alias spp="spotify play && spotify status"
 alias sps="spotify pause"
 alias spv="spotify vol"
+
+# Twitter
+# https://github.com/sferik/t
+alias ts="t stream timeline"
+alias tu="t update"
