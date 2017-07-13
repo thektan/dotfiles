@@ -43,3 +43,4 @@ fi
 
 # Source plugins and add commands to $PATH
 zplug load
+export PATH="$HOME/.yarn/bin:$PATH"

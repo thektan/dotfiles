@@ -5,13 +5,12 @@
 ./brew-cask.sh
 
 # Install global npm packages
-npm install -g diff-so-fancy
-npm install -g git-open
-npm install -g git-recent
-npm install -g jack-cli
-npm install -g n
-npm install -g rebase-editor
-npm install -g trash-cli
+yarn global add git-open		# https://github.com/paulirish/git-open
+yarn global add git-recent		# https://github.com/paulirish/git-recent
+yarn global add jack-cli		# https://github.com/drewbrokke/jack
+yarn global add n				# https://github.com/tj/n
+yarn global add trash-cli 		# https://github.com/sindresorhus/trash-cli
+yarn global add rebase-editor 	# https://github.com/sjurba/rebase-editor
 
 # Other apps to install
 echo "╭───────────────────────────────────────────────────────╮"

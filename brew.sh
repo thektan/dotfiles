@@ -9,18 +9,18 @@ brew update
 brew upgrade
 
 brew install git
-brew install coreutils # https://en.wikipedia.org/wiki/GNU_Core_Utilities
-brew install diff-so-fancy
+brew install coreutils 				# https://en.wikipedia.org/wiki/GNU_Core_Utilities
+brew install diff-so-fancy			# https://github.com/so-fancy/diff-so-fancy/
 brew install node
-brew install ripgrep # https://github.com/BurntSushi/ripgrep
-brew install the_silver_searcher
-brew install tree
-brew install zplug # https://github.com/zplug/zplug
+brew install ripgrep 				# https://github.com/BurntSushi/ripgrep
+brew install tree					# http://brewformulas.org/Tree
+brew install yarn
+brew install zplug 					# https://github.com/zplug/zplug
 brew install zsh
 
 # Extra tools
-brew install shpotify
-brew install wifi-password
+brew install shpotify				# https://github.com/hnarayanan/shpotify
+brew install wifi-password			# https://github.com/rauchg/wifi-password
 
 # Misc Development
 # https://raamdev.com/2008/howto-install-md5sum-sha1sum-on-mac-os-x/

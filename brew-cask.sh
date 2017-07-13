@@ -15,7 +15,7 @@ brew cask install transmission
 brew cask install vlc
 
 # Social
-brew cask install caprine # (https://github.com/sindresorhus/caprine)
+brew cask install caprine # https://github.com/sindresorhus/caprine
 brew cask install discord
 brew cask install skype
 
