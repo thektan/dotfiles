@@ -71,7 +71,7 @@ open_jira_ticket() {
 # Get the last mentioned JIRA ticket id from the commit log
 # @author Nate Cavanaugh
 latest_jira_ticket() {
-	git log $1 --oneline | grep -Eo '([A-Z]{3,}-)([0-9]+)' -m 1;
+	git log $1 --oneline | grep -Eo '([A-Z]{2,}-)([0-9]+)' -m 1;
 }
 
 # Open the url to the latest JIRA ticket referenced in the log
