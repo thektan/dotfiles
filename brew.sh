@@ -13,6 +13,7 @@ brew install coreutils 				# https://en.wikipedia.org/wiki/GNU_Core_Utilities
 brew install diff-so-fancy			# https://github.com/so-fancy/diff-so-fancy/
 brew install node
 brew install ripgrep 				# https://github.com/BurntSushi/ripgrep
+brew install ruby
 brew install tree					# http://brewformulas.org/Tree
 brew install yarn
 brew install zplug 					# https://github.com/zplug/zplug
