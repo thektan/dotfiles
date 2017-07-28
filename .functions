@@ -123,3 +123,23 @@ function filesort() {
 		java FileSort "$@";
 	fi;
 }
+
+# Update programs
+function update() {
+	local blue=`tput setaf 4`
+	local reset=`tput sgr0`
+
+	echo "${blue}▸ Update Brew Formulas (1/3) ${reset}"
+	brew update;
+	brew upgrade;
+	brew cleanup;
+
+	echo "${blue}▸ Update Outdated Brew Casks (2/3) ${reset}"
+	brew cask outdated | xargs brew cask reinstall;
+
+	echo "${blue}▸ Update NPM (3/3) ${reset}"
+	npm install npm -g;
+	npm update -g;
+
+	echo "${green}✓ Update Complete! 🎉 ${reset}"
+}
