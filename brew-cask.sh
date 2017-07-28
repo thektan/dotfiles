@@ -18,6 +18,7 @@ brew cask install vlc
 brew cask install caprine # https://github.com/sindresorhus/caprine
 brew cask install discord
 brew cask install skype
+brew cask install spotify
 
 # Dev Apps
 brew cask install atom
