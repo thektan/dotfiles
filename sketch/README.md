@@ -12,3 +12,5 @@ An archive of sketch plugins I use.
 - [Dynamic Button](https://github.com/ddwht/sketch-dynamic-button)
 - [Icon Font](https://github.com/keremciu/sketch-iconfont)
 - [Sort Me](https://github.com/romashamin/sort-me-sketch)
+- [Cache Cleaner](https://yo-op.github.io/sketchcachecleaner/)
+- [Looper](https://github.com/sureskumar/Looper)

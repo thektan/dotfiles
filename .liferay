@@ -35,6 +35,7 @@ EE62X_PLUGINS=~/Liferay/ee-6.2.x/plugins
 
 TESTRAY=~/Liferay/ee-7.0.x/portal-ee/modules/private/apps/osb-testray
 TESTRAY_PORTLET=~/Liferay/ee-7.0.x/portal-ee/modules/private/apps/osb-testray/osb-testray-portlet
+TESTRAY_TAGLIB=~/Liferay/ee-7.0.x/portal-ee/modules/private/apps/osb-testray/osb-testray-taglib
 TESTRAY_DASHBOARD=~/Liferay/ee-7.0.x/portal-ee/modules/private/apps/osb-testray/osb-testray-dashboard/osb-testray-dashboard-web
 TESTRAY_THEME=~/Liferay/ee-7.0.x/portal-ee/modules/private/apps/osb-testray/osb-testray-theme
 TESTRAY_SETUP=~/Liferay/dxp-bundle-setup
@@ -179,8 +180,8 @@ alias ghc="gh pr --comment"
 alias ghi="gh pr --info"
 
 alias ghs="submit_pull_request"
-alias ghst="submit_pull_request $TESTRAY_BRANCH"
-alias ghstj="submit_pull_request $TESTRAY_BRANCH jonmak08"
+alias ghst="grlt && submit_pull_request $TESTRAY_BRANCH"
+alias ghstj="grlt && submit_pull_request $TESTRAY_BRANCH jonmak08"
 alias ghsm="submit_pull_request master"
 
 alias ghsj="gh pr --submit jonmak08 --title ''"
@@ -237,17 +238,18 @@ alias trf="open $TESTRAY"
 alias tra="atom $TESTRAY"
 alias trs="subl $TESTRAY"
 
-alias trd="trdw"
-alias trdp="cd $TESTRAY_PORTLET && ../../../../../gradlew clean deploy && cd -"
+alias trd="cd $TESTRAY_PORTLET && gradle clean deploy && cd -"
+alias trdp="cd $TESTRAY_PORTLET && gradle clean deploy && cd -"
 alias trdt="cd $TESTRAY_THEME && ../../../../../gradlew clean deploy && cd -"
-alias trdd="cd $TESTRAY_DASHBOARD && ../../../../../../gradlew clean deploy && cd - && trdw"
+alias trdd="cd $TESTRAY_DASHBOARD && gradle clean deploy && cd - && trd"
+alias trdta="cd $TESTRAY_TAGLIB && ../../../../../gradlew clean deploy && cd -"
 
 alias trda="trd && trdt"
 
 alias trcf=testray_check_format
 
 # Deploy War
-alias trdw="cd /Users/ktan/Liferay/ee-7.0.x/portal-ee/modules/private/apps/osb-testray/osb-testray-portlet && ../../../../../gradlew war && cp /Users/ktan/Liferay/ee-7.0.x/portal-ee/tools/sdk/dist/osb-testray-portlet-7.0.10.1.war /Users/ktan/Liferay/ee-7.0.x/bundles/deploy && rm -rf /Users/ktan/Liferay/ee-7.0.x/bundles/work/osb-testray-portlet-7.0.10.1"
+alias trdw="cd /Users/ktan/Liferay/ee-7.0.x/portal-ee/modules/private/apps/osb-testray/osb-testray-portlet && gradle war && cp /Users/ktan/Liferay/ee-7.0.x/portal-ee/tools/sdk/dist/osb-testray-portlet-7.0.10.1.war /Users/ktan/Liferay/ee-7.0.x/bundles/deploy && rm -rf /Users/ktan/Liferay/ee-7.0.x/bundles/work/osb-testray-portlet-7.0.10.1"
 
 # Test pull request
 alias testpr="python $TESTRAY_SETUP/test_pr.py"
