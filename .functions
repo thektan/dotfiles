@@ -137,9 +137,8 @@ function update() {
 	echo "${blue}▸ Update Outdated Brew Casks (2/3) ${reset}"
 	brew cask outdated | xargs brew cask reinstall;
 
-	echo "${blue}▸ Update NPM (3/3) ${reset}"
-	npm install npm -g;
-	npm update -g;
+	echo "${blue}▸ Update Yarn (3/3) ${reset}"
+	yarn global upgrade;
 
 	echo "${green}✓ Update Complete! 🎉 ${reset}"
 }
