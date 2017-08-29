@@ -61,6 +61,11 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 defaults write NSGlobalDomain KeyRepeat -int 1
 defaults write NSGlobalDomain InitialKeyRepeat -int 10
 
+# Disable email page location shortcut cmd+shfit+i
+defaults write com.google.Chrome NSUserKeyEquivalents -dict-add 'Email Page Location' '\0'
+defaults write com.google.Chrome.canary NSUserKeyEquivalents -dict-add 'Email Page Location' '\0'
+defaults write com.apple.Safari NSUserKeyEquivalents -dict-add 'Email Link to This Page' '\0' 'Email This Page' '\0'
+
 ###############################################################################
 # Mouse                                                                       #
 ###############################################################################
