@@ -24,6 +24,7 @@ brew cask install spotify
 brew cask install atom
 brew cask install iterm2
 brew cask install github-desktop
+brew cask install ship # https://www.realartists.com/index.html
 brew cask install sublime-text
 brew cask install sequel-pro
 brew cask install visual-studio-code
