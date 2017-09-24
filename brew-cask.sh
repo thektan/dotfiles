@@ -3,7 +3,7 @@
 # System
 brew cask install 1password
 brew cask install dropbox
-brew cask install google-drive
+brew cask install google-backup-and-sync
 brew cask install private-internet-access
 
 brew cask install google-chrome
