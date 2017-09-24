@@ -126,6 +126,7 @@ function filesort() {
 
 # Update programs
 function update() {
+	local green=`tput setaf 2`
 	local blue=`tput setaf 4`
 	local reset=`tput sgr0`
 
