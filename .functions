@@ -124,26 +124,34 @@ function filesort() {
 	fi;
 }
 
-# Update programs
+# Update dotfiles
+function update_dotfiles() {
+	cd $DOTFILES;
+	git checkout master;
+	git pull origin;
+}
+
+# Update global packages
 function update() {
 	local green=`tput setaf 2`
 	local blue=`tput setaf 4`
 	local reset=`tput sgr0`
 
-	echo "${blue}▸ (1/4) Update dotfiles ${reset}"
-	cd $DOTFILES;
-	git pull origin;
+	echo "${blue}▸ (1/5) Update dotfiles ${reset}"
+	update_dotfiles;
 
-	echo "${blue}▸ (2/4) Update Brew Formulas ${reset}"
+	echo "${blue}▸ (2/5) Update Brew Formulas ${reset}"
 	brew update;
 	brew upgrade;
 	brew cleanup;
 
-	echo "${blue}▸ (3/4) Update Outdated Brew Casks ${reset}"
+	echo "${blue}▸ (3/5) Update Outdated Brew Casks ${reset}"
 	brew cask outdated | xargs brew cask reinstall;
 
-	echo "${blue}▸ (4/4) Update Yarn and NPM ${reset}"
+	echo "${blue}▸ (5/5) Update NPM ${reset}"
 	yarn global upgrade;
+
+	echo "${blue}▸ (4/5) Update Yarn ${reset}"
 	npm install npm -g;
 	npm update -g;
 
