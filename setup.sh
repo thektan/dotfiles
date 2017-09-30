@@ -19,6 +19,9 @@ git config --global core.editor "subl -n -w"
 gem install travis -v 1.8.8 --no-rdoc --no-ri 	# https://github.com/travis-ci/travis.rb#installation
 gem install t 									# https://github.com/sferik/t
 
+# Install xcode for command line tools
+xcode-select --install
+
 # Other apps to install
 echo "╭───────────────────────────────────────────────────────╮"
 echo "│                                                       │"
