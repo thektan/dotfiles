@@ -34,7 +34,7 @@ EE62X_PORTAL_CLEAN=~/Liferay/ee-6.2.x-clean/portal
 EE62X_PLUGINS=~/Liferay/ee-6.2.x/plugins
 
 TESTRAY=~/Liferay/ee-7.0.x/portal-ee/modules/private/apps/osb-testray
-TESTRAY_PORTLET=~/Liferay/ee-7.0.x/portal-ee/modules/private/apps/osb-testray/osb-testray-portlet
+TESTRAY_PORTLET=~/Liferay/ee-7.0.x/portal-ee/modules/private/apps/osb-testray/osb-testray-web
 TESTRAY_TAGLIB=~/Liferay/ee-7.0.x/portal-ee/modules/private/apps/osb-testray/osb-testray-taglib
 TESTRAY_DASHBOARD=~/Liferay/ee-7.0.x/portal-ee/modules/private/apps/osb-testray/osb-testray-dashboard/osb-testray-dashboard-web
 TESTRAY_THEME=~/Liferay/ee-7.0.x/portal-ee/modules/private/apps/osb-testray/osb-testray-theme
@@ -238,10 +238,10 @@ alias trf="open $TESTRAY"
 alias tra="atom $TESTRAY"
 alias trs="subl $TESTRAY"
 
-alias trd="cd $TESTRAY_PORTLET && gradle clean deploy && cd -"
-alias trdp="cd $TESTRAY_PORTLET && gradle clean deploy && cd -"
+alias trd="cd $TESTRAY_PORTLET && ../../../../../gradlew clean deploy && cd -"
 alias trdt="cd $TESTRAY_THEME && ../../../../../gradlew clean deploy && cd -"
-alias trdd="cd $TESTRAY_DASHBOARD && gradle clean deploy && cd - && trd"
+alias trdd="cd $TESTRAY_DASHBOARD && ../../../../../gradlew clean && cd -"
+# alias trdd="cd $TESTRAY_DASHBOARD && gradle jar && mv /Users/ktan/Liferay/ee-7.0.x/portal-ee/tools/sdk/dist/com.liferay.osb.testray.dashboard.web-1.0.0.jar /Users/ktan/Liferay/ee-7.0.x/bundles/osgi/modules && cd -"
 alias trdta="cd $TESTRAY_TAGLIB && ../../../../../gradlew clean deploy && cd -"
 
 alias trda="trd && trdt"
