@@ -59,7 +59,7 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
 # Set a blazingly fast keyboard repeat rate
 defaults write NSGlobalDomain KeyRepeat -int 1
-defaults write NSGlobalDomain InitialKeyRepeat -int 10
+defaults write NSGlobalDomain InitialKeyRepeat -int 12
 
 # Disable email page location shortcut cmd+shfit+i
 defaults write com.google.Chrome NSUserKeyEquivalents -dict-add 'Email Page Location' '\0'
