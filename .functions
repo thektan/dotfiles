@@ -129,6 +129,7 @@ function update_dotfiles() {
 	cd $DOTFILES;
 	git checkout master;
 	git pull origin;
+	zshr; # Alias for resourcing zshrc.
 }
 
 # Update global packages
