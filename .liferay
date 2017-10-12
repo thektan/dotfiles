@@ -240,7 +240,7 @@ alias trs="subl $TESTRAY"
 
 alias trd="cd $TESTRAY_PORTLET && ../../../../../gradlew clean deploy && cd -"
 alias trdt="cd $TESTRAY_THEME && ../../../../../gradlew clean deploy && cd -"
-alias trdd="cd $TESTRAY_DASHBOARD && ../../../../../gradlew clean && cd -"
+alias trdd="cd $TESTRAY_DASHBOARD && ../../../../../../gradlew clean deploy && cd -"
 # alias trdd="cd $TESTRAY_DASHBOARD && gradle jar && mv /Users/ktan/Liferay/ee-7.0.x/portal-ee/tools/sdk/dist/com.liferay.osb.testray.dashboard.web-1.0.0.jar /Users/ktan/Liferay/ee-7.0.x/bundles/osgi/modules && cd -"
 alias trdta="cd $TESTRAY_TAGLIB && ../../../../../gradlew clean deploy && cd -"
 
