@@ -64,11 +64,6 @@ fi
 	"$root_level" $@
 }
 
-# Open the jria ticket ID
-open_jira_ticket() {
-	open http://issues.liferay.com/browse/$0;
-}
-
 # Get the last mentioned JIRA ticket id from the commit log
 # @author Nate Cavanaugh
 latest_jira_ticket() {
