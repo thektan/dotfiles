@@ -41,7 +41,8 @@
 		"CVS",
 		".sass-cache",
 		"classes",
-		"node_modules"
+		"node_modules",
+		"dist"
 	],
 	"font_face": "Roboto Mono",
 	"font_options":
