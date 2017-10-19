@@ -11,6 +11,7 @@ yarn global add jack-cli		# https://github.com/drewbrokke/jack
 yarn global add n				# https://github.com/tj/n
 yarn global add trash-cli 		# https://github.com/sindresorhus/trash-cli
 yarn global add rebase-editor 	# https://github.com/sjurba/rebase-editor
+yarn global add tldr 			# https://github.com/tldr-pages/tldr
 
 git config --global sequence.editor rebase-editor
 git config --global core.editor "subl -n -w"
