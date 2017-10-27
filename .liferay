@@ -165,6 +165,11 @@ alias glut="git pull upstream $TESTRAY_BRANCH"
 alias grbit="git rebase -i $TESTRAY_BRANCH"
 alias grlt="git checkout $TESTRAY_BRANCH && git pull upstream $TESTRAY_BRANCH && git checkout - && git rebase $TESTRAY_BRANCH"
 
+# Gradle
+############################################################
+alias grcd5="../../../../../gradlew clean deploy"
+alias grcd4="../../../../gradlew clean deploy"
+
 # Node GH
 ############################################################
 
