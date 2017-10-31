@@ -13,6 +13,7 @@ brew cask install firefox
 brew cask install kap
 brew cask install notion
 brew cask install transmission
+brew cask install the-unarchiver
 brew cask install vlc
 
 # Social
