@@ -31,7 +31,10 @@ export DOTFILES=$HOME/.dotfiles
 source $DOTFILES/.aliases
 source $DOTFILES/.functions
 source $DOTFILES/.liferay
-source $DOTFILES/.extras
+
+if [ -f $DOTFILES/.extras ]; then
+	source $DOTFILES/.extras
+fi
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
