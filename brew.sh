@@ -11,6 +11,7 @@ brew upgrade
 brew install git
 brew install coreutils 				# https://en.wikipedia.org/wiki/GNU_Core_Utilities
 brew install diff-so-fancy			# https://github.com/so-fancy/diff-so-fancy/
+brew install fd						# https://github.com/sharkdp/fd
 brew install node
 brew install ripgrep 				# https://github.com/BurntSushi/ripgrep
 brew install ruby
