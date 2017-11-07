@@ -377,7 +377,7 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>-1888 302 445 77 -3008 0 3008 1670 </string>
+	<string>-1655 636 445 77 -3008 0 3008 1670 </string>
 	<key>NSWindow Frame Preferences</key>
 	<string>-1278 1053 606 456 -3008 -141 3008 1669 </string>
 	<key>NSWindow Frame SUAutomaticUpdateAlert</key>
@@ -389,11 +389,11 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>-1805 176 618 519 -3008 0 3008 1670 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>-1014 694 796 473 -3008 0 3008 1670 </string>
+	<string>-1130 542 916 485 -3008 0 3008 1670 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>-2726 1085 592 584 -3008 0 3008 1669 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-3008 0 3008 454 -3008 0 3008 1670 </string>
+	<string>-2599 233 570 477 -3008 0 3008 1670 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>-1644 350 650 502 -3008 -141 3008 1669 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -1041,11 +1041,11 @@
 			<key>Name</key>
 			<string>Default</string>
 			<key>Non Ascii Font</key>
-			<string>RobotoMono-Regular 12</string>
+			<string>RobotoMono-Medium 12</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>RobotoMono-Regular 12</string>
+			<string>RobotoMono-Medium 12</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<true/>
 			<key>Option Key Sends</key>
@@ -1954,11 +1954,11 @@
 			<key>Name</key>
 			<string>Quick Access</string>
 			<key>Non Ascii Font</key>
-			<string>RobotoMono-Regular 12</string>
+			<string>RobotoMono-Medium 12</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>RobotoMono-Regular 12</string>
+			<string>RobotoMono-Medium 12</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<true/>
 			<key>Option Key Sends</key>
@@ -2383,7 +2383,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-10-25T18:28:33Z</date>
+	<date>2017-11-03T21:19:43Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Secure Input</key>
