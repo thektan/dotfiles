@@ -117,7 +117,7 @@ alias j="jack --pretty=format:'* %Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(
 ############################################################
 
 # General updates that should be run commonly
-alias update=update
+alias update=update_global_packages
 # Get macOS Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
 # @source https://github.com/mathiasbynens/dotfiles/blob/master/.aliases#L56
 alias updateall='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update; sudo gem cleanup'
