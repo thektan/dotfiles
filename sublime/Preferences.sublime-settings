@@ -31,7 +31,9 @@
 		"*.class",
 		"*.psd",
 		"*.db",
-		"*.sublime-workspace"
+		"*.sublime-workspace",
+		"*.bin",
+		"*.map"
 	],
 	"folder_exclude_patterns":
 	[
@@ -42,7 +44,10 @@
 		".sass-cache",
 		"classes",
 		"node_modules",
-		"dist"
+		"dist",
+		"bin",
+		"build",
+		"tmp"
 	],
 	"font_face": "Roboto Mono",
 	"font_options":
