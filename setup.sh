@@ -12,8 +12,9 @@ yarn global add n               # https://github.com/tj/n
 yarn global add npm-check       # https://github.com/dylang/npm-check
 yarn global add trash-cli       # https://github.com/sindresorhus/trash-cli
 yarn global add rebase-editor   # https://github.com/sjurba/rebase-editor
-yarn global add tldr            # https://github.com/tldr-pages/tldr
-yarn global add stacks-cli      # https://github.com/WeiChiaChang/stacks-cli
+yarn global add stacks-cli      # https://github.com/WeiChiaChang/stacks-cli\
+
+npm install -g tldr             # https://github.com/tldr-pages/tldr
 
 git config --global sequence.editor rebase-editor
 git config --global core.editor "subl -n -w"
