@@ -114,17 +114,19 @@ kt() {
 			branchName="ee-6.2.x"
 		elif [[ "$1" == "7" ]]; then
 			branchName="ee-7.0.x"
+		elif [[ "$1" == "f" ]]; then
+			branchName="ee-7.0.x-faro"
 		elif [[ "$1" == "m" ]]; then
 			branchName="master"
 		else
-			echo "Accepted values: [ee | m]";
+			echo "Accepted values: [6 | 7| f | m]";
 		fi
 
 		echo "Killing process for branch: $branchName\n"
 
 		pkill -9 -f $branchName/bundles/tomcat;
 	else
-		echo "Usage: kt [ee | m]\n"
+		echo "Usage: kt [6 | 7| f | m]\n"
 	fi
 }
 
@@ -254,6 +256,16 @@ alias trdw="cd /Users/ktan/Liferay/ee-7.0.x/portal-ee/modules/private/apps/osb-t
 # Test pull request
 alias testpr="python $TESTRAY_SETUP/test_pr.py"
 
+# Faro
+############################################################
+
+FARO=~/Liferay/ee-7.0.x-faro/portal-ee/modules/private/apps/osb-faro
+FARO_WEB=~/Liferay/ee-7.0.x-faro/portal-ee/modules/private/apps/osb-faro/osb-faro-web
+
+alias faroda="cd $FARO && ../../../../gradlew clean deploy && cd -"
+alias farod="cd $FARO_WEB && ../../../../../gradlew clean deploy && cd -"
+alias farons="cd $FARO_WEB && ../../../../../gradlew npmRunStart && cd -"
+
 # Search Portlet
 ############################################################
 
@@ -265,9 +277,15 @@ alias spd="cd $SEARCH_PORTLET && gradle deploy"
 
 # Start Tomcat server
 alias stomcat="./catalina.sh run"
+# Master
 alias lrsm="cd ~/Liferay/master/bundles/tomcat/bin && ./catalina.sh run"
+# Clean Master
 alias lrsmc="cd ~/Liferay/master-clean/bundles/tomcat/bin && ./catalina.sh run"
+# Testray
 alias lrsee="mysql.server start && cd ~/Liferay/ee-7.0.x/bundles/tomcat/bin && ./catalina.sh run"
+# Faro
+alias lrsf="mysql.server start && cd ~/Liferay/ee-7.0.x-faro/bundles/tomcat/bin && ./catalina.sh run"
+# Clean ee-6.2.x
 alias lrseec="cd ~/Liferay/ee-6.2.x-clean/bundles/tomcat/bin && ./catalina.sh run"
 
 # Find specific processes
