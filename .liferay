@@ -155,6 +155,7 @@ testray_check_format() {
 ############################################################
 
 alias gcee="git checkout ee-7.0.x"
+alias gc7="git checkout 7.0.x-private"
 alias gluee="git checkout ee-7.0.x && git pull upstream ee-7.0.x"
 alias glu7="git checkout 7.0.x-private && git pull upstream 7.0.x-private"
 alias grbee="git rebase ee-7.0.x"
