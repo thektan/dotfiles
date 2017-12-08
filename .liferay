@@ -156,8 +156,10 @@ testray_check_format() {
 
 alias gcee="git checkout ee-7.0.x"
 alias gluee="git checkout ee-7.0.x && git pull upstream ee-7.0.x"
+alias glu7="git checkout 7.0.x-private && git pull upstream 7.0.x-private"
 alias grbee="git rebase ee-7.0.x"
 alias grlee="git checkout ee-7.0.x && git pull upstream ee-7.0.x && git checkout - && git rebase ee-7.0.x"
+alias grl7="git checkout 7.0.x-private && git pull upstream 7.0.x-private && git checkout - && git rebase 7.0.x-private"
 alias grbiee="git rebase -i ee-7.0.x"
 alias gurbee="git pull upstream ee-7.0.x --rebase"
 alias gqlt="gql ~/Liferay/ee-7.0.x/portal-ee/modules/private/apps/osb-testray"
