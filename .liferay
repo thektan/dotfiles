@@ -262,15 +262,18 @@ alias testpr="python $TESTRAY_SETUP/test_pr.py"
 FARO=~/Liferay/ee-7.0.x-faro/portal-ee/modules/private/apps/osb-faro
 FARO_WEB=~/Liferay/ee-7.0.x-faro/portal-ee/modules/private/apps/osb-faro/osb-faro-web
 
+alias farou="git checkout 7.0.x-private"
 alias faroda="cd $FARO && ../../../../gradlew clean deploy && cd -"
+alias farot="cd $FARO && ./gradlew npmRunFormat && ./gradlew npmRunTest && ./gradlew formatSource && cd -"
+
 alias farod="cd $FARO_WEB && ../../../../../gradlew clean deploy && cd -"
 alias farons="cd $FARO_WEB && ../../../../../gradlew npmRunStart && cd -"
 
 # Search Portlet
 ############################################################
 
-alias spo="cd $SEARCH_PORTLET"
-alias spd="cd $SEARCH_PORTLET && gradle deploy"
+# alias spo="cd $SEARCH_PORTLET"
+# alias spd="cd $SEARCH_PORTLET && gradle deploy"
 
 # Tomcat
 ############################################################
