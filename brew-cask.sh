@@ -21,6 +21,7 @@ brew cask install caprine # https://github.com/sindresorhus/caprine
 brew cask install discord
 brew cask install skype
 brew cask install spotify
+brew cask install spotmenu # https://github.com/kmikiy/SpotMenu
 
 # Dev Apps
 brew cask install atom
