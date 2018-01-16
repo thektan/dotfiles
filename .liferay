@@ -267,6 +267,7 @@ FARO=~/Liferay/ee-7.0.x-faro/portal-ee/modules/private/apps/osb-faro
 FARO_WEB=~/Liferay/ee-7.0.x-faro/portal-ee/modules/private/apps/osb-faro/osb-faro-web
 
 alias farou="git checkout 7.0.x-private"
+alias faroup="git checkout 7.0.x-private && git pull upstream 7.0.x-private && git push origin 7.0.x-private"
 alias faroda="cd $FARO && ../../../../gradlew clean deploy && cd -"
 alias farot="cd $FARO && ./gradlew npmRunFormat && ./gradlew npmRunTest && ./gradlew formatSource && cd -"
 
