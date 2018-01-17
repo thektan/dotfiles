@@ -145,8 +145,8 @@ alias emptytrash=" \
 
 # Spotify
 alias sp="spotify"
-alias spn="spotify next && spotify status"
-alias spb="spotify prev && spotify status"
+alias spn="spotify next"
+alias spb="spotify prev"
 alias spp="spotify play && spotify status"
 alias sps="spotify pause"
 alias spv="spotify vol"
