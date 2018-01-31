@@ -139,6 +139,8 @@ alias emptytrash=" \
     sudo rm -v /private/var/vm/sleepimage; \
 "
 
+alias photosort=". /Users/ktan/Projects/photosort/photosort.sh"
+
 ############################################################
 # Apps
 ############################################################
