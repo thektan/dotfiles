@@ -12,6 +12,7 @@ brew install git
 brew install coreutils              # https://en.wikipedia.org/wiki/GNU_Core_Utilities
 brew install diff-so-fancy          # https://github.com/so-fancy/diff-so-fancy/
 brew install fd                     # https://github.com/sharkdp/fd
+brew install m-cli                  # https://github.com/rgcr/m-cli
 brew install node
 brew install ripgrep                # https://github.com/BurntSushi/ripgrep
 brew install ruby
@@ -25,5 +26,4 @@ brew install shpotify               # https://github.com/hnarayanan/shpotify
 brew install wifi-password          # https://github.com/rauchg/wifi-password
 
 # Misc Development
-# https://raamdev.com/2008/howto-install-md5sum-sha1sum-on-mac-os-x/
-brew install md5sha1sum
+# brew install md5sha1sum           # https://raamdev.com/2008/howto-install-md5sum-sha1sum-on-mac-os-x/
