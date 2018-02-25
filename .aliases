@@ -39,7 +39,7 @@ alias ss="open ~/Dropbox/Screenshots"
 alias l="gls -aAhlp --color --group-directories-first"
 
 # List only directories
-alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
+alias lsd="ls -lF -G | grep --color=never '^d'"
 
 ############################################################
 # Build Tasks                                              #
@@ -77,6 +77,9 @@ alias yw="yarn watch"
 
 # Start server in current directory
 alias pserver="python -m SimpleHTTPServer 8000"
+
+# Adding autocomplete for 'we'
+[ -f ~/.we_autocomplete ] && source ~/.we_autocomplete
 
 ############################################################
 # Database                                                 #

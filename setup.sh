@@ -5,16 +5,13 @@
 ./brew-cask.sh
 
 # Install global npm packages
-yarn global add git-open        # https://github.com/paulirish/git-open
-yarn global add git-recent      # https://github.com/paulirish/git-recent
-yarn global add jack-cli        # https://github.com/drewbrokke/jack
 yarn global add n               # https://github.com/tj/n
-yarn global add npm-check       # https://github.com/dylang/npm-check
-yarn global add trash-cli       # https://github.com/sindresorhus/trash-cli
 yarn global add rebase-editor   # https://github.com/sjurba/rebase-editor
 yarn global add stacks-cli      # https://github.com/WeiChiaChang/stacks-cli
 
 npm install -g tldr             # https://github.com/tldr-pages/tldr
+npm install -g jack-cli        # https://github.com/drewbrokke/jack
+npm install -g npm-check       # https://github.com/dylang/npm-check
 
 git config --global sequence.editor rebase-editor
 git config --global core.editor "subl -n -w"
