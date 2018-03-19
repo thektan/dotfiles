@@ -383,19 +383,19 @@
 	<key>NSWindow Frame Preferences</key>
 	<string>-1278 1053 606 456 -3008 -141 3008 1669 </string>
 	<key>NSWindow Frame SUAutomaticUpdateAlert</key>
-	<string>-1268 753 616 174 -1920 0 1920 1178 </string>
+	<string>-1268 754 616 174 -1920 0 1920 1178 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
 	<string>760 787 400 129 0 0 1920 1178 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>650 590 620 392 0 0 1920 1178 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
-	<string>-1805 176 618 519 -3008 0 3008 1670 </string>
+	<string>-1262 104 606 469 -1920 0 1920 1178 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>-983 328 796 473 -1920 0 1920 1178 </string>
+	<string>-974 264 918 512 -1920 0 1920 1178 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>-2726 1085 592 584 -3008 0 3008 1669 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-1920 0 1920 454 -1920 0 1920 1178 </string>
+	<string>-1920 0 1920 478 -1920 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>-1644 350 650 502 -3008 -141 3008 1669 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -2260,6 +2260,12 @@
 					<key>regex</key>
 					<string>STARTED com.liferay.osb.faro.web</string>
 				</dict>
+				<dict>
+					<key>action</key>
+					<string>HighlightTrigger</string>
+					<key>regex</key>
+					<string>ERROR</string>
+				</dict>
 			</array>
 			<key>Unlimited Scrollback</key>
 			<true/>
@@ -2461,7 +2467,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-01-15T05:20:55Z</date>
+	<date>2018-03-19T16:41:10Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Secure Input</key>
@@ -7128,7 +7134,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.1.5.beta.2</string>
+	<string>3.1.6beta3</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
