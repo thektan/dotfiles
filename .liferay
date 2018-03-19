@@ -273,9 +273,9 @@ alias faroda="cd $FARO && ../../../../gradlew clean deploy && cd -"
 alias farot="cd $FARO && ./gradlew npmRunFormat && ./gradlew npmRunTest && ./gradlew formatSource && cd -"
 alias faroti="cd $FARO_FUNCTIONAL_TEST && ../gradlew testIntegration && cd -"
 
-alias farod="cd $FARO_WEB && ../../../../../gradlew clean deploy && cd -"
-alias farons="cd $FARO_WEB && ../../../../../gradlew npmRunStart && cd -"
-alias faros="cd $FARO && ../../../../gradlew startDocker && docker logs --follow com-liferay-osb-faro-private"
+alias farod="cd $FARO_WEB && ../gradlew clean deploy && cd -"
+alias farons="cd $FARO_WEB && ../gradlew npmRunStart && cd -"
+alias faros="cd $FARO && ./gradlew startDocker && docker logs --follow com-liferay-osb-faro-private"
 alias farow="cd $FARO && docker logs --follow com-liferay-osb-faro-private"
 
 # Search Portlet
