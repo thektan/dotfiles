@@ -166,9 +166,10 @@ function update_global_packages() {
 	echo "${blue}"
 	echo "─────────────────────────────────────────────────────────────────";
 	echo "▸ (3/6) Update Outdated Brew Casks";
+	brew cask outdated --greedy;
 	echo "─────────────────────────────────────────────────────────────────";
 	echo "${reset}"
-	brew cask outdated | xargs brew cask reinstall;
+	brew cask upgrade --greedy;
 
 	echo "${blue}"
 	echo "─────────────────────────────────────────────────────────────────";
