@@ -10,6 +10,9 @@ brew cask install google-chrome
 brew cask install firefox
 
 # Tools
+brew cask install bettertouchtool
+brew cask install istat-menus
+brew cask install karabiner-elements
 brew cask install kap
 brew cask install notion
 brew cask install transmission
