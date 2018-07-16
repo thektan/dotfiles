@@ -33,7 +33,7 @@ brew cask install sequel-pro
 brew cask install visual-studio-code
 
 # Design Apps
-brew cask install sketch
+brew cask install figma
 
 # Quick Look Plugins (https://github.com/sindresorhus/quick-look-plugins)
 brew cask install betterzip
