@@ -39,7 +39,7 @@ alias ss="open ~/Dropbox/Screenshots"
 alias l="gls -aAhlp --color --group-directories-first"
 
 # List only directories
-alias lsd="ls -lF -G | grep --color=never '^d'"
+alias lsd="ls -lF -G"
 
 ############################################################
 # Build Tasks                                              #
