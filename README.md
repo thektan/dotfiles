@@ -52,6 +52,11 @@ sudo vim /etc/shells
 chsh -s /usr/local/bin/zsh
 ```
 
+### Improve pasting in MacOS
+
+1. System Preferences > Keyboard > Shortcuts > App Shortcuts > All Applications
+2. Add "Paste and Match Style" for `⌘V`
+
 ## Resources
 
 Places I've referenced while creating my dotfiles.
