@@ -5,7 +5,7 @@
 ############################################################
 
 alias dfc="cd $DOTFILES"
-alias dfe="subl $DOTFILES"
+alias dfe="code $DOTFILES"
 alias dfu="cd $DOTFILES && git pull origin && cd -"
 
 # Update .zshrc
