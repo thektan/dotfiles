@@ -7,6 +7,7 @@ It's a work in progress. Feel free to make suggestions on any improvements or fu
 No cool script yet to get it all setup so we'll need to do the following.
 
 Install Homebrew (https://brew.sh/)
+
 ```bash
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
@@ -14,6 +15,7 @@ Install Homebrew (https://brew.sh/)
 Point iTerm2 preferences file to `$HOME/.dotfiles/iterm/`.
 
 Run `setup.sh`
+
 ```bash
 . ./setup.sh
 ```
@@ -21,6 +23,7 @@ Run `setup.sh`
 ## Additional Notes
 
 ### Backup and Install Atom Packages
+
 ```bash
 # Generates and saves a list of installed atom packages.
 # @source https://github.com/holman/dotfiles/blob/master/bin/atom-package-backup
@@ -54,13 +57,15 @@ chsh -s /usr/local/bin/zsh
 
 ### Improve pasting in MacOS
 
-1. System Preferences > Keyboard > Shortcuts > App Shortcuts > All Applications
-2. Add "Paste and Match Style" for `⌘V`
+![Paste and Match Style](/assets/paste-screenshot.png)
+
+1.  System Preferences > Keyboard > Shortcuts > App Shortcuts > All Applications
+2.  Add "Paste and Match Style" for `⌘V`
 
 ## Resources
 
 Places I've referenced while creating my dotfiles.
 
-- https://github.com/mathiasbynens/dotfiles
-- https://github.com/paulirish/dotfiles
-- https://github.com/holman/dotfiles
+-   https://github.com/mathiasbynens/dotfiles
+-   https://github.com/paulirish/dotfiles
+-   https://github.com/holman/dotfiles
