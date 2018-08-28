@@ -171,11 +171,16 @@ alias glut="git pull upstream $TESTRAY_BRANCH"
 alias grbit="git rebase -i $TESTRAY_BRANCH"
 alias grlt="git checkout $TESTRAY_BRANCH && git pull upstream $TESTRAY_BRANCH && git checkout - && git rebase $TESTRAY_BRANCH"
 
+############################################################
 # Gradle
 ############################################################
-alias grcd5="../../../../../gradlew clean deploy"
+alias grcd1="../gradlew clean deploy"
+alias grcd2="../../gradlew clean deploy"
+alias grcd3="../../../gradlew clean deploy"
 alias grcd4="../../../../gradlew clean deploy"
+alias grcd5="../../../../../gradlew clean deploy"
 
+############################################################
 # Node GH
 ############################################################
 
@@ -193,6 +198,7 @@ alias ghsm="submit_pull_request master"
 alias ghsj="gh pr --submit jonmak08 --title ''"
 alias ghsmeee="gh pr --submit thektan --branch ee-7.0.x --title"
 
+############################################################
 # Liferay
 ############################################################
 
@@ -233,6 +239,7 @@ alias lreec="cd $EE62X_PORTAL_CLEAN"
 alias lreeco="open $EE62X_PORTAL_CLEAN"
 alias lreecu="cd $EE62X_PORTAL_CLEAN && git pull upstream ee-6.2.x && ant all"
 
+############################################################
 # Testray
 ############################################################
 
@@ -260,6 +267,7 @@ alias trdw="cd /Users/ktan/Liferay/ee-7.0.x/portal-ee/modules/private/apps/osb-t
 # Test pull request
 alias testpr="python $TESTRAY_SETUP/test_pr.py"
 
+############################################################
 # Faro
 ############################################################
 
@@ -278,12 +286,7 @@ alias farons="cd $FARO_WEB && ../gradlew npmRunStart && cd -"
 alias faros="cd $FARO && ./gradlew startDocker && docker logs --follow com-liferay-osb-faro-private"
 alias farow="cd $FARO && docker logs --follow com-liferay-osb-faro-private"
 
-# Search Portlet
 ############################################################
-
-# alias spo="cd $SEARCH_PORTLET"
-# alias spd="cd $SEARCH_PORTLET && gradle deploy"
-
 # Tomcat
 ############################################################
 
@@ -320,6 +323,7 @@ alias keer="kill -9 $(ptee) && lrsee"
 
 alias killp="kill -9"
 
+############################################################
 # Misc
 ############################################################
 
