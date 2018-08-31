@@ -47,4 +47,7 @@ fi
 
 # Source plugins and add commands to $PATH
 zplug load
+
+# Misc path bindings
 export PATH="$HOME/.yarn/bin:$PATH"
+export PATH="$PATH:$HOME/Library/PackageManager/bin" # Added from liferay blade tool
