@@ -29,14 +29,12 @@ PURE_PROMPT_SYMBOL=➜
 # Source files
 export DOTFILES=$HOME/.dotfiles
 
-source $DOTFILES/.aliases
-source $DOTFILES/.functions
-source $DOTFILES/.liferay
 [ -f $DOTFILES/.fzf.zsh ] && source $DOTFILES/.fzf.zsh
 
-if [ -f $DOTFILES/.extras ]; then
-	source $DOTFILES/.extras
-fi
+[ -f $DOTFILES/.aliases ] && source $DOTFILES/.aliases
+[ -f $DOTFILES/.functions ] && source $DOTFILES/.functions
+[ -f $DOTFILES/.liferay ] && source $DOTFILES/.liferay
+[ -f $DOTFILES/.extras ] && source $DOTFILES/.extras
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
