@@ -15,6 +15,8 @@ brew install coreutils              # https://en.wikipedia.org/wiki/GNU_Core_Uti
 brew install diff-so-fancy          # https://github.com/so-fancy/diff-so-fancy/
 brew install fd                     # https://github.com/sharkdp/fd
                                     # Faster alternative to `find`
+brew install fzf                    # https://github.com/junegunn/fzf
+                                    # Fuzzy finder
 brew install m-cli                  # https://github.com/rgcr/m-cli
                                     # Provides utility macOS commands.
 brew install node

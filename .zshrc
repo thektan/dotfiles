@@ -32,6 +32,7 @@ export DOTFILES=$HOME/.dotfiles
 source $DOTFILES/.aliases
 source $DOTFILES/.functions
 source $DOTFILES/.liferay
+[ -f $DOTFILES/.fzf.zsh ] && source $DOTFILES/.fzf.zsh
 
 if [ -f $DOTFILES/.extras ]; then
 	source $DOTFILES/.extras
