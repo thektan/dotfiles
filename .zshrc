@@ -28,6 +28,7 @@ PURE_PROMPT_SYMBOL=➜
 
 # Source files
 export DOTFILES=$HOME/.dotfiles
+export DOTFILES_LOGS_PATH=$DOTFILES/logs
 
 [ -f $DOTFILES/.fzf.zsh ] && source $DOTFILES/.fzf.zsh
 

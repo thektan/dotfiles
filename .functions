@@ -203,3 +203,11 @@ function update_global_packages() {
 
 	echo "${green}✓ Update Complete! 🎉 ${reset}";
 }
+
+# Separate function to output update function into a local log file. Attaching
+# `| tee` to the end of the alias or function creates an empty log file when
+# re-sourcing .zshrc and when calling the `update` function, a log file isn't
+# created with the output.
+function update() {
+    update_global_packages 2>&1 | tee $DOTFILES_LOGS_PATH/$(date +"%Y-%m-%d-%H-%M-%S").log;
+}
