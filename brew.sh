@@ -19,6 +19,8 @@ brew install fzf                    # https://github.com/junegunn/fzf
                                     # Fuzzy finder
 brew install m-cli                  # https://github.com/rgcr/m-cli
                                     # Provides utility macOS commands.
+brew install mpv                    # https://github.com/mpv-player/mpv
+                                    # Play videos from command line for audio-only.
 brew install node
 brew install ripgrep                # https://github.com/BurntSushi/ripgrep
 brew install ruby
