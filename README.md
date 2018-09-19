@@ -20,7 +20,7 @@ Run `setup.sh`
 . ./setup.sh
 ```
 
-## Additional Notes
+## Notes
 
 ### Backup and Install Atom Packages
 
@@ -31,7 +31,7 @@ apm list --installed --bare > ~/.dotfiles/atom/packages.txt
 ```
 
 ```bash
-# Installs the atom packages backed up previously.
+# Installs the atom packages backed up.
 # @source https://github.com/holman/dotfiles/blob/master/bin/atom-package-install
 apm install --packages-file ~/.dotfiles/atom/packages.txt
 ```
@@ -48,7 +48,7 @@ brew install --without-etcdir zsh
 # add shell path
 sudo vim /etc/shells
 
-# add the following line into the very end of the file(/etc/shells)
+# add the following line into the end of the file(/etc/shells)
 /usr/local/bin/zsh
 
 # change default shell
