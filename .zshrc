@@ -1,6 +1,9 @@
 # zsh settings
 setopt AUTO_CD
 
+# Enable menu-style completion.
+zstyle ':completion:*' menu select
+
 # zplug setup
 export ZPLUG_HOME=/usr/local/opt/zplug
 source $ZPLUG_HOME/init.zsh
