@@ -119,14 +119,14 @@ kt() {
 		elif [[ "$1" == "m" ]]; then
 			branchName="master"
 		else
-			echo "Accepted values: [6 | 7| f | m]";
+			echo "Accepted values: [ 6 | 7 | f | m ]";
 		fi
 
 		echo "Killing process for branch: $branchName\n"
 
 		pkill -9 -f $branchName/bundles/tomcat;
 	else
-		echo "Usage: kt [6 | 7| f | m]\n"
+		echo "Usage: kt [ 6 | 7 | f | m ]\n"
 	fi
 }
 
