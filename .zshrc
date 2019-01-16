@@ -40,6 +40,9 @@ export DOTFILES_LOGS_PATH=$DOTFILES/logs
 [ -f $DOTFILES/.liferay ] && source $DOTFILES/.liferay
 [ -f $DOTFILES/.extras ] && source $DOTFILES/.extras
 
+# Link dircolors for ls color highlighting
+eval $(gdircolors $DOTFILES/.dircolors)
+
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "

@@ -36,7 +36,7 @@ alias ss="open ~/Dropbox/Screenshots"
 # -p      append / indicator to directories
 # --color colorize the output
 # --group-directories-first
-alias l="gls -aAhlp --color --group-directories-first"
+alias l="gls -aAhlp --color=auto --group-directories-first"
 
 # List only directories
 alias lsd="ls -lF -G"
