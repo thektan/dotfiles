@@ -79,9 +79,6 @@ alias yw="yarn watch"
 # Start server in current directory
 alias pserver="python -m SimpleHTTPServer 8000"
 
-# Adding autocomplete for 'we'
-[ -f ~/.we_autocomplete ] && source ~/.we_autocomplete
-
 ############################################################
 # Database                                                 #
 ############################################################
