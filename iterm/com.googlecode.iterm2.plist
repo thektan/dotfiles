@@ -396,7 +396,7 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>658 1304 606 469 0 1200 1920 1178 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>403 366 928 394 0 0 1680 1028 </string>
+	<string>-1466 278 796 486 -2560 -38 2560 1418 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>-2726 1085 592 584 -3008 0 3008 1669 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
@@ -800,6 +800,13 @@
 					<integer>11</integer>
 					<key>Text</key>
 					<string>0x7f</string>
+				</dict>
+				<key>0x61-0x100000</key>
+				<dict>
+					<key>Action</key>
+					<integer>13</integer>
+					<key>Text</key>
+					<string></string>
 				</dict>
 				<key>0xf700-0x220000</key>
 				<dict>
@@ -1738,6 +1745,13 @@
 					<key>Text</key>
 					<string>0x7f</string>
 				</dict>
+				<key>0x61-0x100000</key>
+				<dict>
+					<key>Action</key>
+					<integer>13</integer>
+					<key>Text</key>
+					<string></string>
+				</dict>
 				<key>0xf700-0x220000</key>
 				<dict>
 					<key>Action</key>
@@ -2500,7 +2514,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-01-22T19:33:24Z</date>
+	<date>2019-01-25T19:11:17Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Secure Input</key>
