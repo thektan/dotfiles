@@ -156,3 +156,6 @@ alias spv="spotify vol"
 # https://github.com/sferik/t
 alias ts="t stream timeline"
 alias tu="t update"
+
+# Dad Joke
+alias dadjoke="curl -H \"Accept: text/plain\" https://icanhazdadjoke.com/"
