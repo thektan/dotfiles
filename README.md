@@ -1,6 +1,6 @@
 # My Bash Aliases, Functions, and Settings
 
-It's a work in progress. Feel free to make suggestions on any improvements or functions/plugins I should add/remove in my system!
+Feel free to make suggestions on any improvements or functions/plugins I should add/remove in my system!
 
 ## Setup
 
