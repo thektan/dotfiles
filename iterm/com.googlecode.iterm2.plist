@@ -2094,7 +2094,7 @@
 			<key>Rows</key>
 			<integer>25</integer>
 			<key>Screen</key>
-			<integer>0</integer>
+			<integer>1</integer>
 			<key>Scrollback Lines</key>
 			<integer>0</integer>
 			<key>Scrollback With Status Bar</key>
