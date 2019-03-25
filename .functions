@@ -141,6 +141,7 @@ function update_global_packages() {
 	echo "${blue}"
 	echo "─────────────────────────────────────────────────────────────────";
 	echo "Preparing to update global packages and brew formulas."
+	echo "- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -";
 	date;
 	echo "─────────────────────────────────────────────────────────────────";
 	echo "${reset}"
@@ -166,6 +167,7 @@ function update_global_packages() {
 	echo "${blue}"
 	echo "─────────────────────────────────────────────────────────────────";
 	echo "▸ (3/6) Update Outdated Brew Casks";
+	echo "- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -";
 	brew cask outdated --greedy;
 	echo "─────────────────────────────────────────────────────────────────";
 	echo "${reset}"
@@ -190,6 +192,7 @@ function update_global_packages() {
 	echo "${blue}"
 	echo "─────────────────────────────────────────────────────────────────";
 	echo "▸ (6/6) Preparing to update outdated global NPM Packages";
+	echo "- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -";
 	npm -g outdated --parseable --depth=0 | cut -d: -f4;
 	echo "─────────────────────────────────────────────────────────────────";
 	echo "${reset}";
