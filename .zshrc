@@ -57,4 +57,6 @@ zplug load
 
 # Misc path bindings
 export PATH="$HOME/.yarn/bin:$PATH"
-export PATH="$PATH:$HOME/Library/PackageManager/bin" # Added from liferay blade tool
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
