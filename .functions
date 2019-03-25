@@ -153,6 +153,7 @@ function update_global_packages() {
 	echo "${reset}"
 
 	update_dotfiles;
+	git submodule foreach git pull;
 
 	echo "${blue}"
 	echo "─────────────────────────────────────────────────────────────────";
