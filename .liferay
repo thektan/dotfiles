@@ -26,24 +26,6 @@ export JAVA_HOME=$JAVA_8_HOME
 
 # Directories
 MASTER=~/Liferay/master/portal
-MASTER_PLUGINS=~/Liferay/master/plugins
-MASTER_CLEAN=~/Liferay/master-clean/portal
-
-EE62X_PORTAL=~/Liferay/ee-6.2.x/portal
-EE62X_PORTAL_CLEAN=~/Liferay/ee-6.2.x-clean/portal
-EE62X_PLUGINS=~/Liferay/ee-6.2.x/plugins
-
-TESTRAY=~/Liferay/ee-7.0.x/portal-ee/modules/private/apps/osb-testray
-TESTRAY_PORTLET=~/Liferay/ee-7.0.x/portal-ee/modules/private/apps/osb-testray/osb-testray-web
-TESTRAY_TAGLIB=~/Liferay/ee-7.0.x/portal-ee/modules/private/apps/osb-testray/osb-testray-taglib
-TESTRAY_DASHBOARD=~/Liferay/ee-7.0.x/portal-ee/modules/private/apps/osb-testray/osb-testray-dashboard/osb-testray-dashboard-web
-TESTRAY_THEME=~/Liferay/ee-7.0.x/portal-ee/modules/private/apps/osb-testray/osb-testray-theme
-TESTRAY_SETUP=~/Liferay/dxp-bundle-setup
-
-SEARCH_PORTLET=~/Liferay/master/portal/modules/apps/foundation/portal-search/portal-search-web
-
-# Testray
-TESTRAY_BRANCH=7.0.x-private
 
 ############################################################
 # Functions
@@ -130,47 +112,6 @@ kt() {
 	fi
 }
 
-# Check source formatting on testray portlet and theme.
-testray_check_format() {
-	echo "\n────────────────────────────────────────────────────────────────"
-	echo "PORTLET FORMATSOURCE"
-	echo "────────────────────────────────────────────────────────────────"
-	cd $TESTRAY_PORTLET
-	ant format-source
-	cd -
-
-	echo "\n────────────────────────────────────────────────────────────────"
-	echo "THEME FORMATSOURCE"
-	echo "────────────────────────────────────────────────────────────────"
-	cd $TESTRAY_THEME
-	gradle formatSource
-	cd -
-}
-
-############################################################
-# Aliases
-############################################################
-
-# Git
-############################################################
-
-alias gcee="git checkout ee-7.0.x"
-alias gc7="git checkout 7.0.x-private"
-alias gluee="git checkout ee-7.0.x && git pull upstream ee-7.0.x"
-alias glu7="git checkout 7.0.x-private && git pull upstream 7.0.x-private"
-alias grbee="git rebase ee-7.0.x"
-alias grlee="git checkout ee-7.0.x && git pull upstream ee-7.0.x && git checkout - && git rebase ee-7.0.x"
-alias grl7="git checkout 7.0.x-private && git pull upstream 7.0.x-private && git checkout - && git rebase 7.0.x-private"
-alias grbiee="git rebase -i ee-7.0.x"
-alias gurbee="git pull upstream ee-7.0.x --rebase"
-alias gqlt="gql ~/Liferay/ee-7.0.x/portal-ee/modules/private/apps/osb-testray"
-alias grbiu7="git rebase -i 7.0.x-private"
-
-alias gcut="git checkout $TESTRAY_BRANCH"
-alias glut="git pull upstream $TESTRAY_BRANCH"
-alias grbit="git rebase -i $TESTRAY_BRANCH"
-alias grlt="git checkout $TESTRAY_BRANCH && git pull upstream $TESTRAY_BRANCH && git checkout - && git rebase $TESTRAY_BRANCH"
-
 ############################################################
 # Gradle
 ############################################################
@@ -191,12 +132,8 @@ alias ghc="gh pr --comment"
 alias ghi="gh pr --info"
 
 alias ghs="submit_pull_request"
-alias ghst="grlt && submit_pull_request $TESTRAY_BRANCH"
-alias ghstj="grlt && submit_pull_request $TESTRAY_BRANCH jonmak08"
 alias ghsm="submit_pull_request master"
-
-alias ghsj="gh pr --submit jonmak08 --title ''"
-alias ghsmeee="gh pr --submit thektan --branch ee-7.0.x --title"
+alias ghsme="gh pr --submit thektan --title ''"
 
 ############################################################
 # Liferay
@@ -211,61 +148,6 @@ alias lrmp="cd $MASTER"
 alias lrmpa="atom $MASTER"
 alias lrmps="subl $MASTER"
 alias lrmpf="open $MASTER"
-
-# Master - Plugins
-alias lrmpl="cd $MASTER_PLUGINS"
-alias lrmpla="atom $MASTER_PLUGINS"
-alias lrmpls="subl $MASTER_PLUGINS"
-alias lrmplf="open $MASTER_PLUGINS"
-
-# Master - Clean
-alias lrmc="cd $MASTER_CLEAN"
-alias lrmcf="open $MASTER_CLEAN"
-alias lrmcu="cd $MASTER_CLEAN && git pull upstream master && ant all"
-
-# EE-6.2.X - Portal
-alias lreep="cd $EE62X_PORTAL"
-alias lreepa="atom $EE62X_PORTAL"
-alias lreeps="subl $EE62X_PORTAL"
-alias lreepf="open $EE62X_PORTAL"
-
-# EE-6.2.X - Plugins
-alias lreepl="cd $EE62X_PLUGINS"
-alias lreepla="atom $EE62X_PLUGINS"
-alias lreeplf="open $EE62X_PLUGINS"
-
-# EE-6.2.X - Clean
-alias lreec="cd $EE62X_PORTAL_CLEAN"
-alias lreeco="open $EE62X_PORTAL_CLEAN"
-alias lreecu="cd $EE62X_PORTAL_CLEAN && git pull upstream ee-6.2.x && ant all"
-
-############################################################
-# Testray
-############################################################
-
-alias testray="$TESTRAY"
-
-alias tro="cd $TESTRAY"
-alias trf="open $TESTRAY"
-
-alias tra="atom $TESTRAY"
-alias trs="subl $TESTRAY"
-
-alias trd="cd $TESTRAY_PORTLET && ../../../../../gradlew clean deploy && cd -"
-alias trdt="cd $TESTRAY_THEME && ../../../../../gradlew clean deploy && cd -"
-alias trdd="cd $TESTRAY_DASHBOARD && ../../../../../../gradlew clean deploy && cd -"
-# alias trdd="cd $TESTRAY_DASHBOARD && gradle jar && mv /Users/ktan/Liferay/ee-7.0.x/portal-ee/tools/sdk/dist/com.liferay.osb.testray.dashboard.web-1.0.0.jar /Users/ktan/Liferay/ee-7.0.x/bundles/osgi/modules && cd -"
-alias trdta="cd $TESTRAY_TAGLIB && ../../../../../gradlew clean deploy && cd -"
-
-alias trda="trd && trdt"
-
-alias trcf=testray_check_format
-
-# Deploy War
-alias trdw="cd /Users/ktan/Liferay/ee-7.0.x/portal-ee/modules/private/apps/osb-testray/osb-testray-portlet && gradle war && cp /Users/ktan/Liferay/ee-7.0.x/portal-ee/tools/sdk/dist/osb-testray-portlet-7.0.10.1.war /Users/ktan/Liferay/ee-7.0.x/bundles/deploy && rm -rf /Users/ktan/Liferay/ee-7.0.x/bundles/work/osb-testray-portlet-7.0.10.1"
-
-# Test pull request
-alias testpr="python $TESTRAY_SETUP/test_pr.py"
 
 ############################################################
 # Faro
@@ -287,6 +169,20 @@ alias faros="cd $FARO && ./gradlew startDocker && docker logs --follow com-lifer
 alias farow="cd $FARO && docker logs --follow com-liferay-osb-faro-private"
 
 ############################################################
+# Search
+############################################################
+
+# Update the custom rankings dev branch
+search_update_dev() {
+	git checkout custom_rankings;
+	git fetch bryan custom_rankings;
+	git reset --hard bryan/custom_rankings;
+	git checkout -;
+}
+
+alias searchupdatedev=search_update_dev;
+
+############################################################
 # Tomcat
 ############################################################
 
@@ -294,22 +190,14 @@ alias farow="cd $FARO && docker logs --follow com-liferay-osb-faro-private"
 alias stomcat="./catalina.sh run"
 # Master
 alias lrsm="cd ~/Liferay/master/bundles/tomcat/bin && ./catalina.sh run"
-# Clean Master
-alias lrsmc="cd ~/Liferay/master-clean/bundles/tomcat/bin && ./catalina.sh run"
-# Testray
-alias lrsee="mysql.server start && cd ~/Liferay/ee-7.0.x/bundles/tomcat/bin && ./catalina.sh run"
 # Faro
 alias lrsf="mysql.server start && cd ~/Liferay/ee-7.0.x-faro/bundles/tomcat/bin && ./catalina.sh run"
-# Clean ee-6.2.x
-alias lrseec="cd ~/Liferay/ee-6.2.x-clean/bundles/tomcat/bin && ./catalina.sh run"
 
 # Find specific processes
 alias pj="ps -ef | ag java"
 alias pt="ps -ef | ag bundles/tomcat/"
 
 alias ptm='ps -ef | ag master/bundles/tomcat/ | ag java | awk '\''{print $2}'\'''
-alias ptmc='ps -ef | ag master-clean/bundles/tomcat/ | ag java | awk '\''{print $2}'\'''
-alias ptee='ps -ef | ag ee-6.2.x/bundles/tomcat/ | ag java | awk '\''{print $2}'\'''
 
 # Kill processes
 alias km="kill -9 $(ptm)"
@@ -326,12 +214,6 @@ alias killp="kill -9"
 ############################################################
 # Misc
 ############################################################
-
-# Patching Tool
-alias lpt="cd /Users/ktan/Liferay/ee-6.2.x/bundles/patching-tool && ./patching-tool.sh"
-
-# Elastic Search
-alias es="cd /Users/ktan/Liferay/testray/elasticsearch-2.3.5/bin && ./elasticsearch"
 
 # Jira
 alias jo=open_jira_ticket;
