@@ -201,13 +201,9 @@ alias ptm='ps -ef | ag master/bundles/tomcat/ | ag java | awk '\''{print $2}'\''
 
 # Kill processes
 alias km="kill -9 $(ptm)"
-alias kmc="kill -9 $(ptmc)"
-alias kee="kill -9 $(ptee)"
 
 # Kill and restart servers
 alias kmr="kill -9 $(ptm) && lrsm"
-alias kmcr="kill -9 $(ptmc) && lrsmc"
-alias keer="kill -9 $(ptee) && lrsee"
 
 alias killp="kill -9"
 
