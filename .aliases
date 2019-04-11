@@ -157,5 +157,9 @@ alias spv="spotify vol"
 alias ts="t stream timeline"
 alias tu="t update"
 
+# MPV
+# Change volume using '9' to increase and '0' to decrease.
+alias mpvyt="mpv --no-video --volume 50 --loop"
+
 # Dad Joke
 alias dadjoke="curl -H \"Accept: text/plain\" https://icanhazdadjoke.com/"
