@@ -77,13 +77,13 @@ submit_pull_request() {
 	if [ -n "$1" ] && [ -n "$2" ]; then
 		description="";
 
-		open_jira_ticket;
-
 		if [ -n "$3" ]; then
 			description="<br><br>$3";
 		fi
 
 		gh pr --branch $1 --submit $2 -D "http://issues.liferay.com/browse/$(latest_jira_ticket) $description";
+
+		open_jira_ticket;
 	fi
 }
 
