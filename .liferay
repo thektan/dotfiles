@@ -75,6 +75,8 @@ latest_jira_ticket_url() {
 # $3 string - extra descriptions
 submit_pull_request() {
 	if [ -n "$1" ] && [ -n "$2" ]; then
+		open_jira_ticket;
+
 		description="";
 
 		if [ -n "$3" ]; then
@@ -82,8 +84,6 @@ submit_pull_request() {
 		fi
 
 		gh pr --branch $1 --submit $2 -D "http://issues.liferay.com/browse/$(latest_jira_ticket) $description";
-
-		open_jira_ticket;
 	fi
 }
 
