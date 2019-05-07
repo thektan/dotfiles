@@ -28,6 +28,12 @@ Feel free to make suggestions on any improvements or functions/plugins I should 
 . ./setup.sh
 ```
 
+### VSCode Settings Sync
+
+I use the **[Settings Sync](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync)** extension for syncing settings between multiple computers.
+
+Settings get saved to a gist: https://gist.github.com/thektan/c98703a02e59b04f4e2e8de20f6885a6/964de55ad410f3b19333b91827fbc238ee318129
+
 ### Make sure macOS is using the zsh installed by brew. (Copied from [this StackOverflow article](https://stackoverflow.com/questions/17648621/how-do-i-update-zsh-to-the-latest-version).)
 
 ```bash
