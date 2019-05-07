@@ -177,6 +177,7 @@ search_update_dev() {
 	git checkout custom_rankings;
 	git fetch bryan custom_rankings;
 	git reset --hard bryan/custom_rankings;
+	git push origin custom_rankings --force;
 	git checkout -;
 }
 
