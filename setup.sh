@@ -17,7 +17,6 @@ git config --global sequence.editor rebase-editor
 git config --global core.editor "subl -n -w"
 
 # Ruby
-gem install travis -v 1.8.8 --no-rdoc --no-ri   # https://github.com/travis-ci/travis.rb#installation
 gem install t                                   # https://github.com/sferik/t
 
 # Install xcode for command line tools
