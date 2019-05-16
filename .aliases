@@ -113,8 +113,17 @@ alias grha="git reset --hard"
 alias gql="git log --pretty=format:'* %Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --date=relative"
 
 # Git Plugins
+
+# https://github.com/jwu910/check-it-out
+alias co="checkit"
+
+# https://github.com/paulirish/git-open
 alias gop="git open"
+
+# https://github.com/paulirish/git-recent
 alias gre="git recent"
+
+# https://github.com/drewbrokke/jack-cli
 alias j="jack --pretty=format:'* %Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --date=relative -n 100"
 
 ############################################################

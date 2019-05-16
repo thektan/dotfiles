@@ -9,15 +9,21 @@ yarn global add n               # https://github.com/tj/n
 yarn global add rebase-editor   # https://github.com/sjurba/rebase-editor
 yarn global add stacks-cli      # https://github.com/WeiChiaChang/stacks-cli
 
+npm install -g check-it-out     # https://github.com/jwu910/check-it-out
+npm install -g jack-cli         # https://github.com/drewbrokke/jack
+npm install -g npm-check        # https://github.com/dylang/npm-check
 npm install -g tldr             # https://github.com/tldr-pages/tldr
-npm install -g jack-cli        # https://github.com/drewbrokke/jack
-npm install -g npm-check       # https://github.com/dylang/npm-check
 
+# Git Configs
+
+# Use rebase-editor as default rebase editor.
 git config --global sequence.editor rebase-editor
+
+# Set sublime as default git editor.
 git config --global core.editor "subl -n -w"
 
 # Ruby
-gem install t                                   # https://github.com/sferik/t
+gem install t                   # https://github.com/sferik/t
 
 # Install xcode for command line tools
 xcode-select --install
@@ -33,6 +39,7 @@ echo "│                                                       │"
 echo "╰───────────────────────────────────────────────────────╯"
 
 echo "Opening links..."
+
 open https://www.wunderlist.com/download/
 open https://getpocket.com/
 open https://getcaption.co/
