@@ -818,26 +818,26 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.51372545957565308</real>
+				<real>0.46274510025978088</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.48235297203063965</real>
+				<real>0.75294119119644165</real>
 				<key>Red Component</key>
-				<real>0.3960784375667572</real>
+				<real>0.89803922176361084</real>
 			</dict>
 			<key>Ansi 12 Color</key>
 			<dict>
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.58823525905609131</real>
+				<real>0.93725490570068359</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.58039218187332153</real>
+				<real>0.62745100259780884</real>
 				<key>Red Component</key>
-				<real>0.51372557878494263</real>
+				<real>0.30980393290519714</real>
 			</dict>
 			<key>Ansi 13 Color</key>
 			<dict>
@@ -961,13 +961,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.20169290900230408</real>
+				<real>0.37005615234375</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.15713045001029968</real>
+				<real>0.32792180776596069</real>
 				<key>Red Component</key>
-				<real>0.0</real>
+				<real>0.31036585569381714</real>
 			</dict>
 			<key>Ansi 9 Color</key>
 			<dict>
@@ -1162,6 +1162,8 @@
 	<false/>
 	<key>FsTabDelay</key>
 	<real>1</real>
+	<key>HapticFeedbackForEsc</key>
+	<false/>
 	<key>HiddenAFRStrokeThickness</key>
 	<real>0.0</real>
 	<key>HiddenAdvancedFontRendering</key>
@@ -1216,6 +1218,8 @@
 	<string>6</string>
 	<key>NSNavLastRootDirectory</key>
 	<string>~/.dotfiles/iterm</string>
+	<key>NSNavLastUserSetHideExtensionButtonState</key>
+	<false/>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{712, 459}</string>
 	<key>NSNavPanelExpandedSizeForSaveMode</key>
@@ -1279,9 +1283,9 @@
 	<key>NSWindow Frame Preferences</key>
 	<string>-1278 1053 606 456 -3008 -141 3008 1669 </string>
 	<key>NSWindow Frame SUAutomaticUpdateAlert</key>
-	<string>-1268 753 616 174 -1920 0 1920 1178 </string>
+	<string>-1268 752 616 174 -1920 0 1920 1177 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
-	<string>-1160 786 400 129 -1920 0 1920 1178 </string>
+	<string>-1160 786 400 129 -1920 0 1920 1177 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>-1270 589 620 392 -1920 0 1920 1178 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
@@ -1291,7 +1295,7 @@
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>-2726 1085 592 584 -3008 0 3008 1669 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-1920 0 710 1178 -1920 0 1920 1178 </string>
+	<string>-1694 155 570 492 -1920 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>-1644 350 650 502 -3008 -141 3008 1669 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -1361,26 +1365,26 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.51372545957565308</real>
+				<real>0.46274510025978088</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.48235297203063965</real>
+				<real>0.75294119119644165</real>
 				<key>Red Component</key>
-				<real>0.3960784375667572</real>
+				<real>0.89803922176361084</real>
 			</dict>
 			<key>Ansi 12 Color</key>
 			<dict>
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.58823525905609131</real>
+				<real>0.93725490570068359</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.58039218187332153</real>
+				<real>0.62745100259780884</real>
 				<key>Red Component</key>
-				<real>0.51372557878494263</real>
+				<real>0.30980393290519714</real>
 			</dict>
 			<key>Ansi 13 Color</key>
 			<dict>
@@ -1504,13 +1508,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.20169290900230408</real>
+				<real>0.37005615234375</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.15713045001029968</real>
+				<real>0.32792180776596069</real>
 				<key>Red Component</key>
-				<real>0.0</real>
+				<real>0.31036585569381714</real>
 			</dict>
 			<key>Ansi 9 Color</key>
 			<dict>
@@ -2049,7 +2053,7 @@
 				<key>action</key>
 				<string>best editor</string>
 				<key>editor</key>
-				<string>com.sublimetext.3</string>
+				<string>com.microsoft.VSCode</string>
 				<key>text</key>
 				<string></string>
 			</dict>
@@ -2359,7 +2363,7 @@
 			<key>Use Underline Color</key>
 			<false/>
 			<key>Vertical Spacing</key>
-			<real>1.1158520801957832</real>
+			<real>1.1200000000000001</real>
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
@@ -2404,11 +2408,11 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.30391452977887662</real>
+				<real>0.30391451716423035</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.2938906685449183</real>
+				<real>0.29389065504074097</real>
 				<key>Red Component</key>
 				<real>0.875274658203125</real>
 			</dict>
@@ -2430,26 +2434,26 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.51372545957565308</real>
+				<real>0.46274510025978088</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.48235297203063965</real>
+				<real>0.75294119119644165</real>
 				<key>Red Component</key>
-				<real>0.3960784375667572</real>
+				<real>0.89803922176361084</real>
 			</dict>
 			<key>Ansi 12 Color</key>
 			<dict>
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.58823525905609131</real>
+				<real>0.93725490570068359</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.58039218187332153</real>
+				<real>0.62745100259780884</real>
 				<key>Red Component</key>
-				<real>0.51372557878494263</real>
+				<real>0.30980393290519714</real>
 			</dict>
 			<key>Ansi 13 Color</key>
 			<dict>
@@ -2573,13 +2577,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.20169290900230408</real>
+				<real>0.37005615234375</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.15713045001029968</real>
+				<real>0.32792180776596069</real>
 				<key>Red Component</key>
-				<real>0.0</real>
+				<real>0.31036585569381714</real>
 			</dict>
 			<key>Ansi 9 Color</key>
 			<dict>
@@ -3431,7 +3435,7 @@
 			<key>Use Tab Color</key>
 			<true/>
 			<key>Vertical Spacing</key>
-			<real>1.1158520801957832</real>
+			<real>1.1200000000000001</real>
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
@@ -3456,7 +3460,7 @@
 		<key>screenFrame</key>
 		<string>{{-1920, 0}, {1920, 1200}}</string>
 		<key>topLeft</key>
-		<string>{-1174, 688}</string>
+		<string>{-1364, 720}</string>
 	</dict>
 	<key>NoSyncHaveShownPromoWithId_4</key>
 	<true/>
@@ -3469,7 +3473,7 @@
 	<key>NoSyncLastTipTime</key>
 	<real>576003896.20636106</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>3</integer>
+	<integer>6</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -3482,6 +3486,25 @@
 	<true/>
 	<key>NoSyncRecordedVariables</key>
 	<dict>
+		<key>0</key>
+		<array>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>id</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string></string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+		</array>
 		<key>1</key>
 		<array>
 			<dict>
@@ -3641,6 +3664,14 @@
 				<true/>
 				<key>name</key>
 				<string>tmuxStatusLeft</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>tmuxWindowTitleEval</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -3843,6 +3874,14 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+				<string>id</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
 				<string>currentTab.currentSession.tty</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
@@ -3934,7 +3973,7 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-				<string>currentSession.path</string>
+				<string>currentSession.terminalWindowName</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -3966,7 +4005,7 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-				<string>currentSession.terminalWindowName</string>
+				<string>currentSession</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -3990,7 +4029,7 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-				<string>currentSession</string>
+				<string>currentSession.path</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -4001,6 +4040,14 @@
 				<string>window</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<false/>
+				<key>name</key>
+				<string>window</string>
+				<key>nonterminalContext</key>
+				<integer>16</integer>
 			</dict>
 			<dict>
 				<key>isTerminal</key>
@@ -4227,7 +4274,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-04-11T16:48:16Z</date>
+	<date>2019-05-31T00:02:46Z</date>
 	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -4245,6 +4292,8 @@
 	<key>ShowPaneTitles</key>
 	<true/>
 	<key>SmartPlacement</key>
+	<false/>
+	<key>SoundForEsc</key>
 	<false/>
 	<key>SplitPaneDimmingAmount</key>
 	<real>0.31302914450354613</real>
@@ -4284,6 +4333,8 @@
 	<true/>
 	<key>UseLionStyleFullscreen</key>
 	<true/>
+	<key>VisualIndicatorForEsc</key>
+	<false/>
 	<key>WebKitDefaultFontSize</key>
 	<integer>11</integer>
 	<key>WebKitStandardFont</key>
@@ -8902,7 +8953,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.3.0beta2</string>
+	<string>3.3.0beta9</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
