@@ -173,15 +173,18 @@ alias farow="cd $FARO && docker logs --follow com-liferay-osb-faro-private"
 ############################################################
 
 # Update the custom rankings dev branch
-search_update_dev() {
-	git checkout custom_rankings;
-	git fetch bryan custom_rankings;
-	git reset --hard bryan/custom_rankings;
-	git push origin custom_rankings --force;
+update_search_dev() {
+	local branch=LPS-89524_Search_Tuning_Result_Rankings;
+	local remote=andre;
+
+	git checkout $branch;
+	git fetch $remote $branch;
+	git reset --hard $remote/$branch;
+	git push origin $branch --force;
 	git checkout -;
 }
 
-alias searchupdatedev=search_update_dev;
+alias updatesearchdev=update_search_dev;
 
 ############################################################
 # Tomcat
