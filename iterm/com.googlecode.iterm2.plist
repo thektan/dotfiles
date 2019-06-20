@@ -1295,7 +1295,7 @@
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>-2726 1085 592 584 -3008 0 3008 1669 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-1694 155 570 492 -1920 0 1920 1177 </string>
+	<string>-1920 0 710 1177 -1920 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>-1644 350 650 502 -3008 -141 3008 1669 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -2421,13 +2421,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.45490196347236633</real>
+				<real>0.45490196078431372</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.65098041296005249</real>
+				<real>0.65098039215686276</real>
 				<key>Red Component</key>
-				<real>0.30196079611778259</real>
+				<real>0.30196078431372547</real>
 			</dict>
 			<key>Ansi 11 Color</key>
 			<dict>
@@ -4274,7 +4274,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-05-31T00:02:46Z</date>
+	<date>2019-06-20T00:53:51Z</date>
 	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
 	<key>SavePasteHistory</key>
