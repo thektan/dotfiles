@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Install xcode for command line tools
+xcode-select --install
+
 # Run brew and brew cask
 ./brew.sh
 ./brew-cask.sh
@@ -24,9 +27,6 @@ git config --global core.editor "subl -n -w"
 
 # Ruby
 gem install t                   # https://github.com/sferik/t
-
-# Install xcode for command line tools
-xcode-select --install
 
 # Other apps to install
 echo "╭───────────────────────────────────────────────────────╮"
