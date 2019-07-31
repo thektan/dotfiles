@@ -194,6 +194,8 @@ alias updatesearchdev=update_search_dev;
 alias stomcat="./catalina.sh run"
 # Master
 alias lrsm="cd ~/Liferay/master/bundles/tomcat/bin && ./catalina.sh run"
+# Master Private
+alias lrsmp="cd ~/Liferay/master-private/bundles/tomcat/bin && ./catalina.sh run"
 # Faro
 alias lrsf="mysql.server start && cd ~/Liferay/ee-7.0.x-faro/bundles/tomcat/bin && ./catalina.sh run"
 
