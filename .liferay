@@ -123,6 +123,11 @@ alias grcd3="../../../gradlew clean deploy"
 alias grcd4="../../../../gradlew clean deploy"
 alias grcd5="../../../../../gradlew clean deploy"
 
+alias gwfs="gradlew formatSource"
+
+# Update master private
+alias abwd="ant -f build-working-dir.xml"
+
 ############################################################
 # Node GH
 ############################################################
@@ -140,10 +145,6 @@ alias ghsme="gh pr --submit thektan --title ''"
 ############################################################
 # Liferay
 ############################################################
-
-# Check all source formatting in current directories
-alias csf="find . | xargs check_sf -q"
-alias sf="gradlew formatSource"
 
 # Master - Portal
 alias lrmp="cd $MASTER"
@@ -195,7 +196,7 @@ alias updatesearchdev=update_search_dev;
 # Start Tomcat server
 alias stomcat="./catalina.sh run"
 # Master
-alias lrsm="cd ~/Liferay/master/bundles/tomcat/bin && ./catalina.sh run"
+alias lrsm="cd ~/Liferay/master/bundles/tomcat-9.0.17/bin && ./catalina.sh run"
 # Master Private
 alias lrsmp="cd ~/Liferay/master-private/bundles/tomcat/bin && ./catalina.sh run"
 # Faro
