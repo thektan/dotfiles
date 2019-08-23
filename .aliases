@@ -75,6 +75,7 @@ alias ys="yarn start"
 alias ysd="yarn start-dev"
 alias yt="yarn test"
 alias yw="yarn watch"
+alias yif="yarn install --force"
 
 # Start server in current directory
 alias pserver="python -m SimpleHTTPServer 8000"
