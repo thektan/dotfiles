@@ -60,3 +60,6 @@ export PATH="$HOME/.yarn/bin:$PATH"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
+# Bat config path
+export BAT_CONFIG_PATH="$DOTFILES/bat/bat.conf"
