@@ -169,20 +169,20 @@ alias lrmpf="open $MASTER"
 # Faro
 ############################################################
 
-FARO=~/Liferay/ee-7.0.x-faro/portal-ee/modules/private/apps/osb-faro
-FARO_WEB=~/Liferay/ee-7.0.x-faro/portal-ee/modules/private/apps/osb-faro/osb-faro-web
-FARO_FUNCTIONAL_TEST=~/Liferay/ee-7.0.x-faro/portal-ee/modules/private/apps/osb-faro/osb-faro-functional-test
+# FARO=~/Liferay/ee-7.0.x-faro/portal-ee/modules/private/apps/osb-faro
+# FARO_WEB=~/Liferay/ee-7.0.x-faro/portal-ee/modules/private/apps/osb-faro/osb-faro-web
+# FARO_FUNCTIONAL_TEST=~/Liferay/ee-7.0.x-faro/portal-ee/modules/private/apps/osb-faro/osb-faro-functional-test
 
-alias farou="git checkout 7.0.x-private"
-alias faroup="git checkout 7.0.x-private && git pull upstream 7.0.x-private && git push origin 7.0.x-private"
-alias faroda="cd $FARO && ../../../../gradlew clean deploy && cd -"
-alias farot="cd $FARO && ./gradlew npmRunFormat && ./gradlew npmRunTest && ./gradlew formatSource && cd -"
-alias faroti="cd $FARO_FUNCTIONAL_TEST && ../gradlew testIntegration && cd -"
+# alias farou="git checkout 7.0.x-private"
+# alias faroup="git checkout 7.0.x-private && git pull upstream 7.0.x-private && git push origin 7.0.x-private"
+# alias faroda="cd $FARO && ../../../../gradlew clean deploy && cd -"
+# alias farot="cd $FARO && ./gradlew npmRunFormat && ./gradlew npmRunTest && ./gradlew formatSource && cd -"
+# alias faroti="cd $FARO_FUNCTIONAL_TEST && ../gradlew testIntegration && cd -"
 
-alias farod="cd $FARO_WEB && ../gradlew clean deploy && cd -"
-alias farons="cd $FARO_WEB && ../gradlew npmRunStart && cd -"
-alias faros="cd $FARO && ./gradlew startDocker && docker logs --follow com-liferay-osb-faro-private"
-alias farow="cd $FARO && docker logs --follow com-liferay-osb-faro-private"
+# alias farod="cd $FARO_WEB && ../gradlew clean deploy && cd -"
+# alias farons="cd $FARO_WEB && ../gradlew npmRunStart && cd -"
+# alias faros="cd $FARO && ./gradlew startDocker && docker logs --follow com-liferay-osb-faro-private"
+# alias farow="cd $FARO && docker logs --follow com-liferay-osb-faro-private"
 
 ############################################################
 # Search
