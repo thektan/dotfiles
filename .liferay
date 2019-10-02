@@ -90,27 +90,11 @@ submit_pull_request() {
 # Kill tomcat server
 kt() {
 	if [ -n "$1" ]; then
-		local branchName="master"
+		echo "Killing process for branch: $1\n"
 
-		if [[ "$1" == "6" ]]; then
-			branchName="ee-6.2.x"
-		elif [[ "$1" == "7" ]]; then
-			branchName="ee-7.0.x"
-		elif [[ "$1" == "f" ]]; then
-			branchName="ee-7.0.x-faro"
-		elif [[ "$1" == "m" ]]; then
-			branchName="master"
-		elif [[ "$1" == "mp" ]]; then
-			branchName="master-private"
-		else
-			echo "Accepted values: [6|7|f|m|mp]";
-		fi
-
-		echo "Killing process for branch: $branchName\n"
-
-		pkill -9 -f $branchName/bundles/tomcat;
+		pkill -9 -f $1/bundles/tomcat;
 	else
-		echo "Usage: kt [6|7|f|m|mp]\n"
+		echo "Usage: kt branchName"
 	fi
 }
 
@@ -123,7 +107,7 @@ st() {
 
 		/$tomcatPath/catalina.sh run;
 	else
-		echo "Please provide a branch name like: st master"
+		echo "Usage: st master"
 	fi
 }
 
