@@ -183,6 +183,7 @@ function update_global_packages() {
 	# 	npm -g install "$package"
 	# done
 
+	zplug update;
 	npm-check -gu;
 
 	echo "${green}✓ Update Complete! 🎉 ${reset}";
