@@ -57,9 +57,11 @@ zplug load
 
 # Misc path bindings
 export PATH="$HOME/.yarn/bin:$PATH"
+export BAT_CONFIG_PATH="$DOTFILES/bat/bat.conf"
+
+# Ruby PATH
+export PATH="/usr/local/opt/ruby/bin:$PATH"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 
-# Bat config path
-export BAT_CONFIG_PATH="$DOTFILES/bat/bat.conf"
