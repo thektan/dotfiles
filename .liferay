@@ -101,7 +101,7 @@ kt() {
 # Start tomcat server
 st() {
 	if [ -n "$1" ]; then
-		local tomcatPath="$HOME/Liferay/$1/bundles/tomcat-9.0.17/bin";
+		local tomcatPath="$HOME/Liferay/liferay-portal-ee/$1/bundles/tomcat-9.0.17/bin";
 
 		echo "Starting tomcat from: $tomcatPath\n"
 
