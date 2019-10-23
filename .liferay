@@ -100,14 +100,17 @@ kt() {
 
 # Start tomcat server
 st() {
-	if [ -n "$1" ]; then
-		local tomcatPath="$HOME/Liferay/liferay-portal-ee/$1/bundles/tomcat-9.0.17/bin";
+	if [ -n "$1" ] && [ -n "$2" ]; then
+		local tomcatPath="$HOME/Liferay/$1/$2/bundles/tomcat-9.0.17/bin";
+
+		cd $tomcatPath;
 
 		echo "Starting tomcat from: $tomcatPath\n"
 
 		/$tomcatPath/catalina.sh run;
 	else
-		echo "Usage: st master"
+		echo "Usage: st [repo] [branch]"
+		echo "Example: st liferay-portal master"
 	fi
 }
 
