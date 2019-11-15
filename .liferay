@@ -72,18 +72,23 @@ latest_jira_ticket_url() {
 # Submit a pull request
 # $1 branch name - the branch to send the pull request to
 # $2 username - pull request recipient
-# $3 string - extra descriptions
 submit_pull_request() {
 	if [ -n "$1" ] && [ -n "$2" ]; then
 		open_jira_ticket;
 
-		description="";
+		ticket=$(latest_jira_ticket);
 
-		if [ -n "$3" ]; then
-			description="<br><br>$3";
-		fi
+		title="$ticket - $(curl -s "https://issues.liferay.com/rest/api/2/issue/$ticket" | jq -r ".fields.summary")";
 
-		gh pr --branch $1 --submit $2 -D "http://issues.liferay.com/browse/$(latest_jira_ticket) $description";
+		echo "http://issues.liferay.com/browse/$(latest_jira_ticket)\n\n" > TMP_GITHUB_MESSAGE.txt
+
+		subl TMP_GITHUB_MESSAGE.txt -nw;
+
+		description="$(cat TMP_GITHUB_MESSAGE.txt)";
+
+		gh pr --branch $1 --submit $2 --title $title --description $description;
+
+		trash TMP_GITHUB_MESSAGE.txt;
 	fi
 }
 
