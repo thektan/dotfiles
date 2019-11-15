@@ -145,7 +145,7 @@ alias ghi="gh pr --info"
 
 alias ghs="submit_pull_request"
 alias ghsm="submit_pull_request master"
-alias ghsme="gh pr --submit thektan --title ''"
+alias ghsme="submit_pull_request master thektan"
 
 ############################################################
 # Liferay
