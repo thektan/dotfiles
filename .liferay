@@ -181,3 +181,7 @@ alias killp="kill -9"
 
 # Jira
 alias jo=open_jira_ticket;
+
+# IntelliJ Setup
+# @see https://github.com/holatuwol/liferay-intellij#setup-instructions
+alias ij="/Users/ktan/Liferay/liferay-intellij/intellij '$@'"
