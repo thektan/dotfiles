@@ -112,7 +112,7 @@ st() {
 
 		echo "Starting tomcat from: $tomcatPath\n"
 
-		/$tomcatPath/catalina.sh run;
+		/$tomcatPath/catalina.sh jpda run;
 	else
 		echo "Usage: st [repo] [branch]"
 		echo "Example: st liferay-portal master"
