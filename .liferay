@@ -147,6 +147,16 @@ alias ghs="submit_pull_request"
 alias ghsm="submit_pull_request master"
 alias ghsme="submit_pull_request master thektan"
 
+ghstest() {
+	if [ -n "$1" ]; then
+		gh pr --user thektan --repo liferay-portal $1 --comment "ci:test:sf"
+		gh pr --user thektan --repo liferay-portal $1 --comment "ci:test:search"
+	else
+		echo "Usage: ghstest {pull request #}"
+		echo "Example: ghstest 0"
+	fi
+}
+
 ############################################################
 # Liferay
 ############################################################
