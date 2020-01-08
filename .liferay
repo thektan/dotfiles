@@ -25,13 +25,6 @@ export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)
 export JAVA_HOME=$JAVA_8_HOME
 
 ############################################################
-# Exports
-############################################################
-
-# Directories
-MASTER=~/Liferay/master/portal
-
-############################################################
 # Functions
 ############################################################
 
@@ -166,16 +159,6 @@ ghstest() {
 		echo "Example: ghstest 0"
 	fi
 }
-
-############################################################
-# Liferay
-############################################################
-
-# Master - Portal
-alias lrmp="cd $MASTER"
-alias lrmpa="atom $MASTER"
-alias lrmps="subl $MASTER"
-alias lrmpf="open $MASTER"
 
 ############################################################
 # Tomcat
