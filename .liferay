@@ -84,6 +84,10 @@ submit_pull_request() {
 
 		title="$ticket - $(curl -s "https://issues.liferay.com/rest/api/2/issue/$ticket" | jq -r ".fields.summary")";
 
+		if [ -z "$title" ]; then
+			title=""
+		fi;
+
 		echo "http://issues.liferay.com/browse/$(latest_jira_ticket)\n\n" > TMP_GITHUB_MESSAGE.txt
 
 		subl TMP_GITHUB_MESSAGE.txt -nw;
@@ -103,6 +107,7 @@ kt() {
 
 		pkill -9 -f $1/bundles/tomcat;
 	else
+		echo "Kills a tomcat server."
 		echo "Usage: kt branchName"
 	fi
 }
@@ -118,6 +123,7 @@ st() {
 
 		/$tomcatPath/catalina.sh jpda run;
 	else
+		echo "Starts a tomcat server from the specified [repo]/[branch] directory."
 		echo "Usage: st [repo] [branch]"
 		echo "Example: st liferay-portal master"
 	fi
