@@ -77,7 +77,7 @@ submit_pull_request() {
 
 		title="$ticket - $(curl -s "https://issues.liferay.com/rest/api/2/issue/$ticket" | jq -r ".fields.summary")";
 
-		if [ -z "$title" ]; then
+		if [ -z "$title"] || [$title -eq "null"]; then
 			title=""
 		fi;
 
@@ -152,8 +152,8 @@ alias ghsme="submit_pull_request master thektan"
 
 ghstest() {
 	if [ -n "$1" ]; then
-		gh pr --user thektan --repo liferay-portal $1 --comment "ci:test:sf"
-		gh pr --user thektan --repo liferay-portal $1 --comment "ci:test:search"
+		gh pr --user thektan --repo liferay-portal $1 --comment "ci:test:sf:norebase"
+		gh pr --user thektan --repo liferay-portal $1 --comment "ci:test:search:norebase"
 	else
 		echo "Usage: ghstest {pull request #}"
 		echo "Example: ghstest 0"
@@ -187,4 +187,4 @@ alias jo=open_jira_ticket;
 
 # IntelliJ Setup
 # @see https://github.com/holatuwol/liferay-intellij#setup-instructions
-alias ij="/Users/ktan/Liferay/liferay-intellij/intellij '$@'"
+alias ij='/Users/ktan/Liferay/liferay-intellij/intellij "$@"'
