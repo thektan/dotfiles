@@ -71,13 +71,14 @@ latest_jira_ticket_url() {
 # $2 username - pull request recipient
 submit_pull_request() {
 	if [ -n "$1" ] && [ -n "$2" ]; then
-		open_jira_ticket;
-
+		# Gather information
 		ticket=$(latest_jira_ticket);
 
 		title="$ticket - $(curl -s "https://issues.liferay.com/rest/api/2/issue/$ticket" | jq -r ".fields.summary")";
 
-		if [ -z "$title"] || ["$title" -eq "null"]; then
+		# -z = string is null and has zero length
+		# @see https://tldp.org/LDP/abs/html/comparison-ops.html
+		if [ -z "$title" ] || [ "$title" = "null" ]; then
 			title=""
 		fi;
 
@@ -87,8 +88,12 @@ submit_pull_request() {
 
 		description="$(cat TMP_GITHUB_MESSAGE.txt)";
 
+		# Initiate processes
+		open_jira_ticket;
+
 		gh pr --branch $1 --submit $2 --title $title --description $description;
 
+		# Clean-up
 		rm TMP_GITHUB_MESSAGE.txt;
 	fi
 }
