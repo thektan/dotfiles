@@ -64,7 +64,3 @@ export PATH="/usr/local/opt/ruby/bin:$PATH"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
-
-# Add br command to launch Broot
-# https://dystroy.org/broot/documentation/usage/#launch-broot
-source /Users/ktan/Library/Preferences/org.dystroy.broot/launcher/bash/br
