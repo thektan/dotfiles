@@ -66,3 +66,4 @@ export PATH="/usr/local/opt/ruby/bin:$PATH"
 export PATH="$PATH:$HOME/.rvm/bin"
 
 export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
+export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
