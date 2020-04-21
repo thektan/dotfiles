@@ -78,7 +78,7 @@ alias yw="yarn watch"
 alias yif="yarn install --force"
 
 # Start server in current directory
-alias pserver="python -m SimpleHTTPServer 8000"
+alias pserver="python3 -m http.server"
 
 ############################################################
 # Database                                                 #
