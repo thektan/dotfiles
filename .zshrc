@@ -65,5 +65,9 @@ export PATH="/usr/local/opt/ruby/bin:$PATH"
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 
+# For compatability with gnu find and sed.
+# Required after running:
+# $ brew install findutils
+# $ brew install gnu-sed
 export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
