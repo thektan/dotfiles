@@ -18,11 +18,12 @@ export GRADLE_OPTS="-Xmx6g"
 # Java                                                     #
 ############################################################
 
-export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)
-# export JAVA_7_HOME=$(/usr/libexec/java_home -v1.7)
+export JAVA_HOME_8=$(/usr/libexec/java_home -v1.8)
+export JAVA_HOME_7=$(/usr/libexec/java_home -v1.7)
+export JAVA_HOME_14=$(/usr/libexec/java_home -v14)
 
 # Default java8
-export JAVA_HOME=$JAVA_8_HOME
+export JAVA_HOME=$JAVA_HOME_8
 
 ############################################################
 # Functions
@@ -193,3 +194,7 @@ alias jo=open_jira_ticket;
 # IntelliJ Setup
 # @see https://github.com/holatuwol/liferay-intellij#setup-instructions
 alias ij='/Users/ktan/Liferay/liferay-intellij/intellij "$@"'
+
+# Liferay Learn
+alias build-learn="cd /Users/ktan/Liferay/liferay-learn/site/ && ./build_site.sh && cd -"
+alias build-learn-cloud="cd /Users/ktan/Liferay/liferay-learn/site/ && ./build_site.sh dxp-cloud && cd -"
