@@ -105,6 +105,18 @@ function filesort() {
 	fi;
 }
 
+# Github fetch remote branch.
+function ghfetch() {
+	if [ -n "$1" ] && [ -n "$2" ]; then
+		git fetch --no-tags $1 pull/$2/head:$1-pr-$2
+
+		git checkout $1-pr-$2
+	else
+		echo "Usage: ghfetch {repo} {pr}"
+		echo "Example: ghfetch liferay-search 1"
+	fi
+}
+
 # Update dotfiles
 function update_dotfiles() {
 	cd $DOTFILES;
