@@ -3,6 +3,10 @@
 # Install xcode for command line tools
 xcode-select --install
 
+# Give permission to run following files
+sudo chmod 755 ./brew.sh
+sudo chmod 755 ./brew-cask.sh
+
 # Run brew and brew cask
 ./brew.sh
 ./brew-cask.sh
@@ -32,7 +36,7 @@ echo "│      • https://www.jetbrains.com/idea/                │"
 echo "│                                                       │"
 echo "╰───────────────────────────────────────────────────────╯"
 
-export DOTFILES_HOME=${HOME}/.dotfiles
+export DOTFILES_HOME=${HOME}/Developer/dotfiles
 
 # Create symlinks
 ln -s ${DOTFILES_HOME}/.zshrc ~/.zshrc
