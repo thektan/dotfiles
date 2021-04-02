@@ -1,40 +1,40 @@
 #!/usr/bin/env bash
 
 # System
-brew cask install 1password
-brew cask install dropbox
-# brew cask install google-backup-and-sync
-brew cask install private-internet-access
+brew install --cask 1password
+brew install --cask dropbox
+# brew install --cask google-backup-and-sync
+brew install --cask private-internet-access
 
-brew cask install google-chrome
-brew cask install firefox
+brew install --cask google-chrome
+brew install --cask firefox
 
 # Tools
-brew cask install bettertouchtool
-brew cask install istat-menus
-brew cask install karabiner-elements
-brew cask install kap
-brew cask install notion
-brew cask install transmission
-brew cask install the-unarchiver
-brew cask install vlc
+brew install --cask bettertouchtool
+brew install --cask istat-menus
+brew install --cask karabiner-elements
+brew install --cask kap
+brew install --cask notion
+brew install --cask transmission
+brew install --cask the-unarchiver
+brew install --cask vlc
 
 # Social
-brew cask install discord
-brew cask install spotify
-brew cask install spotmenu # https://github.com/kmikiy/SpotMenu
+brew install --cask discord
+brew install --cask spotify
+brew install --cask spotmenu # https://github.com/kmikiy/SpotMenu
 
 # Dev Apps
-brew cask install devdocs
-brew cask install iterm2
-brew cask install github-desktop
-brew cask install sublime-text
-brew cask install sequel-pro
-brew cask install visual-studio-code
+brew install --cask devdocs
+brew install --cask iterm2
+brew install --cask github-desktop
+brew install --cask sublime-text
+brew install --cask sequel-pro
+brew install --cask visual-studio-code
 
 # Design Apps
-brew cask install figma
+brew install --cask figma
 
 # Quick Look Plugins (https://github.com/sindresorhus/quick-look-plugins)
-brew cask install betterzip
-brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlimagesize webpquicklook suspicious-package quicklookase qlvideo
+brew install --cask betterzip
+brew install --cask qlcolorcode qlstephen qlmarkdown quicklook-json qlimagesize webpquicklook suspicious-package quicklookase qlvideo
