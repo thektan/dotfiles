@@ -121,9 +121,6 @@ alias co="checkit"
 # https://github.com/paulirish/git-open
 alias gop="git open"
 
-# https://github.com/paulirish/git-recent
-alias gre="git recent"
-
 # https://github.com/drewbrokke/jack-cli
 alias j="jack --pretty=format:'* %Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --date=relative -n 100"
 
@@ -133,7 +130,7 @@ alias j="jack --pretty=format:'* %Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(
 
 # Get macOS Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
 # @source https://github.com/mathiasbynens/dotfiles/blob/master/.aliases#L56
-alias updateall='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update; sudo gem cleanup'
+# alias updateall='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update; sudo gem cleanup'
 
 # Get IP Address
 # @source http://stackoverflow.com/a/13322549/5092054
@@ -154,22 +151,9 @@ alias photosort="/Users/ktan/Projects/photosort/photosort.sh"
 # Apps
 ############################################################
 
-# Spotify
-alias sp="spotify"
-alias spn="spotify next"
-alias spb="spotify prev"
-alias spp="spotify play && spotify status"
-alias sps="spotify pause"
-alias spv="spotify vol"
-
-# Twitter
-# https://github.com/sferik/t
-alias ts="t stream timeline"
-alias tu="t update"
-
 # MPV
 # Change volume using '9' to increase and '0' to decrease.
-alias mpvyt="mpv --no-video --volume 50 --loop"
+# alias mpvyt="mpv --no-video --volume 50 --loop"
 
 # Dad Joke
 alias dadjoke="curl -H \"Accept: text/plain\" https://icanhazdadjoke.com/"

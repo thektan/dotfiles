@@ -10,11 +10,9 @@ xcode-select --install
 # Install global npm packages
 yarn global add n               # https://github.com/tj/n
 yarn global add rebase-editor   # https://github.com/sjurba/rebase-editor
-yarn global add stacks-cli      # https://github.com/WeiChiaChang/stacks-cli
 
 npm install -g check-it-out     # https://github.com/jwu910/check-it-out
 npm install -g jack-cli         # https://github.com/drewbrokke/jack
-npm install -g npm-check        # https://github.com/dylang/npm-check
 npm install -g tldr             # https://github.com/tldr-pages/tldr
 
 # Git Configs
@@ -25,24 +23,14 @@ git config --global sequence.editor rebase-editor
 # Set sublime as default git editor.
 git config --global core.editor "subl -n -w"
 
-# Ruby
-gem install t                   # https://github.com/sferik/t
-
 # Other apps to install
 echo "╭───────────────────────────────────────────────────────╮"
 echo "│                                                       │"
-echo "│    The following will need to be install manually:    │"
-echo "│      • https://www.wunderlist.com/download/           │"
-echo "│      • https://getpocket.com/                         │"
-echo "│      • https://getcaption.co/                         │"
+echo "│    Other apps to install manually:                    │"
+echo "│      • https://eagle.cool/                            │"
+echo "│      • https://www.jetbrains.com/idea/                │"
 echo "│                                                       │"
 echo "╰───────────────────────────────────────────────────────╯"
-
-echo "Opening links..."
-
-open https://www.wunderlist.com/download/
-open https://getpocket.com/
-open https://getcaption.co/
 
 export DOTFILES_HOME=${HOME}/.dotfiles
 

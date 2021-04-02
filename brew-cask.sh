@@ -3,7 +3,7 @@
 # System
 brew cask install 1password
 brew cask install dropbox
-brew cask install google-backup-and-sync
+# brew cask install google-backup-and-sync
 brew cask install private-internet-access
 
 brew cask install google-chrome
@@ -20,13 +20,11 @@ brew cask install the-unarchiver
 brew cask install vlc
 
 # Social
-brew cask install caprine # https://github.com/sindresorhus/caprine
 brew cask install discord
 brew cask install spotify
 brew cask install spotmenu # https://github.com/kmikiy/SpotMenu
 
 # Dev Apps
-brew cask install atom
 brew cask install devdocs
 brew cask install iterm2
 brew cask install github-desktop
