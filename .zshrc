@@ -33,7 +33,7 @@ PURE_PROMPT_SYMBOL=➜
 export DOTFILES=$HOME/Developer/dotfiles
 export DOTFILES_LOGS_PATH=$DOTFILES/logs
 
-[ -f $DOTFILES/.fzf.zsh ] && source $DOTFILES/.fzf.zsh
+# [ -f $DOTFILES/.fzf.zsh ] && source $DOTFILES/.fzf.zsh
 
 [ -f $DOTFILES/.aliases ] && source $DOTFILES/.aliases
 [ -f $DOTFILES/.functions ] && source $DOTFILES/.functions

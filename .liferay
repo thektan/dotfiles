@@ -19,8 +19,8 @@ export GRADLE_OPTS="-Xmx6g"
 ############################################################
 
 export JAVA_HOME_8=$(/usr/libexec/java_home -v1.8)
-export JAVA_HOME_7=$(/usr/libexec/java_home -v1.7)
-export JAVA_HOME_14=$(/usr/libexec/java_home -v14)
+# export JAVA_HOME_7=$(/usr/libexec/java_home -v1.7)
+# export JAVA_HOME_14=$(/usr/libexec/java_home -v14)
 
 # Default java8
 export JAVA_HOME=$JAVA_HOME_8
@@ -171,10 +171,10 @@ ghstest() {
 ############################################################
 
 # Find specific processes
-alias pj="ps -ef | ag java"
-alias pt="ps -ef | ag bundles/tomcat/"
+alias pj="ps -ef | rg java"
+alias pt="ps -ef | rg bundles/tomcat/"
 
-alias ptm='ps -ef | ag master/bundles/tomcat/ | ag java | awk '\''{print $2}'\'''
+alias ptm='ps -ef | rg master/bundles/tomcat/ | rg java | awk '\''{print $2}'\'''
 
 # Kill processes
 alias km="kill -9 $(ptm)"
