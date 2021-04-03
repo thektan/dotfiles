@@ -29,6 +29,7 @@ echo "│                                                       │"
 echo "│    Other apps to install manually:                    │"
 echo "│      • https://eagle.cool/                            │"
 echo "│      • https://www.jetbrains.com/idea/                │"
+echo "│      • https://todoist.com/downloads/mac?lang=en      │"
 echo "│                                                       │"
 echo "╰───────────────────────────────────────────────────────╯"
 

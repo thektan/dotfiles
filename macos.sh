@@ -71,7 +71,7 @@ defaults write com.apple.Safari NSUserKeyEquivalents -dict-add 'Email Link to Th
 ###############################################################################
 
 # Disable “natural” (Lion-style) scrolling
-defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
+# defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 
 ###############################################################################
 # Finder                                                                      #
@@ -134,8 +134,8 @@ defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 # Change minimize/maximize window effect
 defaults write com.apple.dock mineffect -string "scale"
 
-# Set the icon size of Dock items to 28px
-defaults write com.apple.dock tilesize -int 28
+# Set the icon size of Dock items to 48px
+defaults write com.apple.dock tilesize -int 48
 
 # Remove the auto-hiding Dock delay
 defaults write com.apple.dock autohide-delay -float 0
@@ -144,7 +144,7 @@ defaults write com.apple.dock autohide-delay -float 0
 defaults write com.apple.dock autohide-time-modifier -float 0
 
 # Add space to dock
-#defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}'
+# defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}'
 
 ###############################################################################
 # Screenshots                                                                 #

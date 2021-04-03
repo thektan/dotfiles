@@ -3,13 +3,14 @@
 # System
 brew install --cask 1password
 brew install --cask dropbox
-# brew install --cask google-backup-and-sync
+brew install --cask google-backup-and-sync
 brew install --cask private-internet-access
 
 brew install --cask google-chrome
 brew install --cask firefox
 
 # Tools
+brew install --cask alfred
 brew install --cask bettertouchtool
 brew install --cask istat-menus
 brew install --cask karabiner-elements
@@ -20,6 +21,7 @@ brew install --cask the-unarchiver
 brew install --cask vlc
 
 # Social
+brew install --cask slack
 brew install --cask discord
 brew install --cask spotify
 brew install --cask spotmenu # https://github.com/kmikiy/SpotMenu
@@ -27,7 +29,7 @@ brew install --cask spotmenu # https://github.com/kmikiy/SpotMenu
 # Dev Apps
 brew install --cask devdocs
 brew install --cask iterm2
-brew install --cask github-desktop
+brew install --cask github
 brew install --cask sublime-text
 brew install --cask sequel-pro
 brew install --cask visual-studio-code
