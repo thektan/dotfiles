@@ -170,7 +170,3 @@ alias jo=open_jira_ticket;
 # IntelliJ Setup
 # @see https://github.com/holatuwol/liferay-intellij#setup-instructions
 alias ij='/Users/ktan/Developer/liferay-intellij/intellij "$@"'
-
-# Liferay Learn
-# alias build-learn="cd /Users/ktan/Liferay/liferay-learn/site/ && ./build_site.sh && cd -"
-# alias build-learn-cloud="cd /Users/ktan/Liferay/liferay-learn/site/ && ./build_site.sh dxp-cloud && cd -"
