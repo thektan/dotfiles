@@ -143,30 +143,6 @@ alias gwfs="gradlew formatSource"
 alias abwd="ant -f build-working-dir.xml"
 
 ############################################################
-# Node GH
-############################################################
-
-alias ghp="gh pr"
-
-alias ghb="gh pr --browser"
-alias ghc="gh pr --comment"
-alias ghi="gh pr --info"
-
-alias ghs="submit_pull_request"
-alias ghsm="submit_pull_request master"
-alias ghsme="submit_pull_request master thektan"
-
-ghstest() {
-	if [ -n "$1" ]; then
-		gh pr --user thektan --repo liferay-portal $1 --comment "ci:test:sf:norebase"
-		gh pr --user thektan --repo liferay-portal $1 --comment "ci:test:search:norebase"
-	else
-		echo "Usage: ghstest {pull request #}"
-		echo "Example: ghstest 0"
-	fi
-}
-
-############################################################
 # Tomcat
 ############################################################
 
@@ -193,8 +169,8 @@ alias jo=open_jira_ticket;
 
 # IntelliJ Setup
 # @see https://github.com/holatuwol/liferay-intellij#setup-instructions
-alias ij='/Users/ktan/Liferay/liferay-intellij/intellij "$@"'
+alias ij='/Users/ktan/Developer/liferay-intellij/intellij "$@"'
 
 # Liferay Learn
-alias build-learn="cd /Users/ktan/Liferay/liferay-learn/site/ && ./build_site.sh && cd -"
-alias build-learn-cloud="cd /Users/ktan/Liferay/liferay-learn/site/ && ./build_site.sh dxp-cloud && cd -"
+# alias build-learn="cd /Users/ktan/Liferay/liferay-learn/site/ && ./build_site.sh && cd -"
+# alias build-learn-cloud="cd /Users/ktan/Liferay/liferay-learn/site/ && ./build_site.sh dxp-cloud && cd -"
