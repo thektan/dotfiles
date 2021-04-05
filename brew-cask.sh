@@ -31,7 +31,6 @@ brew install --cask devdocs
 brew install --cask iterm2
 brew install --cask github
 brew install --cask sublime-text
-brew install --cask sequel-pro
 brew install --cask visual-studio-code
 
 # Design Apps
