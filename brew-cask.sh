@@ -2,7 +2,6 @@
 
 # System
 brew install --cask 1password
-brew install --cask dropbox
 brew install --cask google-backup-and-sync
 brew install --cask private-internet-access
 
@@ -11,6 +10,7 @@ brew install --cask firefox
 
 # Tools
 brew install --cask alfred
+brew install --cask appcleaner
 brew install --cask bettertouchtool
 brew install --cask istat-menus
 brew install --cask karabiner-elements
