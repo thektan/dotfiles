@@ -1,8 +1,6 @@
 # My Configuration Files
 
-Feel free to make suggestions on any improvements or functions/plugins I should add/remove in my system!
-
-## Screenshots of my environment
+## Screenshots
 
 **iTerm**
 
@@ -12,46 +10,14 @@ Feel free to make suggestions on any improvements or functions/plugins I should 
 
 ![Screenshot of terminal](/assets/vscode.png)
 
-## Setup
+## Steps
 
 1. Install [Homebrew](https://brew.sh/)
-
-```bash
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-```
-
-1. Point iTerm2 preferences file to `$HOME/.dotfiles/iterm/`.
-
-1. Run `setup.sh` to install node packages, gems, and create symlinks to dotfiles. See [setup.sh](https://github.com/thektan/dotfiles/blob/master/setup.sh) for full details on commands called.
-
-```bash
-. ./setup.sh
-```
-
-### VSCode Settings Sync
-
-I use the **[Settings Sync](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync)** extension for syncing settings between multiple computers.
-
-Settings get saved to a gist: https://gist.github.com/thektan/c98703a02e59b04f4e2e8de20f6885a6/964de55ad410f3b19333b91827fbc238ee318129
-
-### Make sure macOS is using the zsh installed by brew. (Copied from [this StackOverflow article](https://stackoverflow.com/questions/17648621/how-do-i-update-zsh-to-the-latest-version).)
-
-```bash
-# check the zsh info
-brew info zsh
-
-# install zsh
-brew install --without-etcdir zsh
-
-# add shell path
-sudo vim /etc/shells
-
-# add the following line into the end of the file(/etc/shells)
-/usr/local/bin/zsh
-
-# change default shell
-chsh -s /usr/local/bin/zsh
-```
+1. `brew install git`
+1. `git clone https://github.com/thektan/dotfiles.git`
+1. `. ./setup.sh`
+1. Point iTerm2 preferences file to `$DOTFILES/iterm/`
+1. In iTerm2, import `ktan-one-dark` color preset
 
 ## Other Improvements
 
@@ -84,12 +50,12 @@ These are my tweaked colors to match Atom's One Dark with the git colors. I have
 
 ## Notes
 
-- Create an `.extras` file in the root directory of this repo for any aliases/functions unique to the current workspace. This file is ignored from git.
+-   Create an `.extras` file in the root directory of this repo for any aliases/functions unique to the current workspace. This file is ignored from git.
 
 ## Resources
 
 Places I've referenced while creating my dotfiles.
 
-- https://github.com/mathiasbynens/dotfiles
-- https://github.com/paulirish/dotfiles
-- https://github.com/holman/dotfiles
+-   https://github.com/mathiasbynens/dotfiles
+-   https://github.com/paulirish/dotfiles
+-   https://github.com/holman/dotfiles
