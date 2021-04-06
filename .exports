@@ -1,0 +1,2 @@
+export DOTFILES=$HOME/Developer/dotfiles
+export DOTFILES_LOGS_PATH=$DOTFILES/logs

@@ -128,10 +128,6 @@ alias j="jack --pretty=format:'* %Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(
 # Utilities
 ############################################################
 
-# Get macOS Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
-# @source https://github.com/mathiasbynens/dotfiles/blob/master/.aliases#L56
-# alias updateall='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update; sudo gem cleanup'
-
 # Get IP Address
 # @source http://stackoverflow.com/a/13322549/5092054
 alias ip="ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'"

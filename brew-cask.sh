@@ -12,6 +12,7 @@ brew install --cask firefox
 brew install --cask alfred
 brew install --cask appcleaner
 brew install --cask bettertouchtool
+brew install --cask betterzip
 brew install --cask istat-menus
 brew install --cask karabiner-elements
 brew install --cask kap
@@ -37,5 +38,10 @@ brew install --cask visual-studio-code
 brew install --cask figma
 
 # Quick Look Plugins (https://github.com/sindresorhus/quick-look-plugins)
-brew install --cask betterzip
-brew install --cask qlcolorcode qlstephen qlmarkdown quicklook-json qlimagesize webpquicklook suspicious-package quicklookase qlvideo
+brew install --cask qlcolorcode
+brew install --cask qlstephen
+brew install --cask qlmarkdown
+brew install --cask quicklook-json
+brew install --cask qlimagesize
+brew install --cask suspicious-package
+brew install --cask qlvideo

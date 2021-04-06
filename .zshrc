@@ -1,3 +1,6 @@
+# Get export variables
+[ -f ./.exports ] && source ./.exports
+
 # zsh settings
 setopt AUTO_CD
 
@@ -30,9 +33,6 @@ export LSCOLORS=exfxcxdxbxegedabagacad
 PURE_PROMPT_SYMBOL=➜
 
 # Source files
-export DOTFILES=$HOME/Developer/dotfiles
-export DOTFILES_LOGS_PATH=$DOTFILES/logs
-
 [ -f $DOTFILES/.aliases ] && source $DOTFILES/.aliases
 [ -f $DOTFILES/.functions ] && source $DOTFILES/.functions
 [ -f $DOTFILES/.liferay ] && source $DOTFILES/.liferay

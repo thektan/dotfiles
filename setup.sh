@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Get export variables
+[ -f ./.exports ] && source ./.exports
+
 # Install xcode for command line tools
 xcode-select --install
 
@@ -28,16 +31,13 @@ echo "╭───────────────────────�
 echo "│                                                       │"
 echo "│    Other apps to install manually:                    │"
 echo "│      • https://eagle.cool/                            │"
-echo "│      • https://www.jetbrains.com/idea/                │"
-echo "│      • https://todoist.com/downloads/mac?lang=en      │"
+echo "│      • https://todoist.com/downloads/                 │"
 echo "│                                                       │"
 echo "╰───────────────────────────────────────────────────────╯"
 
-export DOTFILES_HOME=${HOME}/Developer/dotfiles
-
 # Create symlinks
-ln -s ${DOTFILES_HOME}/.zshrc ~/.zshrc
-ln -s ${DOTFILES_HOME}/.editorconfig ~/.editorconfig
-ln -s ${DOTFILES_HOME}/karabiner ~/.config/karabiner
-ln -s ${DOTFILES_HOME}/sublime/Preferences.sublime-settings  ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Preferences.sublime-settings
-ln -s ${DOTFILES_HOME}/sublime/Package\ Control.sublime-settings  ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Package\ Control.sublime-settings
+ln -s ${DOTFILES}/.zshrc ~/.zshrc
+ln -s ${DOTFILES}/.editorconfig ~/.editorconfig
+ln -s ${DOTFILES}/karabiner ~/.config/karabiner
+ln -s ${DOTFILES}/sublime/Preferences.sublime-settings  ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Preferences.sublime-settings
+ln -s ${DOTFILES}/sublime/Package\ Control.sublime-settings  ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Package\ Control.sublime-settings
