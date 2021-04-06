@@ -1,25 +1,5 @@
 #!/usr/bin/env bash
 
-# `a` with no arguments opens the current directory in Atom Editor, otherwise
-# opens the given location
-# @source https://github.com/mathiasbynens/dotfiles/blob/master/.functions
-function a() {
-	if [ $# -eq 0 ]; then
-		atom .;
-	else
-		atom "$@";
-	fi;
-}
-
-# For Atom Beta
-function b() {
-	if [ $# -eq 0 ]; then
-		atom-beta .;
-	else
-		atom-beta "$@";
-	fi;
-}
-
 # `c` with no arguments opens the current directory in VSCode, otherwise
 # opens the given location
 function c() {
