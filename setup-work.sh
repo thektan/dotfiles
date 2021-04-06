@@ -4,7 +4,9 @@ brew install ant
 brew install mysql
 
 brew install --cask intellij-idea
-brew install --cask sequel-pro
+# brew install --cask sequel-pro
+# Use https://sequelpro.com/test-builds to get latest build.
+# Issues with databases unable to connect.
 
 brew tap adoptopenjdk/openjdk
 brew install --cask adoptopenjdk8
