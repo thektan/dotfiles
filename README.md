@@ -21,6 +21,12 @@
 
 ## Other Improvements
 
+## Disable media keys controlling in Chrome
+
+1. Visit `chrome://flags/#hardware-media-key-handling` in Chrome
+1. Set to `disabled`
+1. Relaunch Chrome
+
 ### Improve pasting in MacOS
 
 ![Paste and Match Style](/assets/paste-screenshot.png)
