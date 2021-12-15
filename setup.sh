@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Get export variables
-[ -f ./.exports ] && source ./.exports
+source .exports
 
 # Install xcode for command line tools
 xcode-select --install
@@ -24,7 +24,10 @@ npm install -g tldr             # https://github.com/tldr-pages/tldr
 git config --global sequence.editor rebase-editor
 
 # Set sublime as default git editor.
-git config --global core.editor "subl -n -w"
+# git config --global core.editor "subl -n -w"
+
+# Set Visual Studio Code as default git editor.
+git config --global core.editor "code --wait"
 
 # Other apps to install
 echo "╭───────────────────────────────────────────────────────╮"
