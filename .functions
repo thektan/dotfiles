@@ -94,6 +94,7 @@ function ghfetch() {
 	else
 		echo "Usage: ghfetch {repo} {pr}"
 		echo "Example: ghfetch liferay-search 1"
+		echo "git fetch --no-tags $1 pull/$2/head:$1-pr-$2"
 	fi
 }
 
