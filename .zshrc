@@ -1,5 +1,5 @@
 # Get export variables
-[ -f ./.exports ] && source ./.exports
+source $HOME/Developer/dotfiles/.exports
 
 # zsh settings
 setopt AUTO_CD
