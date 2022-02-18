@@ -74,6 +74,12 @@ latest_jira_ticket_url() {
 # $1 user - pull request recipient
 # $2 repo - Github repository to submit pull request to
 # $3 branch - branch to submit pull request to
+#
+# Depedencies:
+# brew install gh (https://cli.github.com/) Github CLI
+# brew install jq (https://formulae.brew.sh/formula/jq) JSON processor
+# latest_jira_ticket()
+# open_jira_ticket()
 ghpr() {
 	default_user="thektan";
 	default_repo="liferay-portal";
