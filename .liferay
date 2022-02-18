@@ -54,28 +54,65 @@ latest_jira_ticket() {
 open_jira_ticket() {
 	if [ -z "$1" ]; then
 		latestTicket=$(latest_jira_ticket);
-		open http://issues.liferay.com/browse/$latestTicket;
+
+		echo "Opening https://issues.liferay.com/browse/$latestTicket"
+		open https://issues.liferay.com/browse/$latestTicket;
 	fi
 
 	if [ -n "$1" ]; then
-		open http://issues.liferay.com/browse/$1;
+		echo "Opening https://issues.liferay.com/browse/$1"
+		open https://issues.liferay.com/browse/$1;
 	fi
 }
 
 # Gets the JIRA url for the latest JIRA ticket referenced in the log
 latest_jira_ticket_url() {
-	export latestTicketURL="http://issues.liferay.com/browse/$(latest_jira_ticket)";
+	export latestTicketURL="https://issues.liferay.com/browse/$(latest_jira_ticket)";
 }
 
 # Submit a pull request
-# $1 branch name - the branch to send the pull request to
-# $2 username - pull request recipient
-submit_pull_request() {
-	if [ -n "$1" ] && [ -n "$2" ]; then
-		# Gather information
-		ticket=$(latest_jira_ticket);
+# $1 user - pull request recipient
+# $2 repo - Github repository to submit pull request to
+# $3 branch - branch to submit pull request to
+ghpr() {
+	default_user="thektan";
+	default_repo="liferay-portal";
+	default_branch="master";
 
-		title="$ticket - $(curl -s "https://issues.liferay.com/rest/api/2/issue/$ticket" | jq -r ".fields.summary")";
+	if [ "$1" = "help" ]; then
+		echo "Submits a Github pull request pulling information from the latest commit's Jira ticket.";
+		echo "";
+		echo "USAGE";
+		echo "  ghpr <user> <repo> <branch>";
+		echo "";
+		echo "DEFAULTS";
+		echo "  user: $default_user";
+		echo "  repo: $default_repo";
+		echo "  branch: $default_branch";
+	else
+		# Gather information
+		user=$1;
+		repo=$2;
+		branch=$3;
+		ticket=$(latest_jira_ticket);
+		title="$ticket $(curl -s "https://issues.liferay.com/rest/api/2/issue/$ticket" | jq -r ".fields.summary")";
+
+		# Set default user
+		if [ -z "$user" ] || [ "$user" = "null" ]; then
+			user=$default_user;
+		fi;
+
+		# Set default repo
+		if [ -z "$repo" ] || [ "$repo" = "null" ]; then
+			repo=$default_repo;
+		fi;
+
+		# Set default branch
+		if [ -z "$branch" ] || [ "$branch" = "null" ]; then
+			branch=$default_branch;
+		fi;
+
+		echo "Submitting pull request to $repo $user:$branch";
 
 		# -z = string is null and has zero length
 		# @see https://tldp.org/LDP/abs/html/comparison-ops.html
@@ -83,19 +120,11 @@ submit_pull_request() {
 			title=""
 		fi;
 
-		echo "http://issues.liferay.com/browse/$(latest_jira_ticket)\n\n" > TMP_GITHUB_MESSAGE.txt
-
-		subl TMP_GITHUB_MESSAGE.txt -nw;
-
-		description="$(cat TMP_GITHUB_MESSAGE.txt)";
-
-		# Initiate processes
+		# Open Jira ticket to manually workflow
 		open_jira_ticket;
 
-		gh pr --branch $1 --submit $2 --title $title --description $description;
-
-		# Clean-up
-		rm TMP_GITHUB_MESSAGE.txt;
+		# Open pull request
+		gh pr create -R $user/$repo -B $branch -t $title -b "https://issues.liferay.com/browse/$ticket" -w;
 	fi
 }
 
