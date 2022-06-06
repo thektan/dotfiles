@@ -149,7 +149,8 @@ kt() {
 # Start tomcat server
 st() {
 	if [ -n "$1" ] && [ -n "$2" ]; then
-		local tomcatPath="$HOME/Developer/$1-$2/bundles/tomcat-9.0.53/bin";
+		[ -d "$HOME/Developer/$1-$2/bundles/tomcat-9.0.53/bin" ] && local tomcatPath="$HOME/Developer/$1-$2/bundles/tomcat-9.0.53/bin";
+		[ -d "$HOME/Developer/$1-$2/bundles/tomcat-9.0.56/bin" ] && local tomcatPath="$HOME/Developer/$1-$2/bundles/tomcat-9.0.56/bin";
 
 		cd $tomcatPath;
 
