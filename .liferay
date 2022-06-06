@@ -137,7 +137,7 @@ ghpr() {
 # Kill tomcat server
 kt() {
 	if [ -n "$1" ]; then
-		echo "Killing process for branch: $1\n"
+		echo "🟥 Killing process for branch: $1\n"
 
 		pkill -9 -f $1/bundles/tomcat;
 	else
@@ -154,7 +154,7 @@ st() {
 
 		cd $tomcatPath;
 
-		echo "Starting tomcat from: $tomcatPath\n"
+		echo "🌟 Starting tomcat from: $tomcatPath\n"
 
 		/$tomcatPath/catalina.sh jpda run;
 	else
