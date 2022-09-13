@@ -134,6 +134,43 @@ ghpr() {
 	fi
 }
 
+# Gets a labeled Jira link with ticket number and title for easy pasting on
+# slack messages or notes.
+#
+# Example:
+# jl LPS-155716
+# [LPS-155716](https://issues.liferay.com/browse/LPS-155716) SXPElement field localization breaks with nested fields
+jl() {
+	if [ "$1" = "help" ]; then
+		echo "Submits a Github pull request pulling information from the latest commit's Jira ticket.";
+		echo "";
+		echo "USAGE";
+		echo "  jl LPS-######";
+		echo "";
+		echo "OUTPUT";
+		echo "  [LPS-155716](https://issues.liferay.com/browse/LPS-155716) SXPElement field localization breaks with nested fields";
+	else
+		# Gather information
+		ticket=$1;
+		title="$(curl -s "https://issues.liferay.com/rest/api/2/issue/$ticket" | jq -r ".fields.summary")";
+
+		# -z = string is null and has zero length
+		# @see https://tldp.org/LDP/abs/html/comparison-ops.html
+		if [ -z "$title" ] || [ "$title" = "null" ]; then
+			title=""
+		fi;
+
+		message="[$ticket](https://issues.liferay.com/browse/$ticket) ($title)"
+
+		# Copy message to clipboard
+		echo $message | pbcopy;
+
+		# Success message
+		echo "📋 Copied to clipboard:";
+		echo "$message";
+	fi
+}
+
 # Kill tomcat server
 kt() {
 	if [ -n "$1" ]; then
