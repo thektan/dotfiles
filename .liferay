@@ -141,7 +141,7 @@ ghpr() {
 # jl LPS-155716
 # [LPS-155716](https://issues.liferay.com/browse/LPS-155716) SXPElement field localization breaks with nested fields
 jl() {
-	if [ "$1" = "help" ]; then
+	if [ -z "$1" ] || [ "$1" = "null" ] || [ "$1" = "help" ]; then
 		echo "Submits a Github pull request pulling information from the latest commit's Jira ticket.";
 		echo "";
 		echo "USAGE";
@@ -153,6 +153,7 @@ jl() {
 		# Gather information
 		ticket=$1;
 		title="$(curl -s "https://issues.liferay.com/rest/api/2/issue/$ticket" | jq -r ".fields.summary")";
+		type="$(curl -s "https://issues.liferay.com/rest/api/2/issue/$ticket" | jq -r ".fields.issuetype.name")";
 
 		# -z = string is null and has zero length
 		# @see https://tldp.org/LDP/abs/html/comparison-ops.html
@@ -160,7 +161,17 @@ jl() {
 			title=""
 		fi;
 
-		message="[$ticket](https://issues.liferay.com/browse/$ticket) ($title)"
+		# Get ticket type emoji
+		if [ "$type" = "Story" ]; then
+			typeEmoji="📗"
+		fi;
+
+		# Get ticket type emoji
+		if [ "$type" = "Bug" ] || [ "$type" = "Regression Bug" ]; then
+			typeEmoji="🐞"
+		fi;
+
+		message="$typeEmoji [$ticket](https://issues.liferay.com/browse/$ticket) ($title)"
 
 		# Copy message to clipboard
 		echo $message | pbcopy;
