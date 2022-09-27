@@ -134,6 +134,17 @@ ghpr() {
 	fi
 }
 
+# Updates libraries and builds portal.
+bp() {
+	cd ~/Developer/liferay-binaries-cache-2020;
+	git pull origin master;
+
+	cd -;
+	ant setup-profile-dxp;
+	ant setup-sdk;
+	ant all;
+}
+
 # Gets a labeled Jira link with ticket number and title for easy pasting on
 # slack messages or notes.
 #
