@@ -2,13 +2,9 @@
 
 ## Screenshots
 
-**iTerm**
-
-![Screenshot of terminal](/assets/terminal.png)
-
-**VS Code**
-
-![Screenshot of terminal](/assets/vscode.png)
+| iTerm2                                                                     | VS Code                                                                 |
+| -------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| <img src="./assets/terminal.png" alt="Screenshot of terminal" width="300"/> | <img src="./assets/vscode.png" alt="Screenshot of VS Code" width="300"/> |
 
 ## Steps
 
