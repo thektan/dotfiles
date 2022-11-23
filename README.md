@@ -21,7 +21,7 @@
 
 ## Other Improvements
 
-## Disable media keys controlling in Chrome
+### Disable media keys controlling in Chrome
 
 1. Visit `chrome://flags/#hardware-media-key-handling` in Chrome
 1. Set to `disabled`
