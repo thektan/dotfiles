@@ -65,3 +65,6 @@ Places I've referenced while creating my dotfiles.
 -   https://github.com/mathiasbynens/dotfiles
 -   https://github.com/paulirish/dotfiles
 -   https://github.com/holman/dotfiles
+
+Color `echo`:
+-   https://misc.flogisoft.com/bash/tip_colors_and_formatting
