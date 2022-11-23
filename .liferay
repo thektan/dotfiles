@@ -201,7 +201,8 @@ jl() {
 		fi;
 
 		# Build message
-		message="**$typeEmoji [$ticket](https://issues.liferay.com/browse/$ticket) ($title)**"
+		# message="**$typeEmoji [$ticket](https://issues.liferay.com/browse/$ticket) ($title)**"
+		message="$ticket ($title) https://issues.liferay.com/browse/$ticket"
 
 		# Copy message to clipboard
 		echo $message | pbcopy;
