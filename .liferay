@@ -149,14 +149,18 @@ checkTomcatVersion() {
 }
 
 # Updates libraries and builds portal.
-bp() {
+# --setup: To only run setup commands (no ant all)
+buildPortal() {
 	cd ~/Developer/liferay-binaries-cache-2020;
 	git pull origin master;
 
 	cd -;
 	ant setup-profile-dxp;
 	ant setup-sdk;
-	ant all;
+
+	if [[ $* != *--setup* ]]; then
+		ant all;
+	fi
 }
 
 # Gets a labeled Jira link with ticket number and title for easy pasting on
