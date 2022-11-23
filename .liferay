@@ -134,6 +134,20 @@ ghpr() {
 	fi
 }
 
+# Checks if tomcat version in bundles folder is up to date.
+# @author Bryan Engler
+checkTomcatVersion() {
+	localTomcatVersion=$(cat $1app.server.$USER.properties | grep app.server.tomcat.version= | cut -d "=" -f2);
+
+	upstreamTomcatVersion=$(cat $1app.server.properties | grep app.server.tomcat.version= | cut -d "=" -f2);
+
+	if [ $upstreamTomcatVersion != $localTomcatVersion ]; then
+		echo "⚠️  \e[33mWARNING: Tomcat version is out of sync, set $upstreamTomcatVersion in app.server.$USER.properties and run ant unzip-tomcat -f build-dist.xml"
+	else
+		echo "✅ Tomcat version is up to date."
+	fi
+}
+
 # Updates libraries and builds portal.
 bp() {
 	cd ~/Developer/liferay-binaries-cache-2020;
