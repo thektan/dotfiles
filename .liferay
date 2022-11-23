@@ -230,6 +230,8 @@ st() {
 	if [ -n "$1" ] && [ -n "$2" ]; then
 		[ -d "$HOME/Developer/$1-$2/bundles/tomcat-9.0.53/bin" ] && local tomcatPath="$HOME/Developer/$1-$2/bundles/tomcat-9.0.53/bin";
 		[ -d "$HOME/Developer/$1-$2/bundles/tomcat-9.0.56/bin" ] && local tomcatPath="$HOME/Developer/$1-$2/bundles/tomcat-9.0.56/bin";
+		[ -d "$HOME/Developer/$1-$2/bundles/tomcat-9.0.65/bin" ] && local tomcatPath="$HOME/Developer/$1-$2/bundles/tomcat-9.0.65/bin";
+		[ -d "$HOME/Developer/$1-$2/bundles/tomcat-9.0.68/bin" ] && local tomcatPath="$HOME/Developer/$1-$2/bundles/tomcat-9.0.68/bin";
 
 		cd $tomcatPath;
 
