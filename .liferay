@@ -154,17 +154,23 @@ checkTomcatVersion() {
 
 # Copies vscode settings.json files into portal modules to add peacock coloring.
 setupPortalVSCode() {
-	# search-experiences-web
-	local searchExperiencesWebDir=modules/dxp/apps/search-experiences/search-experiences-web
+	# portal-language-lang
+	local portalLanguageLangDir=modules/apps/portal-language/portal-language-lang
 
-	mkdir "$searchExperiencesWebDir/.vscode";
-	cp "$DOTFILES/vscode/search-experiences-web/settings.json" "$searchExperiencesWebDir/.vscode";
+	mkdir "$portalLanguageLangDir/.vscode";
+	cp "$DOTFILES/vscode/portal-language-lang/settings.json" "$portalLanguageLangDir/.vscode";
 
 	# portal-search-web
 	local portalSearchWebDir=modules/apps/portal-search/portal-search-web
 
 	mkdir "$portalSearchWebDir/.vscode";
 	cp "$DOTFILES/vscode/portal-search-web/settings.json" "$portalSearchWebDir/.vscode";
+
+	# search-experiences-web
+	local searchExperiencesWebDir=modules/dxp/apps/search-experiences/search-experiences-web
+
+	mkdir "$searchExperiencesWebDir/.vscode";
+	cp "$DOTFILES/vscode/search-experiences-web/settings.json" "$searchExperiencesWebDir/.vscode";
 }
 
 # Updates libraries and builds portal.
