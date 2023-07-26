@@ -198,6 +198,48 @@ buildPortal() {
 	fi
 }
 
+# Gets a formatted branch name for a Jira ticket.
+#
+# Example:
+# jl LPS-155716
+# **[LPS-155716](https://liferay.atlassian.net/browse/LPS-155716) SXPElement field localization breaks with nested fields**
+getBranchName() {
+	if [ -z "$1" ] || [ "$1" = "help" ]; then
+		echo "Gets a formatted branch name for a Jira ticket.";
+		echo "";
+		echo "USAGE";
+		echo "  getBranchName LPS-######";
+		echo "";
+		echo "OUTPUT";
+		echo "  LPS-#####_LPS-#####_TitleCamelCased";
+	else
+		# Gather information
+		ticket=$1;
+
+		title="$(curl -s "https://liferay.atlassian.net/rest/api/2/issue/$ticket" | jq -r ".fields.summary")";
+		parentTicket="$(curl -s "https://liferay.atlassian.net/rest/api/2/issue/$ticket" | jq -r ".fields.parent.key")";
+
+		# -z = string is null and has zero length
+		# @see https://tldp.org/LDP/abs/html/comparison-ops.html
+		if [ -z "$title" ] || [ "$title" = "null" ]; then
+			title=""
+		fi;
+
+		# @see https://stackoverflow.com/a/34420162/5092054
+		titleCamelCased=$(sed -r 's/(^|"|-| | "|" )(\w)/\U\2/g' <<<"$title");
+
+		# Build output
+		output="$parentTicket"_"$ticket"_"$titleCamelCased";
+
+		# Copy output to clipboard
+		echo $output | pbcopy;
+
+		# Success message
+		echo "📋 Copied to clipboard:";
+		echo "$output";
+	fi
+}
+
 # Gets a labeled Jira link with ticket number and title for easy pasting on
 # slack messages or notes.
 #
