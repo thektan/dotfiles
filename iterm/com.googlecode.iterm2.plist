@@ -2205,7 +2205,7 @@
 					<key>partial</key>
 					<true/>
 					<key>regex</key>
-					<string>storybook-server</string>
+					<string>liferay-portal-storybook-server</string>
 				</dict>
 			</array>
 			<key>Triggers Use Interpolated Strings</key>
