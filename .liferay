@@ -55,19 +55,19 @@ open_jira_ticket() {
 	if [ -z "$1" ]; then
 		latestTicket=$(latest_jira_ticket);
 
-		echo "Opening https://issues.liferay.com/browse/$latestTicket"
-		open https://issues.liferay.com/browse/$latestTicket;
+		echo "Opening https://liferay.atlassian.net/browse/$latestTicket"
+		open https://liferay.atlassian.net/browse/$latestTicket;
 	fi
 
 	if [ -n "$1" ]; then
-		echo "Opening https://issues.liferay.com/browse/$1"
-		open https://issues.liferay.com/browse/$1;
+		echo "Opening https://liferay.atlassian.net/browse/$1"
+		open https://liferay.atlassian.net/browse/$1;
 	fi
 }
 
 # Gets the JIRA url for the latest JIRA ticket referenced in the log
 latest_jira_ticket_url() {
-	export latestTicketURL="https://issues.liferay.com/browse/$(latest_jira_ticket)";
+	export latestTicketURL="https://liferay.atlassian.net/browse/$(latest_jira_ticket)";
 }
 
 # Submit a pull request
@@ -101,7 +101,7 @@ ghpr() {
 		repo=$2;
 		branch=$3;
 		ticket=$(latest_jira_ticket);
-		title="$ticket $(curl -s "https://issues.liferay.com/rest/api/2/issue/$ticket" | jq -r ".fields.summary")";
+		title="$ticket $(curl -s "https://liferay.atlassian.net/rest/api/2/issue/$ticket" | jq -r ".fields.summary")";
 
 		# Set default user
 		if [ -z "$user" ] || [ "$user" = "null" ]; then
@@ -130,7 +130,7 @@ ghpr() {
 		open_jira_ticket;
 
 		# Open pull request
-		gh pr create -R $user/$repo -B $branch -t $title -b "https://issues.liferay.com/browse/$ticket" -w;
+		gh pr create -R $user/$repo -B $branch -t $title -b "https://liferay.atlassian.net/browse/$ticket" -w;
 	fi
 }
 
@@ -146,7 +146,7 @@ checkTomcatVersion() {
 
 		return 1;
 	else
-		echo "✅ Tomcat version is up to date."
+		echo "✅ Tomcat version is up to date. Current version: $localTomcatVersion"
 
 		return 0;
 	fi
@@ -245,7 +245,7 @@ getBranchName() {
 #
 # Example:
 # jl LPS-155716
-# **[LPS-155716](https://issues.liferay.com/browse/LPS-155716) SXPElement field localization breaks with nested fields**
+# **[LPS-155716](https://liferay.atlassian.net/browse/LPS-155716) SXPElement field localization breaks with nested fields**
 jl() {
 	if [ -z "$1" ] || [ "$1" = "help" ]; then
 		echo "Creates a markdown for a jira ticket";
@@ -254,12 +254,12 @@ jl() {
 		echo "  jl LPS-######";
 		echo "";
 		echo "OUTPUT";
-		echo "  **[LPS-155716](https://issues.liferay.com/browse/LPS-155716) SXPElement field localization breaks with nested fields**";
+		echo "  [LPS-##### (Ticket title)](https://liferay.atlassian.net/browse/LPS-#####)";
 	else
 		# Gather information
 		ticket=$1;
-		title="$(curl -s "https://issues.liferay.com/rest/api/2/issue/$ticket" | jq -r ".fields.summary")";
-		type="$(curl -s "https://issues.liferay.com/rest/api/2/issue/$ticket" | jq -r ".fields.issuetype.name")";
+		title="$(curl -s "https://liferay.atlassian.net/rest/api/2/issue/$ticket" | jq -r ".fields.summary")";
+		type="$(curl -s "https://liferay.atlassian.net/rest/api/2/issue/$ticket" | jq -r ".fields.issuetype.name")";
 
 		# -z = string is null and has zero length
 		# @see https://tldp.org/LDP/abs/html/comparison-ops.html
@@ -278,8 +278,9 @@ jl() {
 		fi;
 
 		# Build message
-		# message="**$typeEmoji [$ticket](https://issues.liferay.com/browse/$ticket) ($title)**"
-		message="$ticket ($title) https://issues.liferay.com/browse/$ticket"
+		# message="**$typeEmoji [$ticket](https://liferay.atlassian.net/browse/$ticket) ($title)**"
+		# message="$ticket ($title) https://liferay.atlassian.net/browse/$ticket"
+		message="[$ticket ($title)](https://liferay.atlassian.net/browse/$ticket)"
 
 		# Copy message to clipboard
 		echo $message | pbcopy;
