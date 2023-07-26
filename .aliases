@@ -134,6 +134,9 @@ alias j="jack --pretty=format:'* %Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(
 alias ip="ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'"
 alias ipc="ip | pbcopy"
 
+# Formats JSON previously copied on clipboard and copies the output to the clipboard.
+alias formatjson="pbpaste | json_pp | pbcopy"
+
 # Empty the Trash on all mounted volumes and the main HDD. then clear the useless sleepimage
 # @source https://github.com/paulirish/dotfiles/blob/master/.aliases
 alias emptytrash=" \
