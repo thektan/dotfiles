@@ -342,6 +342,13 @@ alias grfs="gradle formatSource"
 # Update master private
 alias abwd="ant -f build-working-dir.xml"
 
+
+############################################################
+# Git
+############################################################
+
+alias gitclean='git clean -xd -e '\''**/*.iml'\'' -e .gradle/gradle.properties -e .idea -e '\''**/*.c02cm6mzmd6m.properties'\'''
+
 ############################################################
 # Tomcat
 ############################################################
