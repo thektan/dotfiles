@@ -315,6 +315,7 @@ st() {
 		[ -d "$HOME/Developer/$1-$2/bundles/tomcat-9.0.75/bin" ] && local tomcatPath="$HOME/Developer/$1-$2/bundles/tomcat-9.0.75/bin";
 		[ -d "$HOME/Developer/$1-$2/bundles/tomcat-9.0.80/bin" ] && local tomcatPath="$HOME/Developer/$1-$2/bundles/tomcat-9.0.80/bin";
 		[ -d "$HOME/Developer/$1-$2/bundles/tomcat-9.0.82/bin" ] && local tomcatPath="$HOME/Developer/$1-$2/bundles/tomcat-9.0.82/bin";
+		[ -d "$HOME/Developer/$1-$2/bundles/tomcat-9.0.83/bin" ] && local tomcatPath="$HOME/Developer/$1-$2/bundles/tomcat-9.0.83/bin";
 
 		cd $tomcatPath;
 
