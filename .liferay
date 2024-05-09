@@ -379,3 +379,7 @@ alias jo=open_jira_ticket;
 # IntelliJ Setup
 # @see https://github.com/holatuwol/liferay-intellij#setup-instructions
 alias ij='/Users/ktan/Developer/liferay-intellij/intellij "$@"'
+
+# Overrides the default jmeter command since the app crashes using:
+# open /usr/local/bin/jmeter
+alias jmeter="open /usr/local/Cellar/jmeter/5.6.3/libexec/bin/jmeter"
