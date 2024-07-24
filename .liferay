@@ -8,7 +8,7 @@
 export HOSTNAME=$(hostname)
 
 # Setting ANT_OPS variable for ant command
-export ANT_OPTS="-Xms2048m -Xmx4096m -XX:MaxPermSize=2048m"
+export ANT_OPTS="-Xms2048m -Xmx4096m"
 
 # Allocate more memory to prevent getting stuck on
 # `[echo] Executing Gradle task: deploy` while running `ant all`.
