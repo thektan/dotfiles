@@ -73,6 +73,9 @@ export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 
+# For adding path to blade command
+export PATH="/Users/ktan/Library/PackageManager/bin:$PATH"
+
 # Python PATH
 export PATH="$HOME/.pyenv/shims:$PATH"
 
