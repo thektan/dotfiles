@@ -306,17 +306,18 @@ kt() {
 # Start tomcat server
 st() {
 	if [ -n "$1" ] && [ -n "$2" ]; then
-		[ -d "$HOME/Developer/$1-$2/bundles/tomcat-9.0.53/bin" ] && local tomcatPath="$HOME/Developer/$1-$2/bundles/tomcat-9.0.53/bin";
-		[ -d "$HOME/Developer/$1-$2/bundles/tomcat-9.0.56/bin" ] && local tomcatPath="$HOME/Developer/$1-$2/bundles/tomcat-9.0.56/bin";
-		[ -d "$HOME/Developer/$1-$2/bundles/tomcat-9.0.65/bin" ] && local tomcatPath="$HOME/Developer/$1-$2/bundles/tomcat-9.0.65/bin";
-		[ -d "$HOME/Developer/$1-$2/bundles/tomcat-9.0.68/bin" ] && local tomcatPath="$HOME/Developer/$1-$2/bundles/tomcat-9.0.68/bin";
-		[ -d "$HOME/Developer/$1-$2/bundles/tomcat-9.0.71/bin" ] && local tomcatPath="$HOME/Developer/$1-$2/bundles/tomcat-9.0.71/bin";
-		[ -d "$HOME/Developer/$1-$2/bundles/tomcat-9.0.73/bin" ] && local tomcatPath="$HOME/Developer/$1-$2/bundles/tomcat-9.0.73/bin";
-		[ -d "$HOME/Developer/$1-$2/bundles/tomcat-9.0.75/bin" ] && local tomcatPath="$HOME/Developer/$1-$2/bundles/tomcat-9.0.75/bin";
-		[ -d "$HOME/Developer/$1-$2/bundles/tomcat-9.0.80/bin" ] && local tomcatPath="$HOME/Developer/$1-$2/bundles/tomcat-9.0.80/bin";
-		[ -d "$HOME/Developer/$1-$2/bundles/tomcat-9.0.82/bin" ] && local tomcatPath="$HOME/Developer/$1-$2/bundles/tomcat-9.0.82/bin";
-		[ -d "$HOME/Developer/$1-$2/bundles/tomcat-9.0.83/bin" ] && local tomcatPath="$HOME/Developer/$1-$2/bundles/tomcat-9.0.83/bin";
-		[ -d "$HOME/Developer/$1-$2/bundles/tomcat-9.0.87/bin" ] && local tomcatPath="$HOME/Developer/$1-$2/bundles/tomcat-9.0.87/bin";
+		# [ -d "$HOME/Developer/$1-$2/bundles/tomcat-9.0.53/bin" ] && local tomcatPath="$HOME/Developer/$1-$2/bundles/tomcat-9.0.53/bin";
+		# [ -d "$HOME/Developer/$1-$2/bundles/tomcat-9.0.56/bin" ] && local tomcatPath="$HOME/Developer/$1-$2/bundles/tomcat-9.0.56/bin";
+		# [ -d "$HOME/Developer/$1-$2/bundles/tomcat-9.0.65/bin" ] && local tomcatPath="$HOME/Developer/$1-$2/bundles/tomcat-9.0.65/bin";
+		# [ -d "$HOME/Developer/$1-$2/bundles/tomcat-9.0.68/bin" ] && local tomcatPath="$HOME/Developer/$1-$2/bundles/tomcat-9.0.68/bin";
+		# [ -d "$HOME/Developer/$1-$2/bundles/tomcat-9.0.71/bin" ] && local tomcatPath="$HOME/Developer/$1-$2/bundles/tomcat-9.0.71/bin";
+		# [ -d "$HOME/Developer/$1-$2/bundles/tomcat-9.0.73/bin" ] && local tomcatPath="$HOME/Developer/$1-$2/bundles/tomcat-9.0.73/bin";
+		# [ -d "$HOME/Developer/$1-$2/bundles/tomcat-9.0.75/bin" ] && local tomcatPath="$HOME/Developer/$1-$2/bundles/tomcat-9.0.75/bin";
+		# [ -d "$HOME/Developer/$1-$2/bundles/tomcat-9.0.80/bin" ] && local tomcatPath="$HOME/Developer/$1-$2/bundles/tomcat-9.0.80/bin";
+		# [ -d "$HOME/Developer/$1-$2/bundles/tomcat-9.0.82/bin" ] && local tomcatPath="$HOME/Developer/$1-$2/bundles/tomcat-9.0.82/bin";
+		# [ -d "$HOME/Developer/$1-$2/bundles/tomcat-9.0.83/bin" ] && local tomcatPath="$HOME/Developer/$1-$2/bundles/tomcat-9.0.83/bin";
+		# [ -d "$HOME/Developer/$1-$2/bundles/tomcat-9.0.87/bin" ] && local tomcatPath="$HOME/Developer/$1-$2/bundles/tomcat-9.0.87/bin";
+		[ -d "$HOME/Developer/$1-$2/bundles/tomcat-9.0.90/bin" ] && local tomcatPath="$HOME/Developer/$1-$2/bundles/tomcat-9.0.90/bin";
 
 		cd $tomcatPath;
 
