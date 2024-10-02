@@ -178,6 +178,9 @@ setupPortalVSCode() {
 # Updates libraries and builds portal.
 # --setup: To only run setup commands (no ant all)
 buildPortal() {
+	echo "";
+	echo "🤖 Checking tomcat version...";
+
 	checkTomcatVersion;
 
 	# Stop the function if tomcat version isn't up to date.
@@ -186,17 +189,33 @@ buildPortal() {
 		return;
 	fi
 
+	echo "";
+	echo "🤖 Update liferay-binaries-cache-2020...";
+
 	cd ~/Developer/liferay-binaries-cache-2020;
 	git pull origin master;
 
 	cd -;
+
+	echo "";
+	echo "🤖 Running ant setup-profile-dxp and ant setup-sdk...";
+
 	ant setup-profile-dxp;
 	ant setup-sdk;
 
 	if [[ $* != *--setup* ]]; then
+		echo "";
+		echo "🤖 Running ant all...";
+
 		ant all;
 
+		echo "";
+		echo "🤖 Setting up VS Code color settings...";
+
 		setupPortalVSCode;
+
+		echo "";
+		echo "🤖 Setting up IntelliJ...";
 
 		/Users/ktan/Developer/liferay-intellij/intellij "$@";
 	fi
