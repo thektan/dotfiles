@@ -173,6 +173,12 @@ setupPortalVSCode() {
 
 	mkdir "$searchExperiencesWebDir/.vscode";
 	cp "$DOTFILES/vscode/search-experiences-web/settings.json" "$searchExperiencesWebDir/.vscode";
+
+	# playwright
+	local playwrightDir=modules/test/playwright
+
+	mkdir "$playwrightDir/.vscode";
+	cp "$DOTFILES/vscode/playwright/settings.json" "$playwrightDir/.vscode";
 }
 
 # Updates libraries and builds portal.
