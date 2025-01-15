@@ -18,14 +18,15 @@ export GRADLE_OPTS="-Xmx6g"
 # Java                                                     #
 ############################################################
 
-export JAVA_HOME_8=$(/usr/libexec/java_home -v1.8)
+# export JAVA_HOME_8=$(/usr/libexec/java_home -v1.8)
 # export JAVA_HOME_7=$(/usr/libexec/java_home -v1.7)
 # export JAVA_HOME_14=$(/usr/libexec/java_home -v14)
 
 # Default java
 # export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
 # export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-21.jdk/Contents/Home
-export JAVA_HOME=$JAVA_HOME_8
+# export JAVA_HOME=$JAVA_HOME_8
 
 ############################################################
 # Functions
