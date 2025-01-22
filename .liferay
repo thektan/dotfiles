@@ -187,7 +187,7 @@ setupPortalVSCode() {
 buildPortal() {
 	echo "";
 	echo "----------------------------------------------";
-	echo "🤖 Checking tomcat version...";
+	echo "🤖 Checking tomcat version";
 	echo "----------------------------------------------";
 
 	checkTomcatVersion;
@@ -200,7 +200,7 @@ buildPortal() {
 
 	echo "";
 	echo "----------------------------------------------";
-	echo "🤖 Update liferay-binaries-cache-2020...";
+	echo "🤖 Update liferay-binaries-cache-2020";
 	echo "----------------------------------------------";
 
 	cd ~/Developer/liferay-binaries-cache-2020;
@@ -210,14 +210,14 @@ buildPortal() {
 
 	echo "";
 	echo "----------------------------------------------";
-	echo "🤖 Running ant setup-profile-dxp...";
+	echo "🤖 Running ant setup-profile-dxp";
 	echo "----------------------------------------------";
 
 	ant setup-profile-dxp;
 
 	echo "";
 	echo "----------------------------------------------";
-	echo "🤖 Running ant setup-sdk...";
+	echo "🤖 Running ant setup-sdk";
 	echo "----------------------------------------------";
 
 	ant setup-sdk;
@@ -225,21 +225,21 @@ buildPortal() {
 	if [[ $* != *--setup* ]]; then
 		echo "";
 		echo "----------------------------------------------";
-		echo "🤖 Running ant all...";
+		echo "🤖 Running ant all";
 		echo "----------------------------------------------";
 
 		ant all;
 
 		echo "";
 		echo "----------------------------------------------";
-		echo "🤖 Setting up VS Code color settings...";
+		echo "🤖 Setting up VS Code color settings";
 		echo "----------------------------------------------";
 
 		setupPortalVSCode;
 
 		echo "";
 		echo "----------------------------------------------";
-		echo "🤖 Setting up IntelliJ...";
+		echo "🤖 Setting up IntelliJ";
 		echo "----------------------------------------------";
 
 		/Users/ktan/Developer/liferay-intellij/intellij "$@";
