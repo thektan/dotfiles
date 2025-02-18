@@ -298,7 +298,7 @@ getBranchName() {
 		fi;
 
 		# @see https://stackoverflow.com/a/34420162/5092054
-		titleCamelCased=$(sed -r 's/(^|"|-| | "|" )(\w)/\U\2/g' <<<"$title");
+		titleCamelCased=$(sed -r 's/Technical Task \| //I; s/[^a-zA-Z0-9 ]//g; s/(^| )(\w)/\U\2/g' <<< "$title");
 
 		# Build output
 		output="$parentTicket"_"$ticket"_"$titleCamelCased";
