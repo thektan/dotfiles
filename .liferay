@@ -8,11 +8,11 @@
 export HOSTNAME=$(hostname)
 
 # Setting ANT_OPS variable for ant command
-export ANT_OPTS="-Xms2048m -Xmx4096m"
+export ANT_OPTS="-Xms8g -Xmx8g"
 
 # Allocate more memory to prevent getting stuck on
 # `[echo] Executing Gradle task: deploy` while running `ant all`.
-export GRADLE_OPTS="-Xmx6g"
+export GRADLE_OPTS="-Xmx8g"
 
 ############################################################
 # Java                                                     #
