@@ -376,18 +376,21 @@ kt() {
 
 # Start tomcat server
 st() {
-	if [ -n "$1" ] && [ -n "$2" ]; then
-		[ -d "$HOME/Developer/$1-$2/bundles/tomcat-9.0.98/bin" ] && local tomcatPath="$HOME/Developer/$1-$2/bundles/tomcat-9.0.98/bin";
+	if [ -n "$1" ] && [ -n "$2" ] && [ -n "$3" ]; then
+		[ -d "$HOME/Developer/$1-$2/bundles/tomcat-9.0.$3/bin" ] && local tomcatPath="$HOME/Developer/$1-$2/bundles/tomcat-9.0.$3/bin";
 
 		cd $tomcatPath;
 
-		echo "🌟 Starting tomcat from: $tomcatPath\n"
+		echo "";
+		echo "─────────────────────────────────────────────────────────────────";
+		echo "🌟 Starting tomcat from: $tomcatPath"
+		echo "─────────────────────────────────────────────────────────────────";
 
 		/$tomcatPath/catalina.sh jpda run;
 	else
-		echo "Starts a tomcat server from the specified [repo]/[branch] directory."
-		echo "Usage: st [repo] [branch]"
-		echo "Example: st liferay-portal master"
+		echo "Starts a tomcat server from the specified [repo]/[branch] directory and [tomcat version]."
+		echo "Usage: st [repo] [branch] [tomcat version]"
+		echo "Example: st liferay-portal master 102"
 	fi
 }
 
