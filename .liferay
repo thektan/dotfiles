@@ -145,7 +145,7 @@ checkTomcatVersion() {
 	upstreamTomcatVersion=$(cat $1app.server.properties | grep app.server.tomcat.version= | cut -d "=" -f2);
 
 	if [ $upstreamTomcatVersion != $localTomcatVersion ]; then
-		echo "⚠️  \e[33mWARNING: Tomcat version is out of sync, set $upstreamTomcatVersion in app.server.$USER.properties and run ant unzip-tomcat -f build-dist.xml"
+		echo "⚠️  \e[33mWARNING: Tomcat version is out of sync, set $upstreamTomcatVersion in app.server.$USER.properties"
 
 		return 1;
 	else
@@ -325,7 +325,7 @@ jl() {
 		echo "  jl LPS-######";
 		echo "";
 		echo "OUTPUT";
-		echo "  [LPS-##### (Ticket title)](https://liferay.atlassian.net/browse/LPS-#####)";
+		echo "  [LPS-#####](https://liferay.atlassian.net/browse/LPS-#####) Ticket title";
 	else
 		# Gather information
 		ticket=$1;
@@ -351,7 +351,7 @@ jl() {
 		# Build message
 		# message="**$typeEmoji [$ticket](https://liferay.atlassian.net/browse/$ticket) ($title)**"
 		# message="$ticket ($title) https://liferay.atlassian.net/browse/$ticket"
-		message="[$ticket ($title)](https://liferay.atlassian.net/browse/$ticket)"
+		message="[$ticket](https://liferay.atlassian.net/browse/$ticket) $title"
 
 		# Copy message to clipboard
 		echo $message | pbcopy;
@@ -365,7 +365,7 @@ jl() {
 # Kill tomcat server
 kt() {
 	if [ -n "$1" ]; then
-		echo "🟥 Killing process for branch: $1\n"
+		echo "🟥 Killing process for bundle at $1/bundles/tomcat\n"
 
 		pkill -9 -f $1/bundles/tomcat;
 	else
@@ -377,7 +377,7 @@ kt() {
 # Start tomcat server
 st() {
 	if [ -n "$1" ] && [ -n "$2" ] && [ -n "$3" ]; then
-		[ -d "$HOME/Developer/$1-$2/bundles/tomcat-9.0.$3/bin" ] && local tomcatPath="$HOME/Developer/$1-$2/bundles/tomcat-9.0.$3/bin";
+		[ -d "$HOME/Developer/$1-$2/bundles/tomcat-$3/bin" ] && local tomcatPath="$HOME/Developer/$1-$2/bundles/tomcat-$3/bin";
 
 		cd $tomcatPath;
 
@@ -389,8 +389,8 @@ st() {
 		/$tomcatPath/catalina.sh jpda run;
 	else
 		echo "Starts a tomcat server from the specified [repo]/[branch] directory and [tomcat version]."
-		echo "Usage: st [repo] [branch] [tomcat version]"
-		echo "Example: st liferay-portal master 102"
+		echo "Usage: st [repo] [branch]"
+		echo "Example: st liferay-portal master 10.1.40"
 	fi
 }
 
