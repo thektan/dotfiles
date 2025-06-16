@@ -376,21 +376,32 @@ kt() {
 
 # Start tomcat server
 st() {
-	if [ -n "$1" ] && [ -n "$2" ] && [ -n "$3" ]; then
-		[ -d "$HOME/Developer/$1-$2/bundles/tomcat-$3/bin" ] && local tomcatPath="$HOME/Developer/$1-$2/bundles/tomcat-$3/bin";
+	if [ -n "$1" ] && [ -n "$2" ]; then
+		local baseDir="$HOME/Developer/$1-$2/bundles";
+		local tomcatDir=$(find "$baseDir" -maxdepth 1 -type d -name "tomcat-*" | head -n 1);
 
-		cd $tomcatPath;
+		if [ -n "$tomcatDir" ]; then
+			local tomcatPath="$tomcatDir/bin";
 
-		echo "";
-		echo "─────────────────────────────────────────────────────────────────";
-		echo "🌟 Starting tomcat from: $tomcatPath"
-		echo "─────────────────────────────────────────────────────────────────";
+			if [ -d "$tomcatPath" ]; then
+				cd "$tomcatPath";
 
-		/$tomcatPath/catalina.sh jpda run;
+				echo "";
+				echo "─────────────────────────────────────────────────────────────────";
+				echo "🐈 Starting tomcat from: $tomcatPath"
+				echo "─────────────────────────────────────────────────────────────────";
+
+				./catalina.sh jpda run;
+			else
+				echo "Error: Tomcat bin directory not found at $tomcatPath"
+			fi
+		else
+			echo "Error: No tomcat-* directory found in $baseDir"
+		fi
 	else
-		echo "Starts a tomcat server from the specified [repo]/[branch] directory and [tomcat version]."
+		echo "Starts a tomcat server from the specified [repo]/[branch] directory."
 		echo "Usage: st [repo] [branch]"
-		echo "Example: st liferay-portal master 10.1.40"
+		echo "Example: st liferay-portal master"
 	fi
 }
 
