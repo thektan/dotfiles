@@ -157,6 +157,20 @@ checkTomcatVersion() {
 
 # Copies vscode settings.json files into portal modules to add peacock coloring.
 setupPortalVSCode() {
+	# clay
+	local clayDir=~/Developer/clay
+
+	mkdir "$clayDir/.vscode";
+	cp "$DOTFILES/vscode/clay/settings.json" "$clayDir/.vscode";
+	echo "clay";
+
+	# frontend-data-set-web
+	local frontendDataSetWebDir=modules/apps/frontend-data-set/frontend-data-set-web
+
+	mkdir "$frontendDataSetWebDir/.vscode";
+	cp "$DOTFILES/vscode/frontend-data-set-web/settings.json" "$frontendDataSetWebDir/.vscode";
+	echo "frontend-data-set-web";
+
 	# portal-language-lang
 	local portalLanguageLangDir=modules/apps/portal-language/portal-language-lang
 
