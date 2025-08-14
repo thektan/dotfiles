@@ -39,7 +39,7 @@ PURE_PROMPT_SYMBOL=➜
 [ -f $DOTFILES/.aliases ] && source $DOTFILES/.aliases
 [ -f $DOTFILES/.functions ] && source $DOTFILES/.functions
 [ -f $DOTFILES/.liferay ] && source $DOTFILES/.liferay
-[ -f $DOTFILES/.extras ] && source $DOTFILES/.extras
+[ -f $DOTFILES/.private ] && source $DOTFILES/.private
 
 # Link dircolors for ls color highlighting
 eval $(gdircolors $DOTFILES/.dircolors)
