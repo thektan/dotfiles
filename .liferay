@@ -137,22 +137,52 @@ ghpr() {
 	fi
 }
 
-# Checks if tomcat version in bundles folder is up to date.
-# @author Bryan Engler
+# Checks if the local tomcat version is in sync with the upstream version.
+# If not, it updates the local properties file.
 checkTomcatVersion() {
-	localTomcatVersion=$(cat $1app.server.$USER.properties | grep app.server.tomcat.version= | cut -d "=" -f2);
+	local user_properties_file="app.server.${USER}.properties"
+	local upstream_properties_file="app.server.properties"
 
-	upstreamTomcatVersion=$(cat $1app.server.properties | grep app.server.tomcat.version= | cut -d "=" -f2);
-
-	if [ $upstreamTomcatVersion != $localTomcatVersion ]; then
-		echo "⚠️  \e[33mWARNING: Tomcat version is out of sync, set $upstreamTomcatVersion in app.server.$USER.properties"
-
-		return 1;
-	else
-		echo "✅ Tomcat version is up to date. Current version: $localTomcatVersion"
-
-		return 0;
+	if [[ ! -f "$user_properties_file" ]]; then
+		printf "⚠️  \033[33mWARNING: User properties file not found: %s\033[0m\n" "$user_properties_file"
+		return 1
 	fi
+
+	if [[ ! -f "$upstream_properties_file" ]]; then
+		printf "⚠️  \033[33mWARNING: Upstream properties file not found: %s\033[0m\n" "$upstream_properties_file"
+		return 1
+	fi
+
+	local localTomcatVersion
+	local upstreamTomcatVersion
+
+	localTomcatVersion=$(grep "^app.server.tomcat.version=" "$user_properties_file" | cut -d'=' -f2 | xargs)
+	upstreamTomcatVersion=$(grep "^app.server.tomcat.version=" "$upstream_properties_file" | cut -d'=' -f2 | xargs)
+
+	if [[ "$upstreamTomcatVersion" != "$localTomcatVersion" ]]; then
+		printf "⚠️  \033[33mTomcat version is out of sync.\033[0m\n"
+		printf "   - Your version:     %s\n" "${localTomcatVersion}"
+		printf "   - Upstream version: %s\n" "${upstreamTomcatVersion}"
+		printf "   Updating %s...\n" "${user_properties_file}"
+
+		# Escape dots in version string for sed's regex pattern.
+		local escapedLocalTomcatVersion
+
+		escapedLocalTomcatVersion=$(printf '%s' "$localTomcatVersion" | sed 's/\./\\./g')
+
+		# Use sed for in-place replacement. The empty extension '' for -i is for macOS compatibility.
+		# Two expressions are used to update both occurrences of the version.
+		sed -i '' \
+			-e "s/tomcat-${escapedLocalTomcatVersion}/tomcat-${upstreamTomcatVersion}/" \
+			-e "s/app.server.tomcat.version=${escapedLocalTomcatVersion}/app.server.tomcat.version=${upstreamTomcatVersion}/" \
+			"$user_properties_file"
+
+		printf "✅ Tomcat version updated to %s in %s\n" "${upstreamTomcatVersion}" "${user_properties_file}"
+	else
+		printf "✅ Tomcat version is up to date. Current version: %s\n" "$localTomcatVersion"
+	fi
+
+	return 0
 }
 
 # Copies vscode settings.json files into portal modules to add peacock coloring.
