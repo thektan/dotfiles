@@ -1844,6 +1844,8 @@
 				<dict>
 					<key>action</key>
 					<string>iTermHighlightLineTrigger</string>
+					<key>parameter</key>
+					<string>{p3#ffffffffffff,#c92d20}</string>
 					<key>partial</key>
 					<true/>
 					<key>regex</key>
