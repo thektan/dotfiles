@@ -243,6 +243,12 @@ buildPortal() {
 
 	checkTomcatVersion;
 
+	# Stop the function if tomcat version isn't up to date.
+	# This checks if function returns 1, a non-zero, which indicates an error.
+	if [ $? -eq 1 ]; then
+		return;
+	fi
+
 	if [[ $* == *--setup* ]]; then
 		echo "";
 		echo "─────────────────────────────────────────────────────────────────";
