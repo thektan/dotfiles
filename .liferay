@@ -165,9 +165,8 @@ checkTomcatVersion() {
 		printf "   - Upstream version: %s\n" "${upstreamTomcatVersion}"
 		printf "   Updating %s...\n" "${user_properties_file}"
 
-		# Use sed for in-place replacement. The empty extension '' for -i is for macOS compatibility.
-		# These expressions are more robust as they don't rely on the old version string.
-		sed -i '' \
+		# Replace the current tomcat version with the upstream version.
+		sed -i \
 			-e "s/^\([[:space:]]*app.server.tomcat.version=\).*/\1${upstreamTomcatVersion}/" \
 			-e "s/\(tomcat-\)[0-9\.]*/\1${upstreamTomcatVersion}/" \
 			"$user_properties_file"
