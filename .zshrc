@@ -88,3 +88,11 @@ export PATH="$HOME/.pyenv/shims:$PATH"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Liferay Environment Composer
+export LIFERAY_ENVIRONMENT_COMPOSER_HOME="${HOME}/Developer/liferay-environment-composer"
+
+[[ -s "$LIFERAY_ENVIRONMENT_COMPOSER_HOME/scripts/cli/shell-source.sh" ]] && source "$LIFERAY_ENVIRONMENT_COMPOSER_HOME/scripts/cli/shell-source.sh"
+
+export DOCKER_HOST="unix:///Users/ktan/.colima/default/docker.sock"
+export PATH="$HOME/.local/bin:$PATH"
