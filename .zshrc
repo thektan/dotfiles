@@ -7,6 +7,9 @@ source $HOME/Developer/dotfiles/.exports
 # zsh settings
 setopt AUTO_CD
 
+# Commands in memory (default 2000)
+export HISTSIZE=10000
+
 # Enable menu-style completion.
 zstyle ':completion:*' menu select
 
