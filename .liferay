@@ -286,15 +286,6 @@ buildPortal() {
 
 	/Users/ktan/Developer/liferay-intellij/intellij "$@";
 
-	echo "";
-	echo "─────────────────────────────────────────────────────────────────";
-	echo "🤖 Run 'npm install' in playwright directory";
-	echo "─────────────────────────────────────────────────────────────────";
-
-	cd ~/Developer/liferay-portal-master/portal/modules/test/playwright;
-
-	npm install;
-
 	cd -;
 
 	endtime=$(date +%s.%N);
