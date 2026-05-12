@@ -483,6 +483,16 @@ alias kmr="kill -9 $(ptm) && lrsm"
 alias killp="kill -9"
 
 ############################################################
+# Testing
+############################################################
+
+run_poshi() {
+	ant -f build-test.xml run-selenium-test -Dtest.class=$1 -Ddefault.portal.url=http://localhost:8080 -Dinstance.url=http://localhost:8080;
+}
+
+alias poshi=run_poshi
+
+############################################################
 # Misc
 ############################################################
 
