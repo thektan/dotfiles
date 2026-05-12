@@ -457,6 +457,31 @@ alias grfs="gradle formatSource"
 # Update master private
 alias abwd="ant -f build-working-dir.xml"
 
+############################################################
+# Project-specific deploying
+############################################################
+
+deployCMP() {
+	echo "─────────────────────────────────────────────────────────────────";
+	echo "▶️ Deploying site/site-cmp-site-initializer (renderers)"
+	echo "─────────────────────────────────────────────────────────────────";
+
+	cd ~/Developer/liferay-portal-master/portal/modules/apps/site/site-cmp-site-initializer;
+
+	gradle clean deploy -a;
+
+	cd -;
+
+	echo "─────────────────────────────────────────────────────────────────";
+	echo "▶️ Deploying site-initializer/site-initializer-cmp (templates)"
+	echo "─────────────────────────────────────────────────────────────────";
+
+	cd ~/Developer/liferay-portal-master/portal/modules/apps/site-initializer/site-initializer-cmp;
+
+	gradle clean deploy -a;
+
+	cd -;
+}
 
 ############################################################
 # Git
