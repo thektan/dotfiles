@@ -405,33 +405,76 @@ kt() {
 
 # Start tomcat server
 st() {
-	if [ -n "$1" ] && [ -n "$2" ]; then
-		local baseDir="$HOME/Developer/$1-$2/bundles";
-		local tomcatDir=$(find "$baseDir" -maxdepth 1 -type d -name "tomcat*" | head -n 1);
+	local dirName="$1";
 
-		if [ -n "$tomcatDir" ]; then
-			local tomcatPath="$tomcatDir/bin";
+	# No argument: present a numbered list of bundles to choose from.
+	if [ -z "$dirName" ]; then
+		local bundles=();
+		local d;
+		for d in "$HOME"/Developer/*/bundles; do
+			[ -d "$d" ] && bundles+=("$d");
+		done;
 
-			if [ -d "$tomcatPath" ]; then
-				cd "$tomcatPath";
-
-				echo "";
-				echo "─────────────────────────────────────────────────────────────────";
-				echo "🐈 Starting tomcat from: $tomcatPath"
-				echo "─────────────────────────────────────────────────────────────────";
-
-				./catalina.sh jpda run;
-			else
-				echo "Error: Tomcat bin directory not found at $tomcatPath"
-			fi
-		else
-			echo "Error: No tomcat-* directory found in $baseDir"
+		if [ ${#bundles[@]} -eq 0 ]; then
+			echo "Error: No ~/Developer/*/bundles directories found.";
+			return 1;
 		fi
-	else
-		echo "Starts a tomcat server from the specified [repo]/[branch] directory."
-		echo "Usage: st [repo] [branch]"
-		echo "Example: st liferay-portal master"
+
+		echo "Select a bundle to start:";
+		local i=1;
+		for d in "${bundles[@]}"; do
+			echo "  [$i] ${d#$HOME/Developer/}";
+			i=$((i + 1));
+		done
+
+		local choice;
+		printf "Enter a number: ";
+		read choice;
+
+		if ! [[ "$choice" =~ ^[0-9]+$ ]] || [ "$choice" -lt 1 ] || [ "$choice" -gt ${#bundles[@]} ]; then
+			echo "Error: Invalid selection.";
+			return 1;
+		fi
+
+		# zsh arrays are 1-indexed, bash arrays are 0-indexed.
+		if [ -n "$ZSH_VERSION" ]; then
+			dirName="${bundles[$choice]}";
+		else
+			dirName="${bundles[$((choice - 1))]}";
+		fi
+		dirName="${dirName%/bundles}";
+		dirName="${dirName#$HOME/Developer/}";
 	fi
+
+	local baseDir="$HOME/Developer/$dirName/bundles";
+
+	if [ ! -d "$baseDir" ]; then
+		echo "Error: Bundle directory not found at $baseDir";
+		return 1;
+	fi
+
+	local tomcatDir=$(find "$baseDir" -maxdepth 1 -type d -name "tomcat*" | head -n 1);
+
+	if [ -z "$tomcatDir" ]; then
+		echo "Error: No tomcat-* directory found in $baseDir";
+		return 1;
+	fi
+
+	local tomcatPath="$tomcatDir/bin";
+
+	if [ ! -d "$tomcatPath" ]; then
+		echo "Error: Tomcat bin directory not found at $tomcatPath";
+		return 1;
+	fi
+
+	cd "$tomcatPath";
+
+	echo "";
+	echo "─────────────────────────────────────────────────────────────────";
+	echo "🐈 Starting tomcat from: $tomcatPath"
+	echo "─────────────────────────────────────────────────────────────────";
+
+	./catalina.sh jpda run;
 }
 
 ############################################################
@@ -486,7 +529,7 @@ deployCMP() {
 	echo "▶️ Deploying site-initializer/site-initializer-cmp (templates)"
 	echo "─────────────────────────────────────────────────────────────────";
 
-	cd ~/Developer/liferay-portal-master/portal/modules/apps/site-initializer/site-initializer-cmp;
+	cd "${portalDir}/modules/apps/site-initializer/site-initializer-cmp";
 
 	gradle clean deploy -a;
 
