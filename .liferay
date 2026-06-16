@@ -453,11 +453,30 @@ alias abwd="ant -f build-working-dir.xml"
 ############################################################
 
 deployCMP() {
+	local dir="$PWD";
+	local portalDir="";
+
+	while [ "${dir}" != "/" ]; do
+		if [ -d "${dir}/modules/apps" ]; then
+			portalDir="${dir}";
+
+			break;
+		fi;
+
+		dir="$(dirname "${dir}")";
+	done;
+
+	if [ -z "${portalDir}" ]; then
+		echo "❌ Could not find a parent portal directory (no modules/apps found)";
+
+		return 1;
+	fi;
+
 	echo "─────────────────────────────────────────────────────────────────";
 	echo "▶️ Deploying site/site-cmp-site-initializer (renderers)"
 	echo "─────────────────────────────────────────────────────────────────";
 
-	cd ~/Developer/liferay-portal-master/portal/modules/apps/site/site-cmp-site-initializer;
+	cd "${portalDir}/modules/apps/site/site-cmp-site-initializer";
 
 	gradle clean deploy -a;
 
