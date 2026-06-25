@@ -391,16 +391,87 @@ jl() {
 	fi
 }
 
+# Gracefully kill the given pids: SIGTERM first (fires Tomcat's JVM shutdown
+# hook for a clean OSGi/Lucene/DB flush), escalate to SIGKILL only if needed.
+_kt_kill() {
+	local pids="$1"
+	echo "  → SIGTERM $pids (graceful shutdown)"
+	kill ${=pids} 2>/dev/null
+
+	# Give the shutdown hook time to run
+	local i
+	for i in {1..15}; do
+		kill -0 ${=pids} 2>/dev/null || { echo "  ✅ Shut down cleanly."; return 0; }
+		sleep 1
+	done
+
+	echo "  ⚠️  Still alive after 15s, escalating to SIGKILL (kill -9)"
+	kill -9 ${=pids} 2>/dev/null
+	echo "  🟥 Force killed."
+}
+
 # Kill tomcat server
 kt() {
-	if [ -n "$1" ]; then
+	# kt branchName -> kill by bundle path (backwards compatible)
+	if [ -n "$1" ] && ! [[ "$1" =~ ^[0-9]+$ ]]; then
+		local pids
+		pids=$(pgrep -f "$1/bundles/tomcat")
+		if [ -z "$pids" ]; then
+			echo "No running tomcat process for bundle at $1/bundles/tomcat"
+			return 1
+		fi
 		echo "🟥 Killing process for bundle at $1/bundles/tomcat\n"
-
-		pkill -9 -f $1/bundles/tomcat;
-	else
-		echo "Kills a tomcat server."
-		echo "Usage: kt branchName"
+		_kt_kill "$pids"
+		return $?
 	fi
+
+	# Discover running tomcat bundles by their catalina.base path
+	local lines
+	lines=$(ps -axww -o pid=,command= | grep 'catalina.base=' | grep -v grep)
+
+	if [ -z "$lines" ]; then
+		echo "No running tomcat bundles found."
+		return 0
+	fi
+
+	typeset -A bundlePids
+	local order=()
+
+	while IFS= read -r line; do
+		[ -z "$line" ] && continue
+		local pid="${line%% *}"
+		local base="${line##*-Dcatalina.base=}"
+		base="${base%% *}"
+		if [[ -z "${bundlePids[$base]}" ]]; then
+			order+=("$base")
+			bundlePids[$base]="$pid"
+		else
+			bundlePids[$base]="${bundlePids[$base]} $pid"
+		fi
+	done <<< "$lines"
+
+	# kt <number> -> kill the listed bundle
+	if [ -n "$1" ]; then
+		local base="${order[$1]}"
+		if [ -z "$base" ]; then
+			echo "❌ No tomcat bundle [$1]. Run kt to list running bundles."
+			return 1
+		fi
+		echo "🟥 Killing tomcat bundle [$1] at $base (pids: ${bundlePids[$base]})\n"
+		_kt_kill "${bundlePids[$base]}"
+		return $?
+	fi
+
+	# kt -> list running bundles
+	echo "Running tomcat bundles:"
+	local i=1
+	for base in "${order[@]}"; do
+		echo "  [$i] $base (pids: ${bundlePids[$base]})"
+		i=$((i + 1))
+	done
+	echo ""
+	echo "Usage: kt <number>      kill the listed bundle"
+	echo "       kt <branchName>  kill by bundle path"
 }
 
 # Start tomcat server
