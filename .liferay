@@ -538,6 +538,14 @@ st() {
 		return 1;
 	fi
 
+	# Ensure MySQL is running before starting tomcat.
+	if ! pgrep -x mysqld >/dev/null 2>&1; then
+		echo "🐬 MySQL is not running. Starting it...";
+		sudo mysql.server start || { echo "Error: Failed to start MySQL."; return 1; }
+	else
+		echo "🐬 MySQL is already running.";
+	fi
+
 	cd "$tomcatPath";
 
 	echo "";
