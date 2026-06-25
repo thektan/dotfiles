@@ -237,9 +237,9 @@ buildPortal() {
 	starttime=$(date +%s.%N);
 
 	echo "";
-	echo "─────────────────────────────────────────────────────────────────";
-	echo "🤖 Checking tomcat version";
-	echo "─────────────────────────────────────────────────────────────────";
+	echo "╔═══════════════════════════════════════════════════════════════════╗";
+	echo "║ 🤖 Checking tomcat version                                        ║";
+	echo "╚═══════════════════════════════════════════════════════════════════╝";
 
 	checkTomcatVersion;
 
@@ -251,38 +251,38 @@ buildPortal() {
 
 	if [[ $* == *--setup* ]]; then
 		echo "";
-		echo "─────────────────────────────────────────────────────────────────";
-		echo "🤖 Running 'ant setup-profile-dxp'";
-		echo "─────────────────────────────────────────────────────────────────";
+		echo "╔═══════════════════════════════════════════════════════════════════╗";
+		echo "║ 🤖 Running 'ant setup-profile-dxp'                                ║";
+		echo "╚═══════════════════════════════════════════════════════════════════╝";
 
 		ant setup-profile-dxp;
 
 		echo "";
-		echo "─────────────────────────────────────────────────────────────────";
-		echo "🤖 Running 'ant setup-sdk'";
-		echo "─────────────────────────────────────────────────────────────────";
+		echo "╔═══════════════════════════════════════════════════════════════════╗";
+		echo "║ 🤖 Running 'ant setup-sdk'                                        ║";
+		echo "╚═══════════════════════════════════════════════════════════════════╝";
 
 		ant setup-sdk;
 	fi
 
 	echo "";
-	echo "─────────────────────────────────────────────────────────────────";
-	echo "🤖 Running 'ant all'";
-	echo "─────────────────────────────────────────────────────────────────";
+	echo "╔═══════════════════════════════════════════════════════════════════╗";
+	echo "║ 🤖 Running 'ant all'                                              ║";
+	echo "╚═══════════════════════════════════════════════════════════════════╝";
 
 	ant all;
 
 	echo "";
-	echo "─────────────────────────────────────────────────────────────────";
-	echo "🤖 Setting up VS Code color settings";
-	echo "─────────────────────────────────────────────────────────────────";
+	echo "╔═══════════════════════════════════════════════════════════════════╗";
+	echo "║ 🤖 Setting up VS Code color settings                              ║";
+	echo "╚═══════════════════════════════════════════════════════════════════╝";
 
 	setupPortalVSCode;
 
 	echo "";
-	echo "─────────────────────────────────────────────────────────────────";
-	echo "🤖 Setting up IntelliJ";
-	echo "─────────────────────────────────────────────────────────────────";
+	echo "╔═══════════════════════════════════════════════════════════════════╗";
+	echo "║ 🤖 Setting up IntelliJ                                            ║";
+	echo "╚═══════════════════════════════════════════════════════════════════╝";
 
 	/Users/ktan/Developer/liferay-intellij/intellij "$@";
 
@@ -293,9 +293,10 @@ buildPortal() {
 	duration=$(echo "scale=9; ($endtime - $starttime) / 60" | bc);
 
 	echo "";
-	echo "─────────────────────────────────────────────────────────────────";
-	echo -e "\e[32m⏲️ buildPortal took a total of $duration minutes\e[0m";
-	echo "─────────────────────────────────────────────────────────────────";
+	echo "╔═══════════════════════════════════════════════════════════════════╗";
+	echo "║ ⏲️ buildPortal complete                                           ║";
+	echo "╚═══════════════════════════════════════════════════════════════════╝";
+	echo "\e[32m   ⏱️ Total time: $duration minutes\e[0m";
 }
 
 # Gets a formatted branch name for a Jira ticket.
@@ -487,11 +488,13 @@ st() {
 		done;
 
 		if [ ${#bundles[@]} -eq 0 ]; then
-			echo "Error: No ~/Developer/*/bundles directories found.";
+			echo "❌ No ~/Developer/*/bundles directories found.";
 			return 1;
 		fi
 
-		echo "Select a bundle to start:";
+		echo "╔═══════════════════════════════════════════════════════════════════╗";
+		echo "║ 📦 Select a bundle to start                                       ║";
+		echo "╚═══════════════════════════════════════════════════════════════════╝";
 		local i=1;
 		for d in "${bundles[@]}"; do
 			echo "  [$i] ${d#$HOME/Developer/}";
@@ -503,7 +506,7 @@ st() {
 		read choice;
 
 		if ! [[ "$choice" =~ ^[0-9]+$ ]] || [ "$choice" -lt 1 ] || [ "$choice" -gt ${#bundles[@]} ]; then
-			echo "Error: Invalid selection.";
+			echo "❌ Invalid selection.";
 			return 1;
 		fi
 
@@ -520,38 +523,45 @@ st() {
 	local baseDir="$HOME/Developer/$dirName/bundles";
 
 	if [ ! -d "$baseDir" ]; then
-		echo "Error: Bundle directory not found at $baseDir";
+		echo "❌ Bundle directory not found at $baseDir";
 		return 1;
 	fi
 
 	local tomcatDir=$(find "$baseDir" -maxdepth 1 -type d -name "tomcat*" | head -n 1);
 
 	if [ -z "$tomcatDir" ]; then
-		echo "Error: No tomcat-* directory found in $baseDir";
+		echo "❌ No tomcat-* directory found in $baseDir";
 		return 1;
 	fi
 
 	local tomcatPath="$tomcatDir/bin";
 
 	if [ ! -d "$tomcatPath" ]; then
-		echo "Error: Tomcat bin directory not found at $tomcatPath";
+		echo "❌ Tomcat bin directory not found at $tomcatPath";
 		return 1;
 	fi
 
 	# Ensure MySQL is running before starting tomcat.
+	echo "";
 	if ! pgrep -x mysqld >/dev/null 2>&1; then
-		echo "🐬 MySQL is not running. Starting it...";
-		sudo mysql.server start || { echo "Error: Failed to start MySQL."; return 1; }
+		echo "╔═══════════════════════════════════════════════════════════════════╗";
+		echo "║ 🐬 MySQL is not running — starting it...                          ║";
+		echo "╚═══════════════════════════════════════════════════════════════════╝";
+		sudo mysql.server start || { echo "❌ Failed to start MySQL."; return 1; }
 	else
-		echo "🐬 MySQL is already running.";
+		echo "╔═══════════════════════════════════════════════════════════════════╗";
+		echo "║ 🐬 MySQL is already running                                       ║";
+		echo "╚═══════════════════════════════════════════════════════════════════╝";
 	fi
 
 	cd "$tomcatPath";
 
 	echo "";
-	echo "─────────────────────────────────────────────────────────────────";
-	echo "🐈 Starting tomcat from: $tomcatPath"
-	echo "─────────────────────────────────────────────────────────────────";
+	echo "╔═══════════════════════════════════════════════════════════════════╗";
+	echo "║ 🐈 Starting Tomcat                                                ║";
+	echo "╚═══════════════════════════════════════════════════════════════════╝";
+	echo "   📂 $tomcatPath";
+	echo "";
 
 	./catalina.sh jpda run;
 }
@@ -594,9 +604,9 @@ deployCMP() {
 		return 1;
 	fi;
 
-	echo "─────────────────────────────────────────────────────────────────";
-	echo "▶️ Deploying site/site-cmp-site-initializer (renderers)"
-	echo "─────────────────────────────────────────────────────────────────";
+	echo "╔═══════════════════════════════════════════════════════════════════╗";
+	echo "║ ▶️ Deploying site/site-cmp-site-initializer (renderers)          ║"
+	echo "╚═══════════════════════════════════════════════════════════════════╝";
 
 	cd "${portalDir}/modules/apps/site/site-cmp-site-initializer";
 
@@ -604,9 +614,9 @@ deployCMP() {
 
 	cd -;
 
-	echo "─────────────────────────────────────────────────────────────────";
-	echo "▶️ Deploying site-initializer/site-initializer-cmp (templates)"
-	echo "─────────────────────────────────────────────────────────────────";
+	echo "╔═══════════════════════════════════════════════════════════════════╗";
+	echo "║ ▶️ Deploying site-initializer/site-initializer-cmp (templates)   ║"
+	echo "╚═══════════════════════════════════════════════════════════════════╝";
 
 	cd "${portalDir}/modules/apps/site-initializer/site-initializer-cmp";
 
