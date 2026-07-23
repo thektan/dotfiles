@@ -114,6 +114,10 @@ alias grha="git reset --hard"
 alias gql="git log --pretty=format:'* %Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --date=relative"
 alias gdiff="git diff --name-only"
 
+# Switch worktrees
+
+alias gw='cd "$(git worktree list | fzf | awk '\''{print $1}'\'')"'
+
 # Git Plugins
 
 # https://github.com/jwu910/check-it-out
