@@ -440,7 +440,8 @@ kt() {
 
 	while IFS= read -r line; do
 		[ -z "$line" ] && continue
-		local pid="${line%% *}"
+		local words=(${=line})
+		local pid="${words[1]}"
 		local base="${line##*-Dcatalina.base=}"
 		base="${base%% *}"
 		if [[ -z "${bundlePids[$base]}" ]]; then
@@ -463,16 +464,33 @@ kt() {
 		return $?
 	fi
 
-	# kt -> list running bundles
+	# kt -> list running bundles, then prompt for one to kill
 	echo "Running tomcat bundles:"
 	local i=1
 	for base in "${order[@]}"; do
 		echo "  [$i] $base (pids: ${bundlePids[$base]})"
 		i=$((i + 1))
 	done
+
+	local choice
 	echo ""
-	echo "Usage: kt <number>      kill the listed bundle"
-	echo "       kt <branchName>  kill by bundle path"
+	printf "Enter a number to kill (or press Enter to cancel): "
+	read choice
+
+	if [ -z "$choice" ]; then
+		echo "Cancelled."
+		return 0
+	fi
+
+	if ! [[ "$choice" =~ ^[0-9]+$ ]] || [ "$choice" -lt 1 ] || [ "$choice" -gt ${#order[@]} ]; then
+		echo "❌ Invalid selection."
+		return 1
+	fi
+
+	local base="${order[$choice]}"
+	echo "🟥 Killing tomcat bundle [$choice] at $base (pids: ${bundlePids[$base]})\n"
+	_kt_kill "${bundlePids[$base]}"
+	return $?
 }
 
 # Start tomcat server
@@ -483,8 +501,14 @@ st() {
 	if [ -z "$dirName" ]; then
 		local bundles=();
 		local d;
+
+		# List liferay-portal-master first, then everything else.
+		local priority="$HOME/Developer/liferay-portal-master/bundles";
+
+		[ -d "$priority" ] && bundles+=("$priority");
+
 		for d in "$HOME"/Developer/*/bundles; do
-			[ -d "$d" ] && bundles+=("$d");
+			[ -d "$d" ] && [ "$d" != "$priority" ] && bundles+=("$d");
 		done;
 
 		if [ ${#bundles[@]} -eq 0 ]; then
@@ -605,7 +629,7 @@ deployCMP() {
 	fi;
 
 	echo "╔═══════════════════════════════════════════════════════════════════╗";
-	echo "║ ▶️ Deploying site/site-cmp-site-initializer (renderers)          ║"
+	echo "║ ▶️ Deploying site/site-cmp-site-initializer (renderers)           ║"
 	echo "╚═══════════════════════════════════════════════════════════════════╝";
 
 	cd "${portalDir}/modules/apps/site/site-cmp-site-initializer";
@@ -615,7 +639,7 @@ deployCMP() {
 	cd -;
 
 	echo "╔═══════════════════════════════════════════════════════════════════╗";
-	echo "║ ▶️ Deploying site-initializer/site-initializer-cmp (templates)   ║"
+	echo "║ ▶️ Deploying site-initializer/site-initializer-cmp (templates)    ║"
 	echo "╚═══════════════════════════════════════════════════════════════════╝";
 
 	cd "${portalDir}/modules/apps/site-initializer/site-initializer-cmp";
