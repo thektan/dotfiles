@@ -279,8 +279,6 @@ buildPortal() {
 
 	/Users/ktan/Developer/liferay-intellij/intellij "$@";
 
-	cd -;
-
 	endtime=$(date +%s.%N);
 
 	duration=$(echo "scale=9; ($endtime - $starttime) / 60" | bc);
