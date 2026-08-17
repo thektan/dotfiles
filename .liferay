@@ -437,6 +437,14 @@ kt() {
 		return $?
 	fi
 
+	# kt with a single running bundle -> kill it without prompting
+	if [ ${#order[@]} -eq 1 ]; then
+		local base="${order[1]}"
+		echo "🟥 Force killing the only running tomcat bundle at $base (pids: ${bundlePids[$base]})"
+		kill -9 ${=bundlePids[$base]} 2>/dev/null
+		return $?
+	fi
+
 	# kt -> list running bundles, then prompt for one to kill
 	echo "Running tomcat bundles:"
 	local i=1
