@@ -500,7 +500,7 @@ st() {
 		echo "╔═══════════════════════════════════════════════════════════════════╗";
 		echo "║ 📦 Select a bundle to start                                       ║";
 		echo "╚═══════════════════════════════════════════════════════════════════╝";
-		local i=1;
+		local i=0;
 		for d in "${bundles[@]}"; do
 			echo "  [$i] ${d#$HOME/Developer/}";
 			i=$((i + 1));
@@ -510,16 +510,16 @@ st() {
 		printf "Enter a number: ";
 		read choice;
 
-		if ! [[ "$choice" =~ ^[0-9]+$ ]] || [ "$choice" -lt 1 ] || [ "$choice" -gt ${#bundles[@]} ]; then
+		if ! [[ "$choice" =~ ^[0-9]+$ ]] || [ "$choice" -lt 0 ] || [ "$choice" -ge ${#bundles[@]} ]; then
 			echo "❌ Invalid selection.";
 			return 1;
 		fi
 
 		# zsh arrays are 1-indexed, bash arrays are 0-indexed.
 		if [ -n "$ZSH_VERSION" ]; then
-			dirName="${bundles[$choice]}";
+			dirName="${bundles[$((choice + 1))]}";
 		else
-			dirName="${bundles[$((choice - 1))]}";
+			dirName="${bundles[$choice]}";
 		fi
 		dirName="${dirName%/bundles}";
 		dirName="${dirName#$HOME/Developer/}";
