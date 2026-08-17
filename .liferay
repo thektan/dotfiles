@@ -630,6 +630,45 @@ deployCMP() {
 	cd -;
 }
 
+buildCMP() {
+	local dir="$PWD";
+	local portalDir="";
+
+	while [ "${dir}" != "/" ]; do
+		if [ -d "${dir}/modules/apps" ]; then
+			portalDir="${dir}";
+
+			break;
+		fi;
+
+		dir="$(dirname "${dir}")";
+	done;
+
+	if [ -z "${portalDir}" ]; then
+		echo "❌ Could not find a parent portal directory (no modules/apps found)";
+
+		return 1;
+	fi;
+
+	echo "";
+	echo "╔═══════════════════════════════════════════════════════════════════╗";
+	echo "║ 🔨 Building CMP modules                                           ║";
+	echo "╚═══════════════════════════════════════════════════════════════════╝";
+	echo "   📂 ${portalDir}/modules";
+	echo "";
+
+	cd "${portalDir}/modules";
+
+	../gradlew \
+		:apps:headless:headless-cmp:headless-cmp-api:deploy \
+		:apps:headless:headless-cmp:headless-cmp-client:deploy \
+		:apps:headless:headless-cmp:headless-cmp-impl:deploy \
+		:apps:site:site-cmp-site-initializer:deploy \
+		:apps:site-initializer:site-initializer-cmp:deploy;
+
+	cd -;
+}
+
 ############################################################
 # Git
 ############################################################
