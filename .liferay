@@ -228,10 +228,10 @@ setupPortalVSCode() {
 # --setup: To include setup commands
 buildPortal() {
 	if [[ $* == *--setup* ]]; then
-		echo "ℹ️ Building portal WITH setup commands (ant setup-profile-dxp and ant setup-sdk)";
+		echo "ℹ️ Building portal WITH setup command (ant setup-profile-dxp)";
 	else
-		echo "ℹ️ Building portal WITHOUT setup commands (ant setup-profile-dxp and ant setup-sdk)";
-		echo "Use 'buildPortal --setup' to run with setup commands.";
+		echo "ℹ️ Building portal WITHOUT setup command (ant setup-profile-dxp)";
+		echo "Use 'buildPortal --setup' to run with the setup command.";
 	fi
 
 	starttime=$(date +%s.%N);
@@ -256,13 +256,6 @@ buildPortal() {
 		echo "╚═══════════════════════════════════════════════════════════════════╝";
 
 		ant setup-profile-dxp;
-
-		echo "";
-		echo "╔═══════════════════════════════════════════════════════════════════╗";
-		echo "║ 🤖 Running 'ant setup-sdk'                                        ║";
-		echo "╚═══════════════════════════════════════════════════════════════════╝";
-
-		ant setup-sdk;
 	fi
 
 	echo "";
