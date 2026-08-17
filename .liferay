@@ -383,26 +383,8 @@ jl() {
 	fi
 }
 
-# Gracefully kill the given pids: SIGTERM first (fires Tomcat's JVM shutdown
-# hook for a clean OSGi/Lucene/DB flush), escalate to SIGKILL only if needed.
-_kt_kill() {
-	local pids="$1"
-	echo "  → SIGTERM $pids (graceful shutdown)"
-	kill ${=pids} 2>/dev/null
-
-	# Give the shutdown hook time to run
-	local i
-	for i in {1..15}; do
-		kill -0 ${=pids} 2>/dev/null || { echo "  ✅ Shut down cleanly."; return 0; }
-		sleep 1
-	done
-
-	echo "  ⚠️  Still alive after 15s, escalating to SIGKILL (kill -9)"
-	kill -9 ${=pids} 2>/dev/null
-	echo "  🟥 Force killed."
-}
-
-# Kill tomcat server
+# Kill tomcat server. SIGKILL is fine for dev bundles: data lives in MySQL,
+# so the worst case is a search reindex on next start.
 kt() {
 	# kt branchName -> kill by bundle path (backwards compatible)
 	if [ -n "$1" ] && ! [[ "$1" =~ ^[0-9]+$ ]]; then
@@ -412,8 +394,8 @@ kt() {
 			echo "No running tomcat process for bundle at $1/bundles/tomcat"
 			return 1
 		fi
-		echo "🟥 Killing process for bundle at $1/bundles/tomcat\n"
-		_kt_kill "$pids"
+		echo "🟥 Force killing process for bundle at $1/bundles/tomcat (pids: $pids)"
+		kill -9 ${=pids} 2>/dev/null
 		return $?
 	fi
 
@@ -450,8 +432,8 @@ kt() {
 			echo "❌ No tomcat bundle [$1]. Run kt to list running bundles."
 			return 1
 		fi
-		echo "🟥 Killing tomcat bundle [$1] at $base (pids: ${bundlePids[$base]})\n"
-		_kt_kill "${bundlePids[$base]}"
+		echo "🟥 Force killing tomcat bundle [$1] at $base (pids: ${bundlePids[$base]})"
+		kill -9 ${=bundlePids[$base]} 2>/dev/null
 		return $?
 	fi
 
@@ -479,8 +461,8 @@ kt() {
 	fi
 
 	local base="${order[$choice]}"
-	echo "🟥 Killing tomcat bundle [$choice] at $base (pids: ${bundlePids[$base]})\n"
-	_kt_kill "${bundlePids[$base]}"
+	echo "🟥 Force killing tomcat bundle [$choice] at $base (pids: ${bundlePids[$base]})"
+	kill -9 ${=bundlePids[$base]} 2>/dev/null
 	return $?
 }
 
