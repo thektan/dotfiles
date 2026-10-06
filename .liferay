@@ -660,11 +660,11 @@ buildCMP() {
 	cd "${portalDir}/modules";
 
 	../gradlew \
-		:apps:headless:headless-cmp:headless-cmp-api:deploy \
-		:apps:headless:headless-cmp:headless-cmp-client:deploy \
-		:apps:headless:headless-cmp:headless-cmp-impl:deploy \
-		:apps:site:site-cmp-site-initializer:deploy \
-		:apps:site-initializer:site-initializer-cmp:deploy;
+		:dxp:apps:content-marketing-platform:content-marketing-platform-rest-api:deploy \
+		:dxp:apps:content-marketing-platform:content-marketing-platform-rest-client:deploy \
+		:dxp:apps:content-marketing-platform:content-marketing-platform-rest-impl:deploy \
+		:dxp:apps:content-marketing-platform:content-marketing-platform-site-initializer:deploy \
+		:dxp:apps:content-marketing-platform:content-marketing-platform-web:deploy;
 
 	cd -;
 }
