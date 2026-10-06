@@ -610,20 +610,20 @@ deployCMP() {
 	fi;
 
 	echo "╔═══════════════════════════════════════════════════════════════════╗";
-	echo "║ ▶️ Deploying site/site-cmp-site-initializer (renderers)           ║"
+	echo "║ ▶️ Deploy content-marketing-platform-web (renderers)              ║"
 	echo "╚═══════════════════════════════════════════════════════════════════╝";
 
-	cd "${portalDir}/modules/apps/site/site-cmp-site-initializer";
+	cd "${portalDir}/modules/dxp/apps/content-marketing-platform/content-marketing-platform-web";
 
 	gradle clean deploy -a;
 
 	cd -;
 
 	echo "╔═══════════════════════════════════════════════════════════════════╗";
-	echo "║ ▶️ Deploying site-initializer/site-initializer-cmp (templates)    ║"
+	echo "║ ▶️ Deploy content-marketing-platform-site-initializer (templates) ║"
 	echo "╚═══════════════════════════════════════════════════════════════════╝";
 
-	cd "${portalDir}/modules/apps/site-initializer/site-initializer-cmp";
+	cd "${portalDir}/modules/dxp/apps/content-marketing-platform/content-marketing-platform-site-initializer";
 
 	gradle clean deploy -a;
 
