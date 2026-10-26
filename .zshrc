@@ -4,6 +4,9 @@
 # Get export variables
 source $HOME/Developer/dotfiles/.exports
 
+# Homebrew setup. Sets $HOMEBREW_PREFIX (/opt/homebrew on Apple Silicon, /usr/local on Intel).
+eval "$(/opt/homebrew/bin/brew shellenv 2>/dev/null || /usr/local/bin/brew shellenv)"
+
 # zsh settings
 setopt AUTO_CD
 
@@ -14,7 +17,7 @@ export HISTSIZE=10000
 zstyle ':completion:*' menu select
 
 # zplug setup
-export ZPLUG_HOME=/usr/local/opt/zplug
+export ZPLUG_HOME=$HOMEBREW_PREFIX/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
 # Plugins
@@ -63,21 +66,15 @@ zplug load
 export PATH="$HOME/.yarn/bin:$PATH"
 export BAT_CONFIG_PATH="$DOTFILES/bat/bat.conf"
 
-# Ruby PATH
-export PATH="/usr/local/opt/ruby/bin:$PATH"
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-
 # For compatability with gnu find and sed.
 # Required after running:
 # $ brew install findutils
 # $ brew install gnu-sed
-export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
-export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+export PATH="$HOMEBREW_PREFIX/opt/findutils/libexec/gnubin:$PATH"
+export PATH="$HOMEBREW_PREFIX/opt/gnu-sed/libexec/gnubin:$PATH"
 
 # For adding path to blade command
-export PATH="/Users/ktan/Library/PackageManager/bin:$PATH"
+export PATH="$HOME/Library/PackageManager/bin:$PATH"
 
 # Python PATH
 export PATH="$HOME/.pyenv/shims:$PATH"
@@ -94,5 +91,5 @@ export LIFERAY_ENVIRONMENT_COMPOSER_HOME="${HOME}/Developer/liferay-environment-
 
 [[ -s "$LIFERAY_ENVIRONMENT_COMPOSER_HOME/scripts/cli/shell-source.sh" ]] && source "$LIFERAY_ENVIRONMENT_COMPOSER_HOME/scripts/cli/shell-source.sh"
 
-export DOCKER_HOST="unix:///Users/ktan/.colima/default/docker.sock"
+export DOCKER_HOST="unix://$HOME/.colima/default/docker.sock"
 export PATH="$HOME/.local/bin:$PATH"

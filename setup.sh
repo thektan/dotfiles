@@ -3,18 +3,12 @@
 # Get export variables
 source .exports
 
-# Install xcode for command line tools
-xcode-select --install
-
 # Run brew and brew cask
 ./brew.sh
 ./brew-cask.sh
 
 # Install global npm packages
 yarn global add rebase-editor   # https://github.com/sjurba/rebase-editor
-npm install -g check-it-out     # https://github.com/jwu910/check-it-out
-npm install -g jack-cli         # https://github.com/drewbrokke/jack
-npm install -g tldr             # https://github.com/tldr-pages/tldr
 
 # Git Configs
 
@@ -29,7 +23,6 @@ echo "╭───────────────────────�
 echo "│                                                       │"
 echo "│    Other apps to install manually:                    │"
 echo "│      • https://eagle.cool/                            │"
-echo "│      • https://github.com/nvm-sh/nvm                  │"
 echo "│                                                       │"
 echo "╰───────────────────────────────────────────────────────╯"
 

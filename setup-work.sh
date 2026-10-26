@@ -20,3 +20,11 @@ ln -s ${LIFERAY_CONFIG_PATH}/app.server.ktan.properties ${PORTAL_PATH}/app.serve
 ln -s ${LIFERAY_CONFIG_PATH}/build.ktan.properties ${PORTAL_PATH}/build.ktan.properties
 ln -s ${LIFERAY_CONFIG_PATH}/portal-ext.properties ${PORTAL_BUNDLES}/portal-ext.properties
 ln -s ${LIFERAY_CONFIG_PATH}/portal-setup-wizard.properties ${PORTAL_BUNDLES}/portal-setup-wizard.properties
+
+# Other apps to install
+echo "╭───────────────────────────────────────────────────────╮"
+echo "│                                                       │"
+echo "│    Other apps to install manually:                    │"
+echo "│      • https://github.com/nvm-sh/nvm                  │"
+echo "│                                                       │"
+echo "╰───────────────────────────────────────────────────────╯"
