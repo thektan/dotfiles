@@ -14,8 +14,16 @@ export ANT_OPTS="-Xms8g -Xmx8g"
 # `[echo] Executing Gradle task: deploy` while running `ant all`.
 export GRADLE_OPTS="-Xmx8g"
 
+# For adding path to blade command
+export PATH="$HOME/Library/PackageManager/bin:$PATH"
+
+# Liferay Environment Composer
+export LIFERAY_ENVIRONMENT_COMPOSER_HOME="${HOME}/Developer/liferay-environment-composer"
+
+[[ -s "$LIFERAY_ENVIRONMENT_COMPOSER_HOME/scripts/cli/shell-source.sh" ]] && source "$LIFERAY_ENVIRONMENT_COMPOSER_HOME/scripts/cli/shell-source.sh"
+
 ############################################################
-# Java                                                     #
+# Java                                                    #
 ############################################################
 
 # export JAVA_HOME_8=$(/usr/libexec/java_home -v1.8)
@@ -660,8 +668,19 @@ gdi() {
 }
 
 ############################################################
+# Ant
+############################################################
+alias aa="ant all"
+alias ad="ant deploy"
+alias acd="ant clean deploy"
+
+############################################################
 # Gradle
 ############################################################
+alias gr="gradle"
+alias grd="gradle deploy"
+alias grcd="gradle clean deploy"
+
 alias grcd1="../gradlew clean deploy"
 alias grcd2="../../gradlew clean deploy"
 alias grcd3="../../../gradlew clean deploy"

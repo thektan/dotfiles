@@ -45,16 +45,6 @@ alias lsd="ls -lF -G"
 # Build Tasks                                              #
 ############################################################
 
-# Ant
-alias aa="ant all"
-alias ad="ant deploy"
-alias acd="ant clean deploy"
-
-# Gradle
-alias gr="gradle"
-alias grd="gradle deploy"
-alias grcd="gradle clean deploy"
-
 # Gulp
 alias gub="gulp build"
 alias gud="gulp deploy"
