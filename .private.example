@@ -1,0 +1,7 @@
+# Copy to .private (ignored by git) and fill in. Never commit secrets.
+
+# "work" loads .liferay. Anything else (or unset) skips it.
+export DOTFILES_PROFILE=work
+
+export JIRA_API_USER=""
+export JIRA_API_TOKEN=""

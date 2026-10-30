@@ -12,6 +12,7 @@
 1. `brew install git`
 1. `git clone https://github.com/thektan/dotfiles.git`
 1. `. ./setup.sh`
+1. `cp .private.example .private` and fill it in
 1. Point iTerm2 preferences file to `$DOTFILES/iterm/`
 1. In iTerm2, import `ktan-one-dark` color preset
 
@@ -52,7 +53,7 @@ These are my tweaked colors to match Atom's One Dark with the git colors. I have
 
 ## Notes
 
--   Create an `.extras` file in the root directory of this repo for any aliases/functions unique to the current workspace. This file is ignored from git.
+-   `.private` is ignored from git and holds secrets plus `DOTFILES_PROFILE`, which picks the machine-specific file to load. Set it to `work` to load `.liferay`. Everything else is tracked.
 
 ## Resources
 

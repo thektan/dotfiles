@@ -38,11 +38,14 @@ export LSCOLORS=exfxcxdxbxegedabagacad
 
 PURE_PROMPT_SYMBOL=➜
 
-# Source files
+# Source files. Order matters: .private (untracked) holds secrets and sets
+# DOTFILES_PROFILE, and the work file loads last so it can override shared ones.
+[ -f $DOTFILES/.private ] && source $DOTFILES/.private
+
 [ -f $DOTFILES/.aliases ] && source $DOTFILES/.aliases
 [ -f $DOTFILES/.functions ] && source $DOTFILES/.functions
-[ -f $DOTFILES/.liferay ] && source $DOTFILES/.liferay
-[ -f $DOTFILES/.private ] && source $DOTFILES/.private
+
+[[ $DOTFILES_PROFILE == work ]] && source $DOTFILES/.liferay
 
 # Link dircolors for ls color highlighting
 eval $(gdircolors $DOTFILES/.dircolors)
