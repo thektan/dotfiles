@@ -571,6 +571,94 @@ st() {
 	./catalina.sh jpda run;
 }
 
+# Builds a Docker image of the current bundle and pushes it to the BPM team's
+# Docker Hub repo (liferaybpm/liferay-portal) for feature validation.
+gdi() {
+	echo -e "██████╗ ██████╗ ███╗   ███╗"
+	echo -e "██╔══██╗██╔══██╗████╗ ████║"
+	echo -e "██║ ██║ ██████╔╝██╔████╔██║"
+	echo -e "██║  ██║██╔═══╝ ██║╚██╔╝██║"
+	echo -e "██████╔╝██║     ██║ ╚═  ██║     Image Generator"
+
+	local folder
+	folder=$(find . -maxdepth 1 -type d -name "tomcat*" | head -n 1)
+
+	if [[ -z "$folder" ]]; then
+		echo -e "╔═══════════════════════════════════════════════════════════════════╗"
+		echo -e "║ No Tomcat folder found here. Run in the web server root.          ║"
+		echo -e "╚═══════════════════════════════════════════════════════════════════╝"
+		return 1
+	fi
+
+	folder_count=$(find . -maxdepth 1 -type d -name "tomcat*" | wc -l)
+
+	if [[ "$folder" != "./tomcat" && $folder_count -eq 1 ]]; then
+		mv "$folder" "tomcat"
+		echo -e "╔═══════════════════════════════════════════════════════════════════╗"
+		echo -e "║ Renamed $folder to 'tomcat'.                                      ║"
+		echo -e "╚═══════════════════════════════════════════════════════════════════╝"
+	elif [[ "$folder" == "./tomcat" && $folder_count -eq 1 ]]; then
+		echo -e "╔═══════════════════════════════════════════════════════════════════╗"
+		echo -e "║ Tomcat folder is already named correctly.                         ║"
+		echo -e "╚═══════════════════════════════════════════════════════════════════╝"
+	else
+		echo -e "╔═══════════════════════════════════════════════════════════════════╗"
+		echo -e "║ 'tomcat' folders in the directory: $folder_count                  ║"
+		echo -e "║ Please leave only one 'tomcat' folder.                            ║"
+		echo -e "╚═══════════════════════════════════════════════════════════════════╝"
+		return 1
+	fi
+
+	echo -e "╔═══════════════════════════════════════════════════════════════════╗"
+	echo -e "║ Enter the individual portal-ext properties needed, one per line.  ║"
+	echo -e "║ Type an empty line and press enter to finish.                     ║"
+	echo -e "╚═══════════════════════════════════════════════════════════════════╝"
+
+	> temp.properties
+
+	while true; do
+		read -r prop
+		[[ -z "$prop" ]] && break
+		echo "$prop" >> temp.properties
+	done
+
+	echo -e "╔═══════════════════════════════════════════════════════════════════╗"
+	echo -e "║ Properties saved.                                                 ║"
+	echo -e "╚═══════════════════════════════════════════════════════════════════╝"
+
+	# Clean bundle to avoid errors
+	rm -rf tomcat/temp tomcat/work osgi/state
+	rm -rf data/elasticsearch*
+
+	# Generate the image name
+	echo -e "╔═══════════════════════════════════════════════════════════════════╗"
+	echo -e "║ Please write the ticket number (LPD-XXXXXX):                      ║"
+	echo -e "╚═══════════════════════════════════════════════════════════════════╝"
+	read user_input
+	local input_value=$(echo "$user_input" | sed 's/^LPD/lpd/')
+	local timestamp
+	timestamp=$(LC_TIME=en_US.UTF-8 date +"%b-%d-%I-%M-%p" | tr '[:upper:]' '[:lower:]')
+	local imageName=${input_value}-${timestamp}
+
+	# Build image
+	echo -e "╔═══════════════════════════════════════════════════════════════════╗"
+	echo -e "║ Building Docker Image...                                          ║"
+	echo -e "╚═══════════════════════════════════════════════════════════════════╝"
+	docker build . -t "liferaybpm/liferay-portal:$imageName"
+
+	# Publish on BPM public repo
+	echo -e "╔═══════════════════════════════════════════════════════════════════╗"
+	echo -e "║ Pushing Image to Repository...                                    ║"
+	echo -e "╚═══════════════════════════════════════════════════════════════════╝"
+	docker push "liferaybpm/liferay-portal:$imageName"
+
+	echo -e "╔═══════════════════════════════════════════════════════════════════════════╗"
+	echo -e "║ If you received denied permission, talk to your manager.                  ║"
+	echo -e "║ The image is available at:                                                ║"
+	echo -e "║ https://hub.docker.com/repository/docker/liferaybpm/liferay-portal/tags   ║"
+	echo -e "╚═══════════════════════════════════════════════════════════════════════════╝"
+}
+
 ############################################################
 # Gradle
 ############################################################
