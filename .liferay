@@ -265,23 +265,23 @@ buildPortal() {
 
 	ant all;
 
-	echo "";
-	echo "╔═══════════════════════════════════════════════════════════════════╗";
-	echo "║ 🤖 Setting up VS Code color settings                              ║";
-	echo "╚═══════════════════════════════════════════════════════════════════╝";
+	# echo "";
+	# echo "╔═══════════════════════════════════════════════════════════════════╗";
+	# echo "║ 🤖 Setting up VS Code color settings                              ║";
+	# echo "╚═══════════════════════════════════════════════════════════════════╝";
 
-	setupPortalVSCode;
+	# setupPortalVSCode;
 
-	echo "";
-	echo "╔═══════════════════════════════════════════════════════════════════╗";
-	echo "║ 🤖 Setting up IntelliJ                                            ║";
-	echo "╚═══════════════════════════════════════════════════════════════════╝";
+	# echo "";
+	# echo "╔═══════════════════════════════════════════════════════════════════╗";
+	# echo "║ 🤖 Setting up IntelliJ                                            ║";
+	# echo "╚═══════════════════════════════════════════════════════════════════╝";
 
-	/Users/ktan/Developer/liferay-intellij/intellij "$@";
+	# /Users/ktan/Developer/liferay-intellij/intellij "$@";
 
-	endtime=$(date +%s.%N);
+	# endtime=$(date +%s.%N);
 
-	duration=$(echo "scale=9; ($endtime - $starttime) / 60" | bc);
+	# duration=$(echo "scale=9; ($endtime - $starttime) / 60" | bc);
 
 	echo "";
 	echo "╔═══════════════════════════════════════════════════════════════════╗";
